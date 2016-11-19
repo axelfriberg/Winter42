@@ -6,20 +6,19 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\PlayerSprite</sprite>
-    <sprite>sprites\PlayerSelectedSprite</sprite>
-    <sprite>sprites\sprite4</sprite>
-    <sprite>sprites\WallSprite</sprite>
-    <sprite>sprites\PotSprite</sprite>
+    <sprite>sprites\spr_soldier</sprite>
+    <sprite>sprites\spr_soldierSelected</sprite>
+    <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_pot</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\PlayerObject</object>
-    <object>objects\MouseObject</object>
-    <object>objects\ControllerObject</object>
-    <object>objects\WallObject</object>
-    <object>objects\PotObject</object>
+    <object>objects\obj_soldier</object>
+    <object>objects\obj_mouse</object>
+    <object>objects\obj_controller</object>
+    <object>objects\obj_wall</object>
+    <object>objects\obj_pot</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
