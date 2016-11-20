@@ -95,6 +95,15 @@ Cooking = false;
             scr_dialogue("Let's make some tea...", 0, 0);
             alarm[0] = 60;
         }
+        else if place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier){
+            secondSoldier = instance_place(x-32, y, obj_soldier);
+            //if (x == secondSoldier.x-32 &amp;&amp; y== secondSoldier.y){    
+                scr_dialogue("Good morning, soldat!", 0, 0);
+            //}
+            //if (x == secondSoldier.x+32 &amp;&amp; y== secondSoldier.y){    
+              //  scr_dialogue("Good morning, soldat!", 0, 0);
+            //}
+        }
     }  
     else if y!=MoveY{
         pointDistance = point_distance(x,y,obj_stairs.x,y)
