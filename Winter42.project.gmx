@@ -10,15 +10,25 @@
     <sprite>sprites\spr_soldierSelected</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_pot</sprite>
+    <sprite>sprites\spr_mouse</sprite>
+    <sprite>sprites\spr_stairs</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_dialogue.gml</script>
+  </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_soldier</object>
     <object>objects\obj_mouse</object>
     <object>objects\obj_controller</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_pot</object>
+    <object>objects\obj_textbox</object>
+    <object>objects\obj_stairs</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
