@@ -87,19 +87,21 @@ y = mouse_y;
 else if place_meeting(x, y, obj_soldier){
     with(global.Selected){
         secondSoldier = instance_place(mouse_x, mouse_y, obj_soldier);
-        if(x &lt;= 640)
+        if(instance_exists(secondSoldier)){
+        if(x &lt;= secondSoldier.x)
         {
-            MoveX = secondSoldier.x + 32;
+            MoveX = secondSoldier.x - 34;
             MoveY = secondSoldier.y;
             Move = true;
             MoveSpeed = 7;
         }
         else
         {
-            MoveX = secondSoldier.x - 32;
+            MoveX = secondSoldier.x + 34;
             MoveY = secondSoldier.y;
             Move = true;
             MoveSpeed = 7;
+        }
         }
     }
 }
