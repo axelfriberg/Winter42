@@ -12,6 +12,11 @@
     <sprite>sprites\spr_pot</sprite>
     <sprite>sprites\spr_mouse</sprite>
     <sprite>sprites\spr_stairs</sprite>
+    <sprite>sprites\spr_play</sprite>
+    <sprite>sprites\spr_pause</sprite>
+    <sprite>sprites\spr_fastForward</sprite>
+    <sprite>sprites\spr_door</sprite>
+    <sprite>sprites\spr_ground</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -30,6 +35,10 @@
     <object>objects\obj_pot</object>
     <object>objects\obj_textbox</object>
     <object>objects\obj_stairs</object>
+    <object>objects\obj_timer</object>
+    <object>objects\obj_button_fastForward</object>
+    <object>objects\obj_ground</object>
+    <object>objects\obj_door</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

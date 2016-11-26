@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>MoveSpeed = 2;
+            <string>OriginalMoveSpeed = 5;
+MoveSpeed = OriginalMoveSpeed;
 Move = false;
 MoveX = x;
 MoveY = y;
@@ -79,7 +80,11 @@ Cooking = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if Move{
+            <string>MoveSpeed=OriginalMoveSpeed*global.multiplier;
+
+show_debug_message(string(y) + ", " + string(MoveY))
+
+if Move{
     Busy = false
     Completed = false
     pointDistance = point_distance(x,y,MoveX,y)
@@ -93,25 +98,92 @@ Cooking = false;
         if (x == obj_pot.x-32 &amp;&amp; y== obj_pot.y){    
             Busy = true;
             scr_dialogue("Let's make some tea...", 0, 0);
-            alarm[0] = 60;
+            alarm[0] = 60/global.multiplier;
         }
         else if place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier){
-            secondSoldier = instance_place(x-32, y, obj_soldier);
-            //if (x == secondSoldier.x-32 &amp;&amp; y== secondSoldier.y){    
+            secondSoldier = instance_place(x-32, y, obj_soldier); 
                 scr_dialogue("Good morning, soldat!", 0, 0);
-            //}
-            //if (x == secondSoldier.x+32 &amp;&amp; y== secondSoldier.y){    
-              //  scr_dialogue("Good morning, soldat!", 0, 0);
-            //}
         }
+        
     }  
+    // Using stairs to move around
     else if y!=MoveY{
-        pointDistance = point_distance(x,y,obj_stairs.x,y)
-        move_towards_point(obj_stairs.x, y, min(MoveSpeed, pointDistance))
-        if(x==obj_stairs.x){
-            pointDistance = point_distance(x,y,obj_stairs.x,MoveY)
-            move_towards_point(obj_stairs.x, MoveY, min(MoveSpeed, pointDistance))
+        var stairsFloor0=instance_place(432, 900, obj_stairs);
+        var stairsFloor1=instance_place(520, 720, obj_stairs);
+        var stairsFloor2=instance_place(420, 540, obj_stairs);
+        // we have 4 floors, therefore both person and target can be in any of them
+        if(MoveY&lt;y){
+            if(y&lt;=928&amp;&amp;y&gt;736){ //person in floor0
+                if(x==stairsFloor0.x){
+                    pointDistance = point_distance(x,y,x,stairsFloor0.y-192);
+                    move_towards_point(x, stairsFloor0.y-192, min(MoveSpeed, pointDistance));
+                } else {
+                    pointDistance = point_distance(x,y,stairsFloor0.x,y);
+                    move_towards_point(stairsFloor0.x, y, min(MoveSpeed, pointDistance));
+                }
+            }else if(y&lt;=736&amp;&amp;y&gt;544){ //person in floor1
+
+                if(x==stairsFloor1.x){
+                    pointDistance = point_distance(x,y,x,stairsFloor1.y-192);
+                    move_towards_point(x, stairsFloor1.y-192, min(MoveSpeed, pointDistance));
+                }
+                else{
+                    pointDistance = point_distance(x,y,stairsFloor1.x,y);
+                    move_towards_point(stairsFloor1.x, y, min(MoveSpeed, pointDistance));
+                }
+                
+            }else if(y&lt;=544&amp;&amp;y&gt;320){ //person in floor2
+                if(x==stairsFloor2.x){
+                    pointDistance = point_distance(x,y,x,stairsFloor2.y-192);
+                    move_towards_point(x, stairsFloor2.y-192, min(MoveSpeed, pointDistance));
+                }
+                else{
+                    pointDistance = point_distance(x,y,stairsFloor2.x,y);
+                    move_towards_point(stairsFloor2.x, y, min(MoveSpeed, pointDistance))
+                }
+            }
+        }else{ // going down
+            if(y&gt;=736){ //person in floor1
+
+                if(x==stairsFloor0.x){
+                    pointDistance = point_distance(x,y,x,stairsFloor0.y);
+                    move_towards_point(x, stairsFloor0.y, min(MoveSpeed, pointDistance));
+                }
+                else{
+                    pointDistance = point_distance(x,y,stairsFloor0.x,y);
+                    move_towards_point(stairsFloor0.x, y, min(MoveSpeed, pointDistance));
+                }
+                
+            }else if(y&lt;736&amp;&amp;y&gt;=544){ //person in floor2
+                if(x==stairsFloor1.x){
+                    pointDistance = point_distance(x,y,x,stairsFloor1.y);
+                    move_towards_point(x, stairsFloor1.y, min(MoveSpeed, pointDistance));
+                }
+                else{
+                    pointDistance = point_distance(x,y,stairsFloor1.x,y);
+                    move_towards_point(stairsFloor1.x, y, min(MoveSpeed, pointDistance))
+                }
+                
+            }else if(y&lt;544&amp;&amp;y&gt;=352){ //person in floor3
+                if(x==stairsFloor2.x){
+                    pointDistance = point_distance(x,y,x,stairsFloor2.y);
+                    move_towards_point(x, stairsFloor2.y, min(MoveSpeed, pointDistance));
+                }
+                else{
+                    pointDistance = point_distance(x,y,stairsFloor2.x,y);
+                    move_towards_point(stairsFloor2.x, y, min(MoveSpeed, pointDistance))
+                }
+            }
         }
+        
+        
+     /*   pointDistance = point_distance(x,y,stairs.x,y)
+        move_towards_point(stairs.x, y, min(MoveSpeed, pointDistance))
+        if(x==MoveX){
+            pointDistance = point_distance(x,y,stairs.x,MoveY)
+            move_towards_point(stairs.x, MoveY, min(MoveSpeed, pointDistance))
+        }
+        */
     }
 }
 

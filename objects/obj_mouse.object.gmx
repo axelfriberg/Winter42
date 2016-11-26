@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>destination = 'null';
 secondSoldier = obj_soldier;
+stairs = obj_stairs;
 </string>
           </argument>
         </arguments>
@@ -73,7 +74,9 @@ y = mouse_y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if place_meeting(x, y, obj_pot){
+            <string>/// Character movement implementation
+
+if place_meeting(x, y, obj_pot){
     with(global.Selected){  
         MoveX = obj_pot.x - 32;
         MoveY = obj_pot.y;
@@ -107,37 +110,46 @@ else if place_meeting(x, y, obj_soldier){
 }
 
 else if place_meeting(x, y, obj_stairs){
-  //  soldierID = instance_place(x, y, obj_soldier);
-    with(global.Selected){  
-        MoveX = obj_stairs.x;
-       // soldierID = instance_place(x, y, obj_soldier);
-        if(obj_stairs.y&gt;y){
-            MoveY = obj_stairs.y;
+    with(global.Selected){
+        stairs = instance_place(mouse_x, mouse_y, obj_stairs);
+        if(instance_exists(stairs)){
+            MoveX = stairs.x;
+            if(stairs.y&gt;y){
+                MoveY = y+192;
+            }
+            else{
+                MoveY = y-192;
+            }
+            Move = true;
+            MoveSpeed = 7;
         }
-        else{
-            MoveY = obj_stairs.y-192;
-        }
-        Move = true;
-        MoveSpeed = 7;
     }
 }
 else{
     with(global.Selected){
-        if(mouse_y&lt;480&amp;&amp;mouse_y&gt;320){
-            MoveY = 448;
+        //moving to different floors
+        if(mouse_y&lt;=960&amp;&amp;mouse_y&gt;768){
+            MoveY = 928;
         }
-        else if(mouse_y&gt;480&amp;&amp;mouse_y&lt;672){
-            MoveY = 640;
+        else if(mouse_y&lt;=768&amp;&amp;mouse_y&gt;576){
+            MoveY = 736;
+        }
+        else if(mouse_y&lt;=576&amp;&amp;mouse_y&gt;384){
+            MoveY = 544;
+        }
+        else if(mouse_y&lt;=384&amp;&amp;mouse_y&gt;224){
+            MoveY = 352;
         }
         else{
             MoveY = y;
         }
-        if(mouse_x&gt;160&amp;&amp;mouse_x&lt;1120)
+        // limiting moving outside the walls
+        if(mouse_x&gt;352&amp;&amp;mouse_x&lt;1568)
             MoveX = mouse_x;
-        else if(mouse_x&lt;160)
-            MoveX = 160+16;
-        else if(mouse_x&gt;1120)
-            MoveX = 1120-16;
+        else if(mouse_x&lt;352)
+            MoveX = 352+16;
+        else if(mouse_x&gt;1568)
+            MoveX = 1568-16;
         Move = true;
         MoveSpeed = 7;
     }
@@ -167,8 +179,16 @@ else{
             <string>if place_meeting(x, y, obj_soldier){
     soldierID = instance_place(x, y, obj_soldier);
     global.Selected = soldierID.id;
+} 
+else if place_meeting(x, y, spr_fastForward){
+    if(global.multiplier==1){
+        global.multiplier=2;
+    } else if(global.multiplier==2) {
+        global.multiplier=5;
+    } else{
+        global.multiplier=1;
+    }
 }
-
 else{
     global.Selected = -1;
 }
