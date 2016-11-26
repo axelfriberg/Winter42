@@ -17,6 +17,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_dialogue.gml</script>
+    <script>scripts\scr_view_zoom.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt</font>
