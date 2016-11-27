@@ -17,6 +17,11 @@
     <sprite>sprites\spr_fastForward</sprite>
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_ground</sprite>
+    <sprite>sprites\spr_sentry</sprite>
+    <sprite>sprites\spr_window</sprite>
+    <sprite>sprites\spr_window_back</sprite>
+    <sprite>sprites\spr_chimney</sprite>
+    <sprite>sprites\spr_bed</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -39,6 +44,11 @@
     <object>objects\obj_button_fastForward</object>
     <object>objects\obj_ground</object>
     <object>objects\obj_door</object>
+    <object>objects\obj_sentry</object>
+    <object>objects\obj_window</object>
+    <object>objects\obj_window_back</object>
+    <object>objects\obj_chimney</object>
+    <object>objects\obj_bed</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
