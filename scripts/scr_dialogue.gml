@@ -7,11 +7,12 @@ if(object_exists(obj_textbox))
 txt = instance_create(argument1,argument2,obj_textbox);
 with (txt)
 {
-    
+    //draw_set_halign(fa_left)
+    draw_set_valign(fa_top)
+
     message = argument0;
-    font = fnt;
-    
+    /*font = fnt;
     text_length = string_length(message);
     font_size = font_get_size(font);
-    draw_set_font(font);
+    draw_set_font(font);*/
 }

@@ -28,7 +28,11 @@
             <string>/// Setting global variables
 
 global.Selected = -1;
-global.Food = 0;
+global.Temperature = 17;
+global.Scraps = 7;
+global.Ammunition = 53;
+global.RawFood = 4;
+global.CookedFood = 0;
 </string>
           </argument>
         </arguments>
@@ -100,12 +104,20 @@ draw_set_halign(fa_left)
 draw_set_valign(fa_middle)
 draw_set_color(c_white)
 
-draw_text(20,35,"Food: " + string(global.Food));
-draw_text(20,55,"Time: " + string(global.Thours)+string(global.hours)+":"+string(global.Tminutes)+string(global.minutes));
+draw_text(20,35,"Day "+ string(global.day));
+draw_text(20,55,"Time " + string(global.Thours)+string(global.hours)+":"+string(global.Tminutes)+string(global.minutes));
 draw_text(20,75,"Speed "+ string(global.multiplier)+"x");
-draw_text(20,95,"Day "+ string(global.day));
-
-inst = instance_create(800, 128, obj_button_fastForward);
+draw_text(20,95,"Temperature: " + string(global.Temperature)+" C");
+draw_text(20,115,"Raw food: " + string(global.RawFood));
+draw_text(20,135,"Cooked food: " + string(global.CookedFood));
+draw_text(20,155,"Scraps: " + string(global.Scraps));
+draw_text(20,175,"Ammunition: " + string(global.Ammunition));
+/*
+if(object_exists(obj_button_fastForward))
+{
+    with(obj_button_fastForward) instance_destroy();
+}*/
+inst = instance_create(900, 100, obj_button_fastForward);
 </string>
           </argument>
         </arguments>

@@ -22,6 +22,9 @@
     <sprite>sprites\spr_window_back</sprite>
     <sprite>sprites\spr_chimney</sprite>
     <sprite>sprites\spr_bed</sprite>
+    <sprite>sprites\spr_general</sprite>
+    <sprite>sprites\spr_generalSelected</sprite>
+    <sprite>sprites\spr_empty</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -33,22 +36,23 @@
     <font>fonts\fnt</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_soldier</object>
-    <object>objects\obj_mouse</object>
     <object>objects\obj_controller</object>
-    <object>objects\obj_wall</object>
-    <object>objects\obj_pot</object>
-    <object>objects\obj_textbox</object>
-    <object>objects\obj_stairs</object>
     <object>objects\obj_timer</object>
     <object>objects\obj_button_fastForward</object>
-    <object>objects\obj_ground</object>
-    <object>objects\obj_door</object>
+    <object>objects\obj_textbox</object>
+    <object>objects\obj_soldier</object>
+    <object>objects\obj_general</object>
+    <object>objects\obj_mouse</object>
+    <object>objects\obj_pot</object>
     <object>objects\obj_sentry</object>
+    <object>objects\obj_bed</object>
+    <object>objects\obj_stairs</object>
+    <object>objects\obj_chimney</object>
+    <object>objects\obj_door</object>
     <object>objects\obj_window</object>
     <object>objects\obj_window_back</object>
-    <object>objects\obj_chimney</object>
-    <object>objects\obj_bed</object>
+    <object>objects\obj_wall</object>
+    <object>objects\obj_ground</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
