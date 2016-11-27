@@ -29,14 +29,12 @@
 global.multiplier = 1;
 
 // game starting time
-global.floatSec=0;
-global.seconds = 55;
+global.floatMin=0;
 global.minutes = 59;
 global.hours = 9;
 global.day = 1;
 
 //just some variables for drawing
-global.Tseconds ="0";
 global.Tminutes ="0";
 global.Thours ="0";
 
@@ -64,28 +62,19 @@ global.Thours ="0";
           <argument>
             <kind>1</kind>
             <string>/// Increase Time
-global.floatSec += 1/room_speed*global.multiplier;
-global.seconds = floor(global.floatSec);
-if(global.seconds==60){
-    global.floatSec=0;
-    global.seconds=0;
-    global.minutes++;
-}
+global.floatMin += 1/room_speed*global.multiplier;
+global.minutes = floor(global.floatMin);
+
 if(global.minutes==60){
     global.minutes=0;
     global.hours++;
+    global.floatMin=0;
 }
 if(global.hours==24){
     global.hours=0;
     global.day++;
 }
 //Shitty gamemaker :D 
-if(global.seconds&lt;10){
-    global.Tseconds="0";
-}
-else{
-    global.Tseconds="";
-}
 if(global.minutes&lt;10){
     global.Tminutes="0";
 }
