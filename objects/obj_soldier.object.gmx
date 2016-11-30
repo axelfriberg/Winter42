@@ -38,6 +38,8 @@ Completed = false;
 Cooking = false;
 makingFire = false;
 canEat = true;
+AmmoTime = 60;
+CraftingAmmo = false;
 </string>
           </argument>
         </arguments>
@@ -169,6 +171,16 @@ if Move&amp;&amp;!isOut{
                 isOut=true;
                 selected=-1;     
         }
+        else if (x == obj_anvil.x-50 &amp;&amp; y == 352){  //352 is the y of the floor where the anvil is placed.
+            if(global.Scraps &gt; 0){ 
+                scr_dialogue("Making some ammuniton...", x-260, y-130);
+                Busy=true;
+                alarm[0]=AmmoTime/global.multiplier; 
+            }
+            else{
+                scr_dialogue("Looks like there's no scrap left...", x-260, y-130);
+            }  
+        }
         else if place_meeting(x,y,obj_chimney){ 
             if(global.Temperature &gt; 22){
                 scr_dialogue("Shouldn't make it any hotter", x-260, y-130);               
@@ -180,7 +192,7 @@ if Move&amp;&amp;!isOut{
                     alarm[2] = 60/global.multiplier;   
                 }
                 else {
-                    scr_dialogue("Looks like there's no scrap left...", x-260, y-130);
+                    scr_dialogue("Looks like there's no scrap left...", x-260, y-130);scr_dialogue("Looks like there's no scrap left...", x-260, y-130);
                 }
             }         
         }
@@ -283,6 +295,12 @@ if Busy &amp;&amp; Completed{
                 global.Scraps -= 1;
                 scr_dialogue("Warm and cozy", x-260, y-130);
          
+        }
+        if(CraftingAmmo){
+            CraftingAmmo = false;
+            global.Scraps -=1;
+            global.Ammunition +=5;
+            scr_dialogue("Feeling safer now!", x-260, y-130);
         }        
 }
 
