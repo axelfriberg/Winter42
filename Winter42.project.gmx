@@ -25,6 +25,7 @@
     <sprite>sprites\spr_general</sprite>
     <sprite>sprites\spr_generalSelected</sprite>
     <sprite>sprites\spr_empty</sprite>
+    <sprite>sprites\spr_snowFlake</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -53,6 +54,7 @@
     <object>objects\obj_window_back</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_ground</object>
+    <object>objects\obj_snowFlake</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
