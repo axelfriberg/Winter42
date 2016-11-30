@@ -33,6 +33,47 @@ global.Scraps = 7;
 global.Ammunition = 53;
 global.RawFood = 4;
 global.CookedFood = 0;
+global.SnowCounter = 0;
+
+global.multiplier = 1;
+alarm[0] = 100/global.multiplier;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>x = 200;
+
+for(i = 0; i &lt; 15; i++){
+    instance_create(x, 0, obj_snowFlake);
+    x += 100;
+}
+
+if(global.SnowCounter &lt; 50){
+alarm[0] = 6;
+global.SnowCounter += 1;
+if(global.SnowCounter % 5 == 0){
+    global.Temperature -= 1;
+} 
+} 
+
 </string>
           </argument>
         </arguments>
