@@ -110,6 +110,15 @@ else if place_meeting(x, y, obj_door){
         MoveSpeed = 7;
     }
 }
+if place_meeting(x, y, obj_anvil){
+    with(global.Selected){  
+        MoveX = obj_anvil.x - 50;
+        MoveY = 352;
+        Move = true;
+        MoveSpeed = 7;
+        CraftingAmmo = true;
+    }
+}
 
 else if place_meeting(x, y, obj_stairs){
     with(global.Selected){
