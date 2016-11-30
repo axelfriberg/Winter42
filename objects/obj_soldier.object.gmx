@@ -36,6 +36,8 @@ Busy = false;
 Resource = -1;
 Completed = false;
 Cooking = false;
+makingFire = false;
+canEat = true;
 </string>
           </argument>
         </arguments>
@@ -297,6 +299,16 @@ sprite_index = spr_empty;
 sprite_index = spr_soldierSelected
 } else {
 sprite_index = spr_soldier
+}
+//Eat at 12
+if(global.hours == 12 &amp;&amp; global.minutes == 0 &amp;&amp; canEat){
+    canEat = false;
+    if(global.CookedFood &gt; 0){
+        global.CookedFood -= 1;
+    } 
+}
+if(global.hours == 12 &amp;&amp; global.minutes == 1){
+    canEat = true;
 }
 </string>
           </argument>

@@ -166,6 +166,16 @@ sprite_index = spr_generalSelected
 if isSelected == false{
 sprite_index = spr_general
 }
+//Eat at 12
+if(global.hours == 12 &amp;&amp; global.minutes == 0 &amp;&amp; canEat){
+    canEat = false;
+    if(global.CookedFood &gt; 0){
+        global.CookedFood -= 1;
+    } 
+}
+if(global.hours == 12 &amp;&amp; global.minutes == 1){
+    canEat = true;
+}
 </string>
           </argument>
         </arguments>
