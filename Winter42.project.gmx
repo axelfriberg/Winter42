@@ -7,6 +7,8 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_soldier</sprite>
+    <sprite>sprites\spr_medic</sprite>
+    <sprite>sprites\spr_medicSelected</sprite>
     <sprite>sprites\spr_soldierSelected</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_pot</sprite>
@@ -27,6 +29,11 @@
     <sprite>sprites\spr_empty</sprite>
     <sprite>sprites\spr_anvil</sprite>
     <sprite>sprites\spr_snowFlake</sprite>
+    <sprite>sprites\spr_cook</sprite>
+    <sprite>sprites\spr_cookSelected</sprite>
+    <sprite>sprites\spr_blacksmith</sprite>
+    <sprite>sprites\spr_blacksmithSelected</sprite>
+    <sprite>sprites\spr_cookInfo</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -42,6 +49,8 @@
     <object>objects\obj_timer</object>
     <object>objects\obj_button_fastForward</object>
     <object>objects\obj_textbox</object>
+    <object>objects\obj_abilitiesText</object>
+    <object>objects\obj_descriptionText</object>
     <object>objects\obj_soldier</object>
     <object>objects\obj_general</object>
     <object>objects\obj_mouse</object>
@@ -57,6 +66,10 @@
     <object>objects\obj_ground</object>
     <object>objects\obj_anvil</object>
     <object>objects\obj_snowFlake</object>
+    <object>objects\obj_cook</object>
+    <object>objects\obj_blacksmith</object>
+    <object>objects\obj_medic</object>
+    <object>objects\obj_cookInfo</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
