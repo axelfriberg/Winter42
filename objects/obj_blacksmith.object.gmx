@@ -8,7 +8,7 @@
   <parentName>obj_soldier</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="0">
+    <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,195 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>MoveSpeed=OriginalMoveSpeed*global.multiplier;
-
-scr_randomMovement();
-
-if Move&amp;&amp;!isOut{
-
-    //deleting textbox
-    if(object_exists(obj_textbox))
-    {
-        var textbox  = instance_place(x-260, y-130, obj_textbox);
-        if textbox != noone
-        {   show_debug_message("exists")
-        
-            with(textbox) instance_destroy();
-        }
-    }
-    
-    Busy = false
-    Completed = false
-    pointDistance = point_distance(x,y,MoveX,y)
-    move_towards_point(MoveX, y, min(MoveSpeed, pointDistance))
-    if x == MoveX &amp;&amp; y==MoveY {
-        pointDistance = point_distance(x,y,MoveX,MoveY)
-        move_towards_point(MoveX, MoveY, min(MoveSpeed, pointDistance))
-        if(y==MoveY){
-            Move = false
-        }
-        if (x == obj_pot.x-32 &amp;&amp; y== obj_pot.y){
-            if(global.RawFood&gt;0){    
-                Busy = true;
-                scr_dialogue("Let's cook some food...", x-260, y-130);
-                alarm[0] = 60/global.multiplier;
-            }
-            else {
-                scr_dialogue("Looks like there's no food left...", x-260, y-130);
-            }
-        }
-        else if place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier){
-                secondSoldier = instance_place(x-32, y, obj_soldier); 
-                scr_dialogue("Good morning, soldat!", x-260, y-130);
-        }
-        else if place_meeting(x,y,obj_door){ 
-                scr_dialogue("I'm going to find some resources...", x-260, y-130);
-                Busy=true;
-                alarm[1] = 120/global.multiplier;
-                isOut=true;
-                selected=-1;     
-        }
-        else if (x == obj_anvil.x-50 &amp;&amp; y == 352){  //352 is the y of the floor where the anvil is placed.
-            if(global.Scraps &gt; 0){ 
-                scr_dialogue("Making some ammuniton...", x-260, y-130);
-                Busy=true;
-                alarm[0]=AmmoTime/global.multiplier; 
-            }
-            else{
-                scr_dialogue("Looks like there's no scrap left...", x-260, y-130);
-            }  
-        }
-        else if place_meeting(x,y,obj_chimney){ 
-            if(global.Temperature &gt; 22){
-                scr_dialogue("Shouldn't make it any hotter", x-260, y-130);               
-            } else {
-                 if(global.Scraps &gt; 0){    
-                    scr_dialogue("Making a fire...", x-260, y-130);
-                    Busy=true;
-                    makingFire = true;
-                    alarm[2] = 60/global.multiplier;   
-                }
-                else {
-                    scr_dialogue("Looks like there's no scrap left...", x-260, y-130);scr_dialogue("Looks like there's no scrap left...", x-260, y-130);
-                }
-            }         
-        }
-        
-    }  
-    // Using stairs to move around
-    else if y!=MoveY{
-        var stairsFloor0=instance_place(432, 900, obj_stairs);
-        var stairsFloor1=instance_place(520, 720, obj_stairs);
-        var stairsFloor2=instance_place(420, 540, obj_stairs);
-        // we have 4 floors, therefore both person and target can be in any of them
-        if(MoveY&lt;y){
-            if(y&lt;=928&amp;&amp;y&gt;736){ //person in floor0
-                if(x==stairsFloor0.x){
-                    pointDistance = point_distance(x,y,x,stairsFloor0.y-192);
-                    move_towards_point(x, stairsFloor0.y-192, min(MoveSpeed, pointDistance));
-                } else {
-                    pointDistance = point_distance(x,y,stairsFloor0.x,y);
-                    move_towards_point(stairsFloor0.x, y, min(MoveSpeed, pointDistance));
-                }
-            }else if(y&lt;=736&amp;&amp;y&gt;544){ //person in floor1
-
-                if(x==stairsFloor1.x){
-                    pointDistance = point_distance(x,y,x,stairsFloor1.y-192);
-                    move_towards_point(x, stairsFloor1.y-192, min(MoveSpeed, pointDistance));
-                }
-                else{
-                    pointDistance = point_distance(x,y,stairsFloor1.x,y);
-                    move_towards_point(stairsFloor1.x, y, min(MoveSpeed, pointDistance));
-                }
-                
-            }else if(y&lt;=544&amp;&amp;y&gt;320){ //person in floor2
-                if(x==stairsFloor2.x){
-                    pointDistance = point_distance(x,y,x,stairsFloor2.y-192);
-                    move_towards_point(x, stairsFloor2.y-192, min(MoveSpeed, pointDistance));
-                }
-                else{
-                    pointDistance = point_distance(x,y,stairsFloor2.x,y);
-                    move_towards_point(stairsFloor2.x, y, min(MoveSpeed, pointDistance))
-                }
-            }
-        }else{ // going down
-            if(y&gt;=736){ //person in floor1
-
-                if(x==stairsFloor0.x){
-                    pointDistance = point_distance(x,y,x,stairsFloor0.y);
-                    move_towards_point(x, stairsFloor0.y, min(MoveSpeed, pointDistance));
-                }
-                else{
-                    pointDistance = point_distance(x,y,stairsFloor0.x,y);
-                    move_towards_point(stairsFloor0.x, y, min(MoveSpeed, pointDistance));
-                }
-                
-            }else if(y&lt;736&amp;&amp;y&gt;=544){ //person in floor2
-                if(x==stairsFloor1.x){
-                    pointDistance = point_distance(x,y,x,stairsFloor1.y);
-                    move_towards_point(x, stairsFloor1.y, min(MoveSpeed, pointDistance));
-                }
-                else{
-                    pointDistance = point_distance(x,y,stairsFloor1.x,y);
-                    move_towards_point(stairsFloor1.x, y, min(MoveSpeed, pointDistance))
-                }
-                
-            }else if(y&lt;544&amp;&amp;y&gt;=352){ //person in floor3
-                if(x==stairsFloor2.x){
-                    pointDistance = point_distance(x,y,x,stairsFloor2.y);
-                    move_towards_point(x, stairsFloor2.y, min(MoveSpeed, pointDistance));
-                }
-                else{
-                    pointDistance = point_distance(x,y,stairsFloor2.x,y);
-                    move_towards_point(stairsFloor2.x, y, min(MoveSpeed, pointDistance))
-                }
-            }
-        }
-    }
-}
-
-if Busy &amp;&amp; Completed{
-    Busy = false;
-    Completed = false;
-        //Raw Food ==&gt; Cooked Food
-        if(Cooking)
-        {
-            Cooking = false;
-            global.RawFood -= 1;
-            global.CookedFood += 1;
-            scr_dialogue("Mmmm it will be delicious", x-260, y-130);
-        } // Went scavaging, found raw food and scraps
-        if(isOut)
-        {
-                isOut = false;
-                global.RawFood += 1;
-                global.Scraps += 1;
-                scr_dialogue("Found raw food and scraps", x-260, y-130);
-        }
-        if(makingFire = true){
-            makingFire = false;
-            
-                global.Temperature += 1;
-                global.Scraps -= 1;
-                scr_dialogue("Warm and cozy", x-260, y-130);
-         
-        }
-        if(CraftingAmmo){
-            CraftingAmmo = false;
-            global.Scraps -=1;
-            global.Ammunition +=5;
-            scr_dialogue("Feeling safer now!", x-260, y-130);
-        }        
-}
-
-if global.Selected == id{
-    isSelected = true;
-}
-else{
-    isSelected = false
-}
-
-if isOut{
+            <string>if isOut{
 sprite_index = spr_empty;
 } else if isSelected{
 sprite_index = spr_blacksmithSelected
@@ -221,18 +33,6 @@ sprite_index = spr_blacksmithSelected
 sprite_index = spr_blacksmith
 }
 
-//Eat at 12
-if(global.hours == 12 &amp;&amp; global.minutes == 0 &amp;&amp; canEat){
-    canEat = false;
-    if(global.CookedFood &gt; 0){
-        global.CookedFood -= 1;
-    } 
-}
-if(global.hours == 12 &amp;&amp; global.minutes == 1){
-    canEat = true;
-}
-if(Health&lt;=0)
-    instance_destroy();
 </string>
           </argument>
         </arguments>

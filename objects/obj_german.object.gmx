@@ -34,6 +34,34 @@ Busy = false;        //for random movement
 isSelected = false;  //
 isOut=false;         //
 Health = 100;
+counter=0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if(global.isAttack)
+    sprite_index = spr_german;
+else
+    sprite_index = spr_empty;
 </string>
           </argument>
         </arguments>
@@ -60,6 +88,17 @@ Health = 100;
 
 if(global.isAttack){
     scr_randomMovement();
+}
+
+if(global.isWatch){
+    if(x&gt;1552&amp;&amp;global.Ammunition&gt;0){
+        counter++;
+        if(counter&gt;=10){
+            Health-=10;
+            global.Ammunition--;
+            counter=0;
+        }
+    }
 }
 
 if Move&amp;&amp;!isOut{
@@ -173,10 +212,6 @@ if place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier){
     scr_dialogue("Die!", x-260, y-130);
 }
 
-if(global.isAttack)
-    sprite_index = spr_german;
-else
-    sprite_index = spr_empty;
     
 if(Health&lt;=0)
     instance_destroy();
