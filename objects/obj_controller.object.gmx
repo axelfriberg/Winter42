@@ -37,7 +37,13 @@ global.Soldiers = 3;
 global.SnowCounter = 0;
 
 global.multiplier = 1;
-alarm[0] = 100/global.multiplier;
+alarm[0] = 500/global.multiplier;
+
+instance_create(576, 354, obj_blacksmith);
+instance_create(800, 544, obj_soldier);
+instance_create(900, 544, obj_general);
+instance_create(1000, 544, obj_medic);
+instance_create(650, 941, obj_cook);
 </string>
           </argument>
         </arguments>
