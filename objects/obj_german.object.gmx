@@ -34,6 +34,7 @@ Busy = false;        //for random movement
 isSelected = false;  //
 isOut=false;         //
 Health = 100;
+counter=0;
 </string>
           </argument>
         </arguments>
@@ -60,6 +61,17 @@ Health = 100;
 
 if(global.isAttack){
     scr_randomMovement();
+}
+
+if(global.isWatch){
+    if(x&gt;1552&amp;&amp;global.Ammunition&gt;0){
+        counter++;
+        if(counter&gt;=10){
+            Health-=10;
+            global.Ammunition--;
+            counter=0;
+        }
+    }
 }
 
 if Move&amp;&amp;!isOut{

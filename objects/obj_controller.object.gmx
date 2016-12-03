@@ -39,7 +39,7 @@ global.SnowCounter = 0;
 global.multiplier = 1;
 
 global.isAttack=false;
-
+global.isWatch=false;
 
 alarm[0] = 500/global.multiplier;
 alarm[1] = 1000/global.multiplier;
