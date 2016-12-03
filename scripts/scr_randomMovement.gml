@@ -1,7 +1,6 @@
 ///scr_randomMovements(amount,view)
 
 if(random(1000)>990&&!Move&&!isOut&&!Busy&&!isSelected){
-    //deleting textbox
 
     MoveX=floor(random(1184))+368;
     var fl = random(4);
@@ -17,5 +16,5 @@ if(random(1000)>990&&!Move&&!isOut&&!Busy&&!isSelected){
     }
     Move=true;
     MoveSpeed = 7;
-    show_debug_message("X: "+string(MoveX)+" Y: "+string(fl));
+
 }

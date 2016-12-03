@@ -3,8 +3,7 @@
     {
         var textbox  = instance_place(x-260, y-130, obj_textbox);
         if textbox != noone
-        {   show_debug_message("exists")
-        
+        {   
             with(textbox) instance_destroy();
         }
     }
@@ -40,11 +39,12 @@
                 isOut=true;
                 selected=-1;     
         }
-        else if (x == obj_anvil.x-50 && y == obj_anvil.y){  
+        else if (x == obj_anvil.x-50 && y == obj_anvil.y - 11){  
             if(global.Scraps > 0){ 
                 scr_dialogue("Making some ammuniton...", x-260, y-130);
                 Busy=true;
-                alarm[0]=AmmoTime/global.multiplier; 
+                CraftingAmmo = true;
+                alarm[0]=60/global.multiplier; 
             }
             else{
                 scr_dialogue("Looks like there's no scrap left...", x-260, y-130);
