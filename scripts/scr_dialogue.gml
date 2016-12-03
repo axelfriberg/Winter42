@@ -1,8 +1,13 @@
 //scr_dialogue("Text",x,y):
 if(object_exists(obj_textbox))
-{
-    with(obj_textbox) instance_destroy();
-}
+    {
+        var textbox  = instance_place(x-260, y-130, obj_textbox);
+        if textbox != noone
+        {   show_debug_message("exists")
+        
+            with(textbox) instance_destroy();
+        }
+    }
 
 txt = instance_create(argument1,argument2,obj_textbox);
 with (txt)

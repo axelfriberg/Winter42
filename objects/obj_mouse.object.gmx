@@ -76,6 +76,7 @@ y = mouse_y;
             <kind>1</kind>
             <string>/// Character movement implementation
 
+
 if place_meeting(x, y, obj_pot){
     with(global.Selected){  
         MoveX = obj_pot.x - 32;
@@ -112,12 +113,22 @@ else if place_meeting(x, y, obj_door){
 } else if place_meeting(x, y, obj_anvil){
     with(global.Selected){  
         MoveX = obj_anvil.x - 50;
-        MoveY = 352;
+        MoveY = obj_anvil.y - 11;
+        //show_debug_message(string(obj_anvil.y));
         Move = true;
         MoveSpeed = 7;
         CraftingAmmo = true;
     }
+} else if place_meeting(x, y, obj_sentry){
+    with(global.Selected){  
+        MoveX = obj_sentry.x-20;
+        MoveY = obj_sentry.y + 11;
+        Move = true;
+        MoveSpeed = 7;
+        //CraftingAmmo = true;
+    }
 }
+
 
 else if place_meeting(x, y, obj_stairs){
     with(global.Selected){

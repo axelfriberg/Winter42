@@ -27,13 +27,21 @@
             <kind>1</kind>
             <string>MoveSpeed=OriginalMoveSpeed*global.multiplier;
 
+scr_randomMovement();
+
 if Move{
 
     //deleting textbox
     if(object_exists(obj_textbox))
     {
-        with(obj_textbox) instance_destroy();
+        var textbox  = instance_place(x-260, y-130, obj_textbox);
+        if textbox != noone
+        {   show_debug_message("exists")
+        
+            with(textbox) instance_destroy();
+        }
     }
+    
     Busy = false
     Completed = false
     pointDistance = point_distance(x,y,MoveX,y)
@@ -176,6 +184,9 @@ if(global.hours == 12 &amp;&amp; global.minutes == 0 &amp;&amp; canEat){
 if(global.hours == 12 &amp;&amp; global.minutes == 1){
     canEat = true;
 }
+
+if(Health&lt;=0)
+    instance_destroy();
 </string>
           </argument>
         </arguments>

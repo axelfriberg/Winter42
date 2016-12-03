@@ -40,6 +40,8 @@ makingFire = false;
 canEat = true;
 AmmoTime = 60;
 CraftingAmmo = false;
+onWatch = false;
+Health=100;
 </string>
           </argument>
         </arguments>
@@ -133,12 +135,19 @@ CraftingAmmo = false;
             <kind>1</kind>
             <string>MoveSpeed=OriginalMoveSpeed*global.multiplier;
 
+scr_randomMovement();
+
 if Move&amp;&amp;!isOut{
 
     //deleting textbox
     if(object_exists(obj_textbox))
     {
-        with(obj_textbox) instance_destroy();
+        var textbox  = instance_place(x-260, y-130, obj_textbox);
+        if textbox != noone
+        {   show_debug_message("exists")
+        
+            with(textbox) instance_destroy();
+        }
     }
     Busy = false
     Completed = false
@@ -171,7 +180,7 @@ if Move&amp;&amp;!isOut{
                 isOut=true;
                 selected=-1;     
         }
-        else if (x == obj_anvil.x-50 &amp;&amp; y == 352){  //352 is the y of the floor where the anvil is placed.
+        else if (x == obj_anvil.x-50 &amp;&amp; y == obj_anvil.y){  
             if(global.Scraps &gt; 0){ 
                 scr_dialogue("Making some ammuniton...", x-260, y-130);
                 Busy=true;
@@ -179,6 +188,16 @@ if Move&amp;&amp;!isOut{
             }
             else{
                 scr_dialogue("Looks like there's no scrap left...", x-260, y-130);
+            }  
+        }
+        else if (x == obj_sentry.x-20 &amp;&amp; y == obj_sentry.y+11){  
+            if(global.Ammunition &gt; 0){ 
+                scr_dialogue("I'll be on watch now", x-260, y-130);
+                Busy=true;
+                onWatch=true;
+            }
+            else{
+                scr_dialogue("No ammunition left... No point of being on the watch", x-260, y-130);
             }  
         }
         else if place_meeting(x,y,obj_chimney){ 
@@ -328,6 +347,8 @@ if(global.hours == 12 &amp;&amp; global.minutes == 0 &amp;&amp; canEat){
 if(global.hours == 12 &amp;&amp; global.minutes == 1){
     canEat = true;
 }
+if(Health&lt;=0)
+    instance_destroy();
 </string>
           </argument>
         </arguments>

@@ -34,12 +34,15 @@
     <sprite>sprites\spr_blacksmith</sprite>
     <sprite>sprites\spr_blacksmithSelected</sprite>
     <sprite>sprites\spr_cookInfo</sprite>
+    <sprite>sprites\spr_german</sprite>
+    <sprite>sprites\spr_textbox</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_dialogue.gml</script>
     <script>scripts\scr_view_zoom.gml</script>
+    <script>scripts\scr_randomMovement.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt</font>
@@ -51,8 +54,6 @@
     <object>objects\obj_textbox</object>
     <object>objects\obj_abilitiesText</object>
     <object>objects\obj_descriptionText</object>
-    <object>objects\obj_soldier</object>
-    <object>objects\obj_general</object>
     <object>objects\obj_mouse</object>
     <object>objects\obj_pot</object>
     <object>objects\obj_sentry</object>
@@ -66,10 +67,13 @@
     <object>objects\obj_ground</object>
     <object>objects\obj_anvil</object>
     <object>objects\obj_snowFlake</object>
+    <object>objects\obj_cookInfo</object>
+    <object>objects\obj_soldier</object>
+    <object>objects\obj_general</object>
     <object>objects\obj_cook</object>
     <object>objects\obj_blacksmith</object>
     <object>objects\obj_medic</object>
-    <object>objects\obj_cookInfo</object>
+    <object>objects\obj_german</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
