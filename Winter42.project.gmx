@@ -49,6 +49,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt</font>
+    <font>fonts\fnt_info</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_timer</object>
