@@ -109,8 +109,7 @@ else if place_meeting(x, y, obj_door){
         Move = true;
         MoveSpeed = 7;
     }
-}
-if place_meeting(x, y, obj_anvil){
+} else if place_meeting(x, y, obj_anvil){
     with(global.Selected){  
         MoveX = obj_anvil.x - 50;
         MoveY = 352;
