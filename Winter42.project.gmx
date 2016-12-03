@@ -43,6 +43,8 @@
     <script>scripts\scr_dialogue.gml</script>
     <script>scripts\scr_view_zoom.gml</script>
     <script>scripts\scr_randomMovement.gml</script>
+    <script>scripts\scr_move.gml</script>
+    <script>scripts\scr_eat.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt</font>
