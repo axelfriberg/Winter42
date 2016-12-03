@@ -48,7 +48,6 @@
     <font>fonts\fnt</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_controller</object>
     <object>objects\obj_timer</object>
     <object>objects\obj_button_fastForward</object>
     <object>objects\obj_textbox</object>
@@ -74,6 +73,7 @@
     <object>objects\obj_blacksmith</object>
     <object>objects\obj_medic</object>
     <object>objects\obj_german</object>
+    <object>objects\obj_controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

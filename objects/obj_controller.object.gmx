@@ -33,14 +33,40 @@ global.Scraps = 7;
 global.Ammunition = 53;
 global.RawFood = 4;
 global.CookedFood = 0;
-global.Soldiers = 3;
+global.Soldiers = 5;
 global.SnowCounter = 0;
 
 global.multiplier = 1;
-alarm[0] = 100/global.multiplier;
 
 global.isAttack=false;
-alarm[1] = 200/global.multiplier;
+
+
+alarm[0] = 500/global.multiplier;
+alarm[1] = 1000/global.multiplier;
+alarm[2] = 200/global.multiplier;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.isAttack=true;
 </string>
           </argument>
         </arguments>
@@ -63,9 +89,29 @@ alarm[1] = 200/global.multiplier;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.isAttack=true;
-
+            <string>with (obj_blacksmith) instance_destroy();
+global.Soldiers -= 1;
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>321</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_message</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>2</kind>
+            <string>The blacksmith died unexpectedly from illness</string>
           </argument>
         </arguments>
       </action>
@@ -149,6 +195,31 @@ if (mouse_wheel_down()){
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Check loose condition
+if(global.Soldiers &lt;= 0){
+    game_end();
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="64">
       <action>
@@ -188,6 +259,30 @@ if(object_exists(obj_button_fastForward))
 }*/
 inst = instance_create(900, 100, obj_button_fastForward);
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>543</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_sprite_color</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>13</kind>
+            <string>16777215</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>1</string>
           </argument>
         </arguments>
       </action>
