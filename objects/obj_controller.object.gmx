@@ -211,8 +211,8 @@ if (mouse_wheel_down()){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Check loose condition
-if(global.Soldiers &lt;= 0){
+            <string>/// Check loose condition
+if(global.Soldiers &lt;= 0||obj_general.Health==0){
     game_end();
 }
 

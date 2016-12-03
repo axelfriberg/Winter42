@@ -154,7 +154,9 @@ sprite_index = spr_soldier
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>MoveSpeed=OriginalMoveSpeed*global.multiplier;
+            <string>/// Moving soldier and doing stuff
+
+MoveSpeed=OriginalMoveSpeed*global.multiplier;
 
 scr_randomMovement();
 
@@ -170,7 +172,7 @@ if Busy &amp;&amp; Completed{
         {
             Cooking = false;
             global.RawFood -= 1;
-            global.CookedFood += 1;
+            global.CookedFood += CookSkill;
             scr_dialogue("Mmmm it will be delicious", x-260, y-130);
         } // Went scavaging, found raw food and scraps
         if(isOut)
@@ -191,7 +193,7 @@ if Busy &amp;&amp; Completed{
         if(CraftingAmmo){
             CraftingAmmo = false;
             global.Scraps -=1;
-            global.Ammunition +=5;
+            global.Ammunition += AmmoSkill;
             scr_dialogue("Feeling safer now!", x-260, y-130);
         }        
 }
