@@ -14,3 +14,5 @@ canEat = true;
 CraftingAmmo = false;
 onWatch = false;
 isMedic = false;
+hour=0;
+isCold=false;

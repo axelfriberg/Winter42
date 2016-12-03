@@ -28,7 +28,7 @@
             <string>scr_initialize_soldier();
 Health=100;
 Morale=100;
-Name="Bob";
+Name="Ivan Peterovich Pavulov";
 AmmoSkill = 1;
 FightSkill = 1;
 CookSkill = 1;
@@ -58,7 +58,6 @@ SocialSkill = 5;
             <string>if isSelected{
 sprite_index = spr_generalSelected
 }
-
 if isSelected == false{
 sprite_index = spr_general
 }

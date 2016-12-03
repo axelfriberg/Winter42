@@ -204,14 +204,15 @@ if global.Selected == id{
 else{
     isSelected = false
 }
-
+/// Soldiers eat at 12
 scr_eat(12);
+/// Low temperature every hour causes soldiers to lose health
+scr_cold(10);
 
-if(global.hours == 12 &amp;&amp; global.minutes == 1){
-    canEat = true;
-}
 if(Health&lt;=0)
     instance_destroy();
+    
+
 </string>
           </argument>
         </arguments>
@@ -283,7 +284,7 @@ if(Health&lt;=0)
             <kind>1</kind>
             <string>if(!isOut){
     draw_self();
-    draw_healthbar(x-16,y-50, x+16, y-40, (Health / 100) * 100, c_black, c_red, c_lime, 0, true, true)
+    draw_healthbar(x-16,y-50, x+16, y-40, max(0,(Health / 100) * 100), c_black, c_red, c_lime, 0, true, true)
 }
 </string>
           </argument>
