@@ -6,6 +6,9 @@ if(global.hours == argument0 && global.minutes == 0 && canEat){
     if(global.CookedFood > 0){
         global.CookedFood -= 1;
     } 
+    else{ 
+        Health=-20;
+    }
 }
 if(global.hours == argument0 && global.minutes == 1){
     canEat = true;

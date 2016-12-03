@@ -45,6 +45,7 @@
     <script>scripts\scr_randomMovement.gml</script>
     <script>scripts\scr_move.gml</script>
     <script>scripts\scr_eat.gml</script>
+    <script>scripts\scr_initialize_soldier.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt</font>
@@ -68,8 +69,8 @@
     <object>objects\obj_ground</object>
     <object>objects\obj_anvil</object>
     <object>objects\obj_snowFlake</object>
-    <object>objects\obj_cookInfo</object>
     <object>objects\obj_soldier</object>
+    <object>objects\obj_cookInfo</object>
     <object>objects\obj_general</object>
     <object>objects\obj_cook</object>
     <object>objects\obj_blacksmith</object>

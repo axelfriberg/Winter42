@@ -1,0 +1,16 @@
+OriginalMoveSpeed = 5;
+MoveSpeed = OriginalMoveSpeed;
+Move = false;
+MoveX = x;
+MoveY = y;
+isSelected = false;
+isOut= false;
+Busy = false;
+Resource = -1;
+Completed = false;
+Cooking = false;
+makingFire = false;
+canEat = true;
+CraftingAmmo = false;
+onWatch = false;
+isMedic = false;

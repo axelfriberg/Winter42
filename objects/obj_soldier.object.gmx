@@ -25,23 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>OriginalMoveSpeed = 5;
-MoveSpeed = OriginalMoveSpeed;
-Move = false;
-MoveX = x;
-MoveY = y;
-isSelected = false;
-isOut= false;
-Busy = false;
-Resource = -1;
-Completed = false;
-Cooking = false;
-makingFire = false;
-canEat = true;
-AmmoTime = 60;
-CraftingAmmo = false;
-onWatch = false;
+            <string>scr_initialize_soldier();
 Health=100;
+Morale=100;
+Name="Bob";
+AmmoSkill = 1;
+FightSkill = 5;
+CookSkill = 1;
+SocialSkill = 1;
 </string>
           </argument>
         </arguments>
@@ -133,7 +124,8 @@ Health=100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if isOut{
+            <string>
+if isOut{
 sprite_index = spr_empty;
 } else if isSelected{
 sprite_index = spr_soldierSelected
@@ -167,7 +159,7 @@ sprite_index = spr_soldier
 scr_randomMovement();
 
 if Move&amp;&amp;!isOut{
-    scr_move();
+  scr_move();
 }
 
 if Busy &amp;&amp; Completed{
@@ -211,8 +203,16 @@ else{
     isSelected = false
 }
 
-scr_eat(12);
-
+//Eat at 12
+if(global.hours == 12 &amp;&amp; global.minutes == 0 &amp;&amp; canEat){
+    canEat = false;
+    if(global.CookedFood &gt; 0){
+        global.CookedFood -= 1;
+    } 
+}
+if(global.hours == 12 &amp;&amp; global.minutes == 1){
+    canEat = true;
+}
 if(Health&lt;=0)
     instance_destroy();
 </string>
@@ -262,6 +262,32 @@ if(Health&lt;=0)
             <kind>1</kind>
             <string>//global.Selected = id;
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!isOut){
+    draw_self();
+    draw_healthbar(x-16,y-50, x+16, y-40, (Health / 100) * 100, c_black, c_red, c_lime, 0, true, true)
+}
 </string>
           </argument>
         </arguments>

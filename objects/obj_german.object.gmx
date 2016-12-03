@@ -213,8 +213,44 @@ if place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier){
 }
 
     
-if(Health&lt;=0)
+if(Health&lt;=0){
+    if(object_exists(obj_textbox))
+    {
+        var textbox  = instance_place(x-260, y-130, obj_textbox);
+        if textbox != noone
+        {   show_debug_message("exists")
+        
+            with(textbox) instance_destroy();
+        }
+    }
     instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(global.isAttack){
+    draw_self(); 
+    draw_healthbar(x-16,y-50, x+16, y-40, (Health / 100) * 100, c_black, c_red, c_lime, 0, true, true)
+}
 </string>
           </argument>
         </arguments>
