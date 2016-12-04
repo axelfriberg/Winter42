@@ -55,11 +55,15 @@
                 
         }
         else if place_meeting(x,y,obj_door){ 
-                scr_dialogue("I'm going to find some resources...", x-260, y-130);
-                Busy=true;
-                alarm[1] = 120/global.multiplier;
-                isOut=true;
-                selected=-1;     
+                if(isGeneral)
+                     scr_dialogue("Shouldn't be leaving, I'm more useful here...", x-260, y-130);
+                else{
+                    scr_dialogue("I'm going to find some resources...", x-260, y-130);
+                    Busy=true;
+                    alarm[1] = 120/global.multiplier;
+                    isOut=true;
+                    selected=-1;
+                }     
         }
         else if (x == obj_anvil.x-50 && y == obj_anvil.y - 11){  
             if(global.Scraps > 0){ 

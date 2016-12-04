@@ -33,6 +33,7 @@ AmmoSkill = 1;
 FightSkill = 1;
 CookSkill = 1;
 SocialSkill = 5;
+isGeneral = true;
 </string>
           </argument>
         </arguments>
@@ -93,7 +94,7 @@ sprite_index = spr_general
     
     //Character base info          
     draw_text(80, 484, 
-    "Name: " + string(Name) + "#Ability: Cooking#Health: " + string(Health) + "%#Morale: " + string(Morale) + "%");
+    "Name: " + string(Name) + "#Ability: General#Health: " + string(Health) + "%#Morale: " + string(Morale) + "%");
     
     //Character description
     draw_text(20, 570, 
