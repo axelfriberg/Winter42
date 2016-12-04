@@ -10,7 +10,6 @@ if(random(1000)>990&&!Move&&!isOut&&!Busy&&!isSelected&&!isTarget){
             with(textbox) instance_destroy();
         }
     }
-    
     MoveX=floor(random(1184))+368;
     var fl = random(4);
     switch(floor(fl)){
