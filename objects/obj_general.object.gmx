@@ -28,12 +28,11 @@
             <string>scr_initialize_soldier();
 Health=100;
 Morale=100;
-Name="Ivan";
+Name="Ivan Peterovich Pavulov";
 AmmoSkill = 1;
 FightSkill = 1;
 CookSkill = 1;
 SocialSkill = 5;
-isGeneral = true;
 </string>
           </argument>
         </arguments>
@@ -61,44 +60,6 @@ sprite_index = spr_generalSelected
 }
 if isSelected == false{
 sprite_index = spr_general
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if isSelected{
-    draw_sprite(spr_generalInfo, image_index, 100, 595);
-    draw_set_alpha( 1 );
-    draw_set_color( c_white );
-    draw_set_font(fnt_info);
-    draw_set_valign(fa_top);
-    draw_set_halign(fa_left);
-    
-    //Character base info          
-    draw_text(80, 484, 
-    "Name: " + string(Name) + "#Ability: General#Health: " + string(Health) + "%#Morale: " + string(Morale) + "%");
-    
-    //Character description
-    draw_text(20, 570, 
-    "Everyone's leader.#Takes the blame when bad#things happen.");
 }
 </string>
           </argument>

@@ -1,7 +1,7 @@
 //deleting textbox
     if(object_exists(obj_textbox))
     {
-        var textbox  = instance_place(x-200, y-100, obj_textbox);
+        var textbox  = instance_place(x-260, y-130, obj_textbox);
         if textbox != noone
         {   
             with(textbox) instance_destroy();
@@ -28,43 +28,16 @@
                 scr_dialogue("Looks like there's no food left...", x-260, y-130);
             }
         }
-        else if ((place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier))&&!isMedic){
+        else if place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier){
                 secondSoldier = instance_place(x-32, y, obj_soldier); 
-                if(!instance_exists(secondSoldier))
-                    secondSoldier = instance_place(x+32, y, obj_soldier); 
                 scr_dialogue("Good morning, soldat!", x-260, y-130);
-                if(instance_exists(secondSoldier)){
-                    secondSoldier.isTarget=false;
-                }
-        }
-         else if ((place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier))&&isMedic){
-                secondSoldier = instance_place(x-32, y, obj_soldier); 
-                if(!instance_exists(secondSoldier))
-                    secondSoldier = instance_place(x+32, y, obj_soldier); 
-                global.Scraps-=1;
-                if(instance_exists(secondSoldier)){
-                    secondSoldier.sick = false;
-                    if(secondSoldier.Health<100){
-                        secondSoldier.Health+=10;
-                        scr_dialogue("There there.. I'll heal your wounds", x-260, y-130);
-                    }
-                    else {
-                        scr_dialogue("Looks like you're in perfect shape!", x-260, y-130);
-                    }
-                    secondSoldier.isTarget=false;
-                }
-                
         }
         else if place_meeting(x,y,obj_door){ 
-                if(isGeneral)
-                     scr_dialogue("Shouldn't be leaving, I'm more useful here...", x-260, y-130);
-                else{
-                    scr_dialogue("I'm going to find some resources...", x-260, y-130);
-                    Busy=true;
-                    alarm[1] = 120/global.multiplier;
-                    isOut=true;
-                    selected=-1;
-                }     
+                scr_dialogue("I'm going to find some resources...", x-260, y-130);
+                Busy=true;
+                alarm[1] = 120/global.multiplier;
+                isOut=true;
+                selected=-1;     
         }
         else if (x == obj_anvil.x-50 && y == obj_anvil.y - 11){  
             if(global.Scraps > 0){ 
