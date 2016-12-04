@@ -33,8 +33,10 @@ MoveY = y;
 Busy = false;        //for random movement
 isSelected = false;  //
 isOut=false;         //
+isTarget=false;      //
 Health = 100;
 counter=0;
+
 </string>
           </argument>
         </arguments>

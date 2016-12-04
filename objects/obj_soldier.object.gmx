@@ -158,6 +158,11 @@ sprite_index = spr_soldier
 
 MoveSpeed=OriginalMoveSpeed*global.multiplier;
 
+if(isTarget){
+    MoveX=x;
+    MoveY=y;
+}
+
 scr_randomMovement();
 
 if Move&amp;&amp;!isOut{

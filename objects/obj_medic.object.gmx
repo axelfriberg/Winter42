@@ -96,11 +96,11 @@ sprite_index = spr_medic
     
     //Character base info          
     draw_text(80, 484, 
-    "Name: " + string(Name) + "#Ability: Cooking#Health: " + string(Health) + "%#Morale: " + string(Morale) + "%");
+    "Name: " + string(Name) + "#Ability: Healing#Health: " + string(Health) + "%#Morale: " + string(Morale) + "%");
     
     //Character description
     draw_text(20, 570, 
-    "Has been healing people for#years.#His favorite WoW class is#priest, so he's got a lot of#practice.");
+    "Has been healing people for#years.#Her favorite WoW class is#priest, so she's got a lot of#practice.");
 }
 </string>
           </argument>

@@ -4,6 +4,7 @@ Move = false;
 MoveX = x;
 MoveY = y;
 isSelected = false;
+isTarget = false;
 isOut= false;
 Busy = false;
 Resource = -1;

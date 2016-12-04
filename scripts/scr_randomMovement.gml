@@ -1,6 +1,6 @@
 ///scr_randomMovements(amount,view)
 
-if(random(1000)>990&&!Move&&!isOut&&!Busy&&!isSelected){
+if(random(1000)>990&&!Move&&!isOut&&!Busy&&!isSelected&&!isTarget){
     
     if(object_exists(obj_textbox))
     {
