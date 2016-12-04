@@ -158,6 +158,11 @@ sprite_index = spr_soldier
 
 MoveSpeed=OriginalMoveSpeed*global.multiplier;
 
+if(isTarget){
+    MoveX=x;
+    MoveY=y;
+}
+
 scr_randomMovement();
 
 if Move&amp;&amp;!isOut{
@@ -204,9 +209,8 @@ if global.Selected == id{
 else{
     isSelected = false
 }
-/// Soldiers eat at 12 and 19
+/// Soldiers eat at 12
 scr_eat(12);
-scr_eat(19);
 /// Low temperature every hour causes soldiers to lose health
 scr_cold(10);
 
@@ -261,6 +265,44 @@ if(Health&lt;=0)
             <kind>1</kind>
             <string>//global.Selected = id;
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if isSelected{
+    draw_sprite(spr_soldierInfo, image_index, 100, 595);
+    draw_set_alpha( 1 );
+    draw_set_color( c_white );
+    draw_set_font(fnt_info);
+    draw_set_valign(fa_top);
+    draw_set_halign(fa_left);
+    
+    //Character base info          
+    draw_text(80, 484, 
+    "Name: " + string(Name) + "#Ability: Cooking#Health: " + string(Health) + "%#Morale: " + string(Morale) + "%");
+    
+    //Character description
+    draw_text(20, 570, 
+    "Just a random soldier#named " + string(Name) + "...#What kind of name is that???");
+}
 </string>
           </argument>
         </arguments>

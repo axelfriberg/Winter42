@@ -45,9 +45,8 @@ alarm[0] = 500/global.multiplier;  // storm
 alarm[2] = 1500/global.multiplier; // enemy attack
 
 //Start Message
-var gameOverMenu;
+var gameOver;
 var quitButton;
-gameover = false;
 screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
 startingInfo = instance_create(room_width/2, room_height/2, obj_startingInfo);
 continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
@@ -74,7 +73,7 @@ continueButton = instance_create(room_width/2, room_height/2+90, obj_continueBut
           <argument>
             <kind>1</kind>
             <string>/// Storm event continues
-if(!gameover){
+
 x = 200;
 
 for(i = 0; i &lt; 15; i++){
@@ -89,7 +88,6 @@ if(global.SnowCounter % 5 == 0){
     global.Temperature -= 1;
 } 
 } 
-}
 
 </string>
           </argument>
@@ -113,38 +111,8 @@ if(global.SnowCounter % 5 == 0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!gameover){
-global.isAttack=true;
-}
+            <string>global.isAttack=true;
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>gameover</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>false</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -187,7 +155,7 @@ global.isAttack=true;
           <argument>
             <kind>1</kind>
             <string>/// Storm event going on
-if(!gameover){
+
 x = 200;
 
 for(i = 0; i &lt; 15; i++){
@@ -202,36 +170,8 @@ if(global.SnowCounter % 5 == 0){
     global.Temperature -= 1;
 } 
 } 
-}
+
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>gameover</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>false</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -276,10 +216,9 @@ if(global.SnowCounter % 5 == 0){
             <string>/// Check the losing condition
 
 if(global.Soldiers &lt;= 0||!instance_exists(obj_general)){
-    gameover = true;
     screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
-    gameOverMenu = instance_create(room_width/2, room_height/2, obj_gameOverMenu);
-    quitButton = instance_create(room_width/2, room_height/2+90, obj_restartButton);
+    gameOver = instance_create(room_width/2, room_height/2, obj_gameOverMenu);
+    quitButton = instance_create(room_width/2, room_height/2+90, obj_quitButton);
 }
 
 </string>
@@ -327,35 +266,6 @@ if (mouse_wheel_down()){
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Check win codition
-
-if(global.hours == 22){
-    instance_deactivate_all(self);
-    gameover = true;
-    screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
-    winMenu = instance_create(room_width/2, room_height/2, obj_winMenu);
-    restartButton = instance_create(room_width/2, room_height/2+90, obj_restartButton);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="8" enumb="64">
       <action>
@@ -376,9 +286,9 @@ if(global.hours == 22){
             <kind>1</kind>
             <string>/// GUI drawing function
 
-draw_set_halign(fa_left)
-draw_set_valign(fa_middle)
-draw_set_color(c_white)
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
+draw_set_color(c_white);
 draw_set_font(fnt);
 
 draw_text(20,35,"Day "+ string(global.day));

@@ -33,8 +33,10 @@ MoveY = y;
 Busy = false;        //for random movement
 isSelected = false;  //
 isOut=false;         //
+isTarget=false;      //
 Health = 100;
 counter=0;
+
 </string>
           </argument>
         </arguments>
@@ -127,7 +129,7 @@ if Move&amp;&amp;!isOut{
         }
         if place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier){
                 secondSoldier = instance_place(x-32, y, obj_soldier); 
-                scr_dialogue("Good morning, soldat!", x-260, y-130);
+                scr_dialogue("Die!", x-260, y-130);
         }
         
     }  
@@ -208,7 +210,7 @@ if place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier){
     if(soldier==noone)
         soldier = instance_place(x+32, y, obj_soldier); 
     with(soldier) Health -= 20;
-    Health -=10;
+    Health -=20;
     scr_dialogue("Die!", x-260, y-130);
 }
 

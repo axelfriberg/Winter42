@@ -34,13 +34,15 @@
     <sprite>sprites\spr_blacksmith</sprite>
     <sprite>sprites\spr_blacksmithSelected</sprite>
     <sprite>sprites\spr_cookInfo</sprite>
+    <sprite>sprites\spr_generalInfo</sprite>
+    <sprite>sprites\spr_medicInfo</sprite>
+    <sprite>sprites\spr_soldierInfo</sprite>
     <sprite>sprites\spr_german</sprite>
     <sprite>sprites\spr_textbox</sprite>
+    <sprite>sprites\spr_blacksmithInfo</sprite>
     <sprites name="UI">
       <sprite>sprites\spr_playButton</sprite>
       <sprite>sprites\spr_quitButton</sprite>
-      <sprite>sprites\spr_restartButton</sprite>
-      <sprite>sprites\spr_restartButtonSelected</sprite>
       <sprite>sprites\spr_quitButtonSelected</sprite>
       <sprite>sprites\spr_continueButton</sprite>
       <sprite>sprites\spr_continueButtonSelected</sprite>
@@ -49,7 +51,6 @@
       <sprite>sprites\spr_startingInfo</sprite>
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_gameOverMenu</sprite>
-      <sprite>sprites\spr_winMenu</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -104,8 +105,6 @@
       <object>objects\obj_title</object>
       <object>objects\obj_gameOverMenu</object>
       <object>objects\obj_quitButton</object>
-      <object>objects\obj_restartButton</object>
-      <object>objects\obj_winMenu</object>
     </objects>
   </objects>
   <rooms name="rooms">
