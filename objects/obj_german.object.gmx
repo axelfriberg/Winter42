@@ -92,11 +92,11 @@ if(global.isAttack){
     scr_randomMovement();
 }
 
-if(global.isWatch){
+if(global.isWatch&amp;&amp;global.isAttack){
     if(x&gt;1552&amp;&amp;global.Ammunition&gt;0){
         counter++;
         if(counter&gt;=10){
-            Health-=10;
+            Health=Health-global.multiplier;
             global.Ammunition--;
             counter=0;
         }
@@ -110,7 +110,7 @@ if Move&amp;&amp;!isOut{
     {
         var textbox  = instance_place(x-260, y-130, obj_textbox);
         if textbox != noone
-        {   show_debug_message("exists")
+        {
         
             with(textbox) instance_destroy();
         }
@@ -216,16 +216,17 @@ if place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier){
 
     
 if(Health&lt;=0){
+
     if(object_exists(obj_textbox))
     {
         var textbox  = instance_place(x-260, y-130, obj_textbox);
         if textbox != noone
-        {   show_debug_message("exists")
-        
+        {   
             with(textbox) instance_destroy();
         }
     }
     instance_destroy();
+    isAttack=false;
 }
 </string>
           </argument>

@@ -7,7 +7,10 @@
             with(textbox) instance_destroy();
         }
     }
-    global.isWatch=false;
+    if(onWatch){
+        global.isWatch=false;
+        onWatch=false;
+    }
     Busy = false
     Completed = false
     pointDistance = point_distance(x,y,MoveX,y)
@@ -37,7 +40,7 @@
                     secondSoldier.isTarget=false;
                 }
         }
-         else if ((place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier))&&isMedic){
+         else if ((place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier))&&isMedic&&global.Scraps>0){
                 secondSoldier = instance_place(x-32, y, obj_soldier); 
                 if(!instance_exists(secondSoldier))
                     secondSoldier = instance_place(x+32, y, obj_soldier); 

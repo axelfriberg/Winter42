@@ -111,7 +111,12 @@ if(global.SnowCounter % 5 == 0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.isAttack=true;
+            <string>/// Attack event going on
+
+global.isAttack=true;
+//if(instance_exists(obj_german)){
+//    german=instance_place();
+//}
 </string>
           </argument>
         </arguments>
