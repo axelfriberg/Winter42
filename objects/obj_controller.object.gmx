@@ -43,14 +43,36 @@ global.isWatch=false;
 
 alarm[0] = 500/global.multiplier;  // storm
 alarm[2] = 1500/global.multiplier; // enemy attack
+alarm[4] = 30;
+startMessage = false;
+messageCheck = false;
 
 //Start Message
-var gameOver;
-var quitButton;
-gameover = false;
-screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
-startingInfo = instance_create(room_width/2, room_height/2, obj_startingInfo);
-continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>startMessage = true;
+messageCheck = true;
 </string>
           </argument>
         </arguments>
@@ -216,7 +238,7 @@ if(global.SnowCounter % 5 == 0){
             <kind>1</kind>
             <string>/// Check the losing condition
 
-if(global.Soldiers &lt;= 0||!instance_exists(obj_general)){
+if((global.Soldiers &lt;= 0||!instance_exists(obj_general)) &amp;&amp; !startMessage){
     gameover = true;
     screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
     gameOver = instance_create(room_width/2, room_height/2, obj_gameOverMenu);
@@ -292,6 +314,37 @@ if(global.hours == 22){
     screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
     winMenu = instance_create(room_width/2, room_height/2, obj_winMenu);
     restartButton = instance_create(room_width/2, room_height/2+90, obj_restartButton);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///start message
+if(messageCheck){
+messageCheck = false;
+var gameOver;
+var quitButton;
+gameover = false;
+scr_pause();
+//screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
+startingInfo = instance_create(room_width/2, room_height/2, obj_startingInfo);
+continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
 }
 </string>
           </argument>
