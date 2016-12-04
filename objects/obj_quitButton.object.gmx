@@ -85,7 +85,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>game_end();
+            <string>with(obj_controller.gameOver){
+    instance_destroy();
+}
+
+with(obj_controller.quitButton){
+    instance_destroy();
+}
+
+with(obj_controller.screenHide){
+    instance_destroy();
+}
+
+game_end();
 </string>
           </argument>
         </arguments>
