@@ -18,3 +18,4 @@ isMedic = false;
 isGeneral = false;
 hour=0;
 isCold=false;
+sick = false;

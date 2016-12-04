@@ -42,7 +42,6 @@ global.isAttack=false;
 global.isWatch=false;
 
 alarm[0] = 500/global.multiplier;  // storm
-alarm[1] = 1000/global.multiplier; // sickness
 alarm[2] = 1500/global.multiplier; // enemy attack
 
 //Start Message
@@ -134,52 +133,6 @@ if(global.SnowCounter % 5 == 0){
           <argument>
             <kind>2</kind>
             <string>We're under attack! Enemy soldiers are closing in! Send some soldiers to defend the fortress or they'll enter and kill you!</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Sickness event going on
-
-with (obj_blacksmith) instance_destroy();
-global.Soldiers -= 1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>321</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_message</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>2</kind>
-            <string>The blacksmith died unexpectedly from illness</string>
           </argument>
         </arguments>
       </action>

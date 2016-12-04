@@ -43,6 +43,7 @@
                     secondSoldier = instance_place(x+32, y, obj_soldier); 
                 global.Scraps-=1;
                 if(instance_exists(secondSoldier)){
+                    secondSoldier.sick = false;
                     if(secondSoldier.Health<100){
                         secondSoldier.Health+=10;
                         scr_dialogue("There there.. I'll heal your wounds", x-260, y-130);
