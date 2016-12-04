@@ -34,8 +34,12 @@
     <sprite>sprites\spr_blacksmith</sprite>
     <sprite>sprites\spr_blacksmithSelected</sprite>
     <sprite>sprites\spr_cookInfo</sprite>
+    <sprite>sprites\spr_generalInfo</sprite>
+    <sprite>sprites\spr_medicInfo</sprite>
+    <sprite>sprites\spr_soldierInfo</sprite>
     <sprite>sprites\spr_german</sprite>
     <sprite>sprites\spr_textbox</sprite>
+    <sprite>sprites\spr_blacksmithInfo</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
