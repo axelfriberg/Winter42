@@ -44,6 +44,13 @@ global.isWatch=false;
 alarm[0] = 500/global.multiplier;  // storm
 alarm[1] = 1000/global.multiplier; // sickness
 alarm[2] = 1500/global.multiplier; // enemy attack
+
+//Start Message
+var gameOver;
+var quitButton;
+screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
+startingInfo = instance_create(room_width/2, room_height/2, obj_startingInfo);
+continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
 </string>
           </argument>
         </arguments>
@@ -256,7 +263,9 @@ if(global.SnowCounter % 5 == 0){
             <string>/// Check the losing condition
 
 if(global.Soldiers &lt;= 0||!instance_exists(obj_general)){
-    game_end();
+    screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
+    gameOver = instance_create(room_width/2, room_height/2, obj_gameOverMenu);
+    quitButton = instance_create(room_width/2, room_height/2+90, obj_quitButton);
 }
 
 </string>
