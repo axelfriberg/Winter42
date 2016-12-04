@@ -42,7 +42,6 @@ global.isAttack=false;
 global.isWatch=false;
 
 alarm[0] = 500/global.multiplier;  // storm
-alarm[1] = 1000/global.multiplier; // sickness
 alarm[2] = 1500/global.multiplier; // enemy attack
 
 //Start Message
@@ -166,81 +165,6 @@ global.isAttack=true;
           <argument>
             <kind>2</kind>
             <string>We're under attack! Enemy soldiers are closing in! Send some soldiers to defend the fortress or they'll enter and kill you!</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Sickness event going on
-if(!gameover){
-with (obj_blacksmith) instance_destroy();
-global.Soldiers -= 1;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>gameover</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>false</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>321</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_message</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>2</kind>
-            <string>The blacksmith died unexpectedly from illness</string>
           </argument>
         </arguments>
       </action>
@@ -419,7 +343,9 @@ if (mouse_wheel_down()){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.hours == 22){
+            <string>///Check win codition
+
+if(global.hours == 22){
     instance_deactivate_all(self);
     gameover = true;
     screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
@@ -453,6 +379,7 @@ if (mouse_wheel_down()){
 draw_set_halign(fa_left)
 draw_set_valign(fa_middle)
 draw_set_color(c_white)
+draw_set_font(fnt);
 
 draw_text(20,35,"Day "+ string(global.day));
 draw_text(20,55,"Time " + string(global.Thours)+string(global.hours)+":"+string(global.Tminutes)+string(global.minutes));
