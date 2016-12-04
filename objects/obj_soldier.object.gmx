@@ -101,7 +101,9 @@ SocialSkill = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Completed = true;
+            <string>/// Alarm for cooking
+
+Completed = true;
 </string>
           </argument>
         </arguments>
@@ -182,17 +184,16 @@ if Busy &amp;&amp; Completed{
         } // Went scavaging, found raw food and scraps
         if(isOut)
         {
-                isOut = false;
-                global.RawFood += 1;
-                global.Scraps += 1;
-                scr_dialogue("Found raw food and scraps", x-260, y-130);
+            isOut = false;
+            global.RawFood += 1;
+            global.Scraps += 1;
+            scr_dialogue("Found raw food and scraps", x-260, y-130);
         }
-        if(makingFire = true){
+        if(makingFire){
             makingFire = false;
-            
-                global.Temperature += 1;
-                global.Scraps -= 1;
-                scr_dialogue("Warm and cozy", x-260, y-130);
+            global.Temperature += 1;
+            global.Scraps -= 1;
+            scr_dialogue("Warm and cozy", x-260, y-130);
          
         }
         if(CraftingAmmo){

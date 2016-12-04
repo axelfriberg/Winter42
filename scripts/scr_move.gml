@@ -21,7 +21,7 @@
         if(y==MoveY){
             Move = false
         }
-        if (x == obj_pot.x-32 && y== obj_pot.y){
+        if (x == obj_pot.x-32 && y== obj_pot.y)&&Cooking{
             if(global.RawFood>0){    
                 Busy = true;
                 scr_dialogue("Let's cook some food...", x-260, y-130);
@@ -69,18 +69,17 @@
                     selected=-1;
                 }     
         }
-        else if (x == obj_anvil.x-50 && y == obj_anvil.y - 11){  
+        else if (x == obj_anvil.x-50 && y == obj_anvil.y - 11)&&CraftingAmmo{  
             if(global.Scraps > 0){ 
                 scr_dialogue("Making some ammuniton...", x-260, y-130);
                 Busy=true;
-                CraftingAmmo = true;
                 alarm[0]=60/global.multiplier; 
             }
             else{
                 scr_dialogue("Looks like there's no scrap left...", x-260, y-130);
             }  
         }
-        else if (x == obj_sentry.x-20 && y == obj_sentry.y+11){  
+        else if (x == obj_sentry.x-20 && y == obj_sentry.y+11)&&goToWatch{  
             if(global.Ammunition > 0){ 
                 scr_dialogue("I'll be on watch now", x-260, y-130);
                 Busy=true;
@@ -88,18 +87,18 @@
                 global.isWatch = true;
             }
             else{
+                onWatch=false;
                 global.isWatch = false;
                 scr_dialogue("No ammunition left... No point of being on the watch", x-260, y-130);
             }  
         }
-        else if place_meeting(x,y,obj_chimney){ 
+        else if place_meeting(x,y,obj_chimney)&&makingFire{ 
             if(global.Temperature > 22){
                 scr_dialogue("Shouldn't make it any hotter", x-260, y-130);               
             } else {
                  if(global.Scraps > 0){    
                     scr_dialogue("Making a fire...", x-260, y-130);
                     Busy=true;
-                    makingFire = true;
                     alarm[2] = 60/global.multiplier;   
                 }
                 else {

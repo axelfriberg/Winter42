@@ -32,7 +32,7 @@ global.multiplier = 1;
 global.floatMin=0;
 global.minutes = 59;
 global.hours = 9;
-global.day = 1;
+global.day = 32;
 
 //just some variables for drawing
 global.Tminutes ="0";

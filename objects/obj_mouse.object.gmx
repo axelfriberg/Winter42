@@ -83,7 +83,6 @@ if place_meeting(x, y, obj_pot){
         MoveY = obj_pot.y;
         Move = true;
         MoveSpeed = 7;
-        alarm[0] = 60
         Resource = 1
         Cooking = true;
     }
@@ -126,7 +125,15 @@ else if place_meeting(x, y, obj_door){
         MoveY = obj_sentry.y + 11;
         Move = true;
         MoveSpeed = 7;
-        //CraftingAmmo = true;
+        goToWatch=true;
+    }
+} else if place_meeting(x, y, obj_chimney){
+    with(global.Selected){  
+        MoveX = obj_chimney.x+ 20;
+        MoveY = obj_chimney.y +32;
+        Move = true;
+        MoveSpeed = 7;
+        makingFire = true;
     }
 }
 

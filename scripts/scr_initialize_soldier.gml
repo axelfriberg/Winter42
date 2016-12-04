@@ -13,6 +13,7 @@ Cooking = false;
 makingFire = false;
 canEat = true;
 CraftingAmmo = false;
+goToWatch=false;
 onWatch = false;
 isMedic = false;
 isGeneral = false;
