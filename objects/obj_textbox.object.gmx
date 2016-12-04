@@ -118,6 +118,8 @@ ds_list_destroy( textbox_ds_list );
     
     print_msg = string_copy( message, ds_list_find_value( textbox_ds_list, line), count - ds_list_find_value (textbox_ds_list, line));
     
+    draw_set_valign(fa_top);
+    draw_set_halign(fa_left);
     draw_set_font(fnt);
     draw_text(x+padding_x, y+padding_y, print_msg);
 </string>
