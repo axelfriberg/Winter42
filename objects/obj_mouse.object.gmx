@@ -225,6 +225,7 @@ else{
             MoveX = 1552;
         Move = true;
         MoveSpeed = 7;
+        isTarget=false;
     }
 }
 </string>

@@ -51,6 +51,8 @@ control = false;
 stormBuffer = -1;
 attackBuffer = -1;
 
+
+hour=-1;
 //Start Message
 gameover = false;
 </string>
@@ -401,6 +403,31 @@ if(messageCheck &amp;&amp; startMessage &amp;&amp; control){
     screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
     startingInfo = instance_create(room_width/2, room_height/2, obj_startingInfo);
     continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// temperature drops 1C every hour until absolute 0
+if(global.hours != hour &amp;&amp; global.minutes == 0 &amp;&amp; global.Temperature&gt;-273){
+    global.Temperature-=1; 
+    hour=global.hours;
 }
 </string>
           </argument>
