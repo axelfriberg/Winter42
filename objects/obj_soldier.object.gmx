@@ -201,6 +201,12 @@ scr_smallMovement();
 //scr_randomMovement();
 
 if Move&amp;&amp;!isOut{
+  if(Cooking)    
+    audio_stop_sound(snd_cooking);   
+  if(makingFire)   
+    audio_stop_sound(snd_fire); 
+  if(CraftingAmmo)
+    audio_stop_sound(snd_blacksmith);
   scr_move();
 }
 
