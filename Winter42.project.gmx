@@ -13,12 +13,15 @@
     <sound>sound\snd_door</sound>
     <sound>sound\snd_cooking</sound>
     <sound>sound\snd_mainMenu</sound>
+    <sound>sound\snd_gatling</sound>
+    <sound>sound\sound9</sound>
+    <sound>sound\snd_death</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_soldier</sprite>
+    <sprite>sprites\spr_soldierSelected</sprite>
     <sprite>sprites\spr_medic</sprite>
     <sprite>sprites\spr_medicSelected</sprite>
-    <sprite>sprites\spr_soldierSelected</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_pot</sprite>
     <sprite>sprites\spr_mouse</sprite>

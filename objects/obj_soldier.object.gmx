@@ -255,6 +255,7 @@ if(Health&lt;=0){
     if(isSelected)
         global.Selected=-1;
     instance_destroy();
+    audio_play_sound(snd_death,0,0);
 }
 
 </string>
