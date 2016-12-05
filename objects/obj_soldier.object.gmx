@@ -197,7 +197,8 @@ if(isTarget){
     MoveY=y;
 }
 
-scr_randomMovement();
+scr_smallMovement();
+//scr_randomMovement();
 
 if Move&amp;&amp;!isOut{
   scr_move();

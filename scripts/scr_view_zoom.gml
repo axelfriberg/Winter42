@@ -4,7 +4,7 @@ var view = argument[1];
 
 // limit how much user can zoom
 if (view_wview[view] <= 480 && amount <1) exit;
-if (view_wview[view] >= 1920 && amount >1) exit;
+if (view_wview[view] >= 1680 && amount >1) exit;
 
 // get the offset
 var offx = abs(view_wview[view]*amount - view_wview[view]);

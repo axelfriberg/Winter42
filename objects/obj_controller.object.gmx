@@ -338,10 +338,10 @@ var right = keyboard_check(ord("D"));
 
 var amount = view_wview[view]/80;
 
-if (up) view_yview[view] -= amount;
-if (down) view_yview[view] += amount;
-if (left) view_xview[view] -= amount;
-if (right) view_xview[view] += amount;
+if (up&amp;&amp;view_yview[view]&gt;0) view_yview[view] -= amount;
+if (down&amp;&amp;view_yview[view]+view_hview[view]&lt;1080) view_yview[view] += amount;
+if (left&amp;&amp;view_xview[view]&gt;0) view_xview[view] -= amount;
+if (right&amp;&amp;view_xview[view]+view_wview[view]&lt;1680) view_xview[view] += amount;
 
 if (mouse_wheel_up()){
     scr_view_zoom(-0.1, view);
