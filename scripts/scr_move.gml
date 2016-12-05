@@ -113,6 +113,7 @@
                     alarm[2] = 60/global.multiplier;   
                 }
                 else {
+                    makingFire=false;
                     scr_dialogue("Looks like there's no scrap left...", x-260, y-130);scr_dialogue("Looks like there's no scrap left...", x-260, y-130);
                 }
             }         
