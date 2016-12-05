@@ -144,6 +144,7 @@ else if place_meeting(x, y, obj_soldier){
             MoveY = secondSoldier.y;
             Move = true;
             MoveSpeed = 7;
+            Interact=true;
         }
     }
 }

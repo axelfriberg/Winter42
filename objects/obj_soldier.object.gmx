@@ -237,7 +237,7 @@ if Busy &amp;&amp; Completed{
             global.Ammunition += 5*AmmoSkill;
             scr_dialogue("Feeling safer now!", x-260, y-130);
             audio_stop_sound(snd_blacksmith);
-        }        
+        } 
 }
 
 if global.Selected == id{

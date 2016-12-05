@@ -33,7 +33,7 @@
                 Cooking=false;
             }
         }
-        else if ((place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier))&&!isMedic){
+        else if ((place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier))&&!isMedic&&Interact){
                 secondSoldier = instance_place(x-32, y, obj_soldier); 
                 if(!instance_exists(secondSoldier))
                     secondSoldier = instance_place(x+32, y, obj_soldier); 
@@ -41,8 +41,9 @@
                 if(instance_exists(secondSoldier)){
                     secondSoldier.isTarget=false;
                 }
+                Interact = false       
         }
-         else if ((place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier))&&isMedic&&global.Scraps>0){
+         else if ((place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier))&&isMedic&&global.Scraps>0&&Interact){
                 secondSoldier = instance_place(x-32, y, obj_soldier); 
                 if(!instance_exists(secondSoldier))
                     secondSoldier = instance_place(x+32, y, obj_soldier); 
@@ -59,6 +60,7 @@
                     }
                     secondSoldier.isTarget=false;
                 }
+                Interact = false 
                 
         }
         else if place_meeting(x,y,obj_door){ 
