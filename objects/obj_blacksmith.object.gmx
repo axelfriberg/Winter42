@@ -111,6 +111,10 @@ obj_controller.control = true;
             <string>///Display message
 if(!obj_controller.gameover &amp;&amp; obj_controller.messageCheck &amp;&amp; obj_controller.control){
     obj_controller.control = false;
+    obj_controller.stormBuffer = obj_controller.alarm[0];
+    obj_controller.attackBuffer = obj_controller.alarm[2];
+    obj_controller.alarm[0] = -1;
+    obj_controller.alarm[2] = -1;
     scr_pause();
     obj_controller.screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
     obj_controller.startingInfo = instance_create(room_width/2, room_height/2, obj_sicknessInfo);
