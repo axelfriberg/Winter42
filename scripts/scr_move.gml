@@ -24,6 +24,7 @@
         if (x == obj_pot.x-32 && y== obj_pot.y)&&Cooking{
             if(global.RawFood>0){    
                 Busy = true;
+                audio_play_sound(snd_cooking,0,0);
                 scr_dialogue("Let's cook some food...", x-260, y-130);
                 alarm[0] = 60/global.multiplier;
             }
@@ -50,6 +51,7 @@
                     secondSoldier.sick = false;
                     if(secondSoldier.Health<100){
                         secondSoldier.Health+=10;
+                        audio_play_sound(snd_heal,0,0);
                         scr_dialogue("There there.. I'll heal your wounds", x-260, y-130);
                     }
                     else {
@@ -63,6 +65,7 @@
                 if(isGeneral)
                      scr_dialogue("Shouldn't be leaving, I'm more useful here...", x-260, y-130);
                 else{
+                    audio_play_sound(snd_door,0,0);
                     scr_dialogue("I'm going to find some resources...", x-260, y-130);
                     Busy=true;
                     alarm[1] = 120/global.multiplier;
@@ -74,14 +77,16 @@
             if(global.Scraps > 0){ 
                 scr_dialogue("Making some ammuniton...", x-260, y-130);
                 Busy=true;
-                alarm[0]=60/global.multiplier; 
+                audio_play_sound(snd_blacksmith,0,5);
+                alarm[0]=60/global.multiplier;
             }
             else{
                 scr_dialogue("Looks like there's no scrap left...", x-260, y-130);
             }  
         }
         else if (x == obj_sentry.x-20 && y == obj_sentry.y+11)&&goToWatch{  
-            if(global.Ammunition > 0){ 
+            if(global.Ammunition > 0){
+                audio_play_sound(snd_gun,0,0); 
                 scr_dialogue("I'll be on watch now", x-260, y-130);
                 alarm[3]=60;
                 Busy=true;
@@ -99,7 +104,8 @@
             if(global.Temperature > 22){
                 scr_dialogue("Shouldn't make it any hotter", x-260, y-130);               
             } else {
-                 if(global.Scraps > 0){    
+                 if(global.Scraps > 0){
+                    audio_play_sound(snd_fire,0,5);    
                     scr_dialogue("Making a fire...", x-260, y-130);
                     Busy=true;
                     alarm[2] = 60/global.multiplier;   

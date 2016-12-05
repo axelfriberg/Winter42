@@ -85,7 +85,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>game_end();
+            <string>if(audio_is_playing(snd_mainMenu))
+    audio_stop_sound(snd_mainMenu);
+game_end();
 </string>
           </argument>
         </arguments>
