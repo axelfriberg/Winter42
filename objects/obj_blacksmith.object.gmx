@@ -109,13 +109,13 @@ obj_controller.control = true;
           <argument>
             <kind>1</kind>
             <string>///Display message
-/*if(!obj_controller.gameover &amp;&amp; obj_controller.messageCheck &amp;&amp; obj_controller.control){
+if(!obj_controller.gameover &amp;&amp; obj_controller.messageCheck &amp;&amp; obj_controller.control){
     obj_controller.control = false;
     scr_pause();
-    screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
-    startingInfo = instance_create(room_width/2, room_height/2, obj_sicknessInfo);
-    continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
-}*/
+    obj_controller.screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
+    obj_controller.startingInfo = instance_create(room_width/2, room_height/2, obj_sicknessInfo);
+    obj_controller.continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
+}
 </string>
           </argument>
         </arguments>
