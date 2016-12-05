@@ -4,3 +4,4 @@
 instance_activate_all();
 background_index[0] = -1;
 obj_controller.messageCheck = false;
+obj_controller.canZoom = true;

@@ -51,7 +51,7 @@ control = false;
 stormBuffer = -1;
 attackBuffer = -1;
 
-
+canZoom = true;
 hour=-1;
 //Start Message
 gameover = false;
@@ -198,9 +198,9 @@ if(!gameover &amp;&amp; messageCheck &amp;&amp; control){
     alarm[2] = -1;
     alarm[0] = -1;
     scr_pause();
-    screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
-    startingInfo = instance_create(room_width/2, room_height/2, obj_attackInfo);
-    continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
+    screenHide = instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]/2, obj_darkenScreen);
+    startingInfo = instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]/2, obj_attackInfo);
+    continueButton = instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]/2+90, obj_continueButton);
 }
 </string>
           </argument>
@@ -274,9 +274,9 @@ if(!gameover &amp;&amp; messageCheck &amp;&amp; control){
     alarm[2] = -1;
     alarm[0] = -1;
     scr_pause();
-    screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
-    startingInfo = instance_create(room_width/2, room_height/2, obj_stormInfo);
-    continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
+    screenHide = instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]/2, obj_darkenScreen);
+    startingInfo = instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]/2, obj_stormInfo);
+    continueButton = instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]/2+90, obj_continueButton);
 }
 </string>
           </argument>
@@ -338,16 +338,16 @@ var right = keyboard_check(ord("D"));
 
 var amount = view_wview[view]/80;
 
-if (up&amp;&amp;view_yview[view]&gt;0) view_yview[view] -= amount;
-if (down&amp;&amp;view_yview[view]+view_hview[view]&lt;1080) view_yview[view] += amount;
-if (left&amp;&amp;view_xview[view]&gt;0) view_xview[view] -= amount;
-if (right&amp;&amp;view_xview[view]+view_wview[view]&lt;1680) view_xview[view] += amount;
+if (up&amp;&amp;view_yview[view]&gt;0&amp;&amp;canZoom) view_yview[view] -= amount;
+if (down&amp;&amp;view_yview[view]+view_hview[view]&lt;1080&amp;&amp;canZoom) view_yview[view] += amount;
+if (left&amp;&amp;view_xview[view]&gt;0&amp;&amp;canZoom) view_xview[view] -= amount;
+if (right&amp;&amp;view_xview[view]+view_wview[view]&lt;1680&amp;&amp;canZoom) view_xview[view] += amount;
 
-if (mouse_wheel_up()){
+if (mouse_wheel_up() &amp;&amp; canZoom){
     scr_view_zoom(-0.1, view);
 } 
 
-if (mouse_wheel_down()){
+if (mouse_wheel_down() &amp;&amp; canZoom){
     scr_view_zoom(0.1, view);
 } 
 </string>
@@ -408,9 +408,9 @@ if(messageCheck &amp;&amp; startMessage &amp;&amp; control){
     alarm[0] = -1;
     startMessage = false;
     scr_pause();
-    screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
-    startingInfo = instance_create(room_width/2, room_height/2, obj_startingInfo);
-    continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
+    screenHide = instance_create(view_wview[0]/2, view_hview[0]/2, obj_darkenScreen);
+    startingInfo = instance_create(view_wview[0]/2,  view_hview[0]/2, obj_startingInfo);
+    continueButton = instance_create(view_wview[0]/2,  view_hview[0]/2+90, obj_continueButton);
 }
 </string>
           </argument>

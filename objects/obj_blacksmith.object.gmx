@@ -116,9 +116,9 @@ if(!obj_controller.gameover &amp;&amp; obj_controller.messageCheck &amp;&amp; ob
     obj_controller.alarm[0] = -1;
     obj_controller.alarm[2] = -1;
     scr_pause();
-    obj_controller.screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
-    obj_controller.startingInfo = instance_create(room_width/2, room_height/2, obj_sicknessInfo);
-    obj_controller.continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
+    obj_controller.screenHide = instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]/2, obj_darkenScreen);
+    obj_controller.startingInfo = instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]/2, obj_sicknessInfo);
+    obj_controller.continueButton = instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]/2+90, obj_continueButton);
 }
 </string>
           </argument>
