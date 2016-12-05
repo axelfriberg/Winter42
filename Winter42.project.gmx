@@ -28,6 +28,7 @@
     <sprite>sprites\spr_generalSelected</sprite>
     <sprite>sprites\spr_empty</sprite>
     <sprite>sprites\spr_anvil</sprite>
+    <sprite>sprites\spr_radio</sprite>
     <sprite>sprites\spr_snowFlake</sprite>
     <sprite>sprites\spr_cook</sprite>
     <sprite>sprites\spr_cookSelected</sprite>
@@ -58,7 +59,6 @@
       <sprite>sprites\spr_attackInfo</sprite>
       <sprite>sprites\spr_sicknessInfo</sprite>
     </sprites>
-    <sprite>sprites\spr_radio</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>

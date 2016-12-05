@@ -93,7 +93,7 @@
                 scr_dialogue("No ammunition left... No point of being on the watch", x-260, y-130);
             }  
         }
-        else if place_meeting(x,y,obj_chimney)&&makingFire{ 
+        else if place_meeting(x+30,y,obj_chimney)&&makingFire{ 
             if(global.Temperature > 22){
                 scr_dialogue("Shouldn't make it any hotter", x-260, y-130);               
             } else {

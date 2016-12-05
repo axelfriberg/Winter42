@@ -83,6 +83,7 @@ stairs = obj_stairs;
             <kind>1</kind>
             <string>x = mouse_x;
 y = mouse_y;
+
 </string>
           </argument>
         </arguments>
@@ -173,7 +174,7 @@ else if place_meeting(x, y, obj_door){
     }
 } else if place_meeting(x, y, obj_chimney){
     with(global.Selected){  
-        MoveX = obj_chimney.x+ 20;
+        MoveX = obj_chimney.x +50;
         MoveY = obj_chimney.y +32;
         Move = true;
         MoveSpeed = 7;
@@ -278,6 +279,113 @@ else if place_meeting(x, y, obj_button_fastForward){
 }
 else{
     global.Selected = -1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
+draw_set_color(c_black);
+draw_set_font(fnt);
+
+var locationx=x-30;
+var locationy=y-10;
+
+if place_meeting(x,y,obj_door){ 
+    if(global.Selected!=-1){
+        draw_text(locationx,locationy,"Go out")
+    }
+    else{
+        draw_text(locationx,locationy,"Door")
+    }
+}
+if place_meeting(x,y,obj_sentry){ 
+    if(global.Selected!=-1){
+        draw_text(locationx,locationy,"Go on watch")
+    }
+    else{
+        draw_text(locationx,locationy,"Sentry")
+    }
+}
+
+if place_meeting(x,y,obj_soldier){ 
+    if(global.Selected!=-1){
+        if(global.Selected!=instance_place(x,y,obj_soldier)&amp;&amp;global.Selected.isMedic)
+            draw_text(locationx,locationy,"Heal")
+        else if(global.Selected!=instance_place(x,y,obj_soldier))
+            draw_text(locationx,locationy,"Talk")
+    }
+    else{
+        draw_text(locationx,locationy,"Select")
+    }
+}
+
+if place_meeting(x,y,obj_chimney){ 
+    if(global.Selected!=-1){
+        draw_text(locationx,locationy,"Make fire")
+    }
+    else{
+        draw_text(locationx,locationy,"Chimney")
+    }
+}
+
+if place_meeting(x,y,obj_anvil){ 
+    if(global.Selected!=-1){
+        draw_text(locationx,locationy,"Craft ammo")
+    }
+    else{
+        draw_text(locationx,locationy,"Anvil")
+    }
+}
+
+if place_meeting(x,y,obj_stairs){ 
+    if(global.Selected!=-1){
+        draw_text(locationx,locationy,"Use")
+    }
+    else{
+        draw_text(locationx,locationy,"Stairs")
+    }
+}
+
+if place_meeting(x,y,obj_german){ 
+    if(global.Selected!=-1){
+        draw_text(locationx,locationy,"Attack")
+    }
+    else{
+        draw_text(locationx,locationy,"Enemy")
+    }
+}
+
+if place_meeting(x,y,obj_pot){ 
+    if(global.Selected!=-1){
+        draw_text(locationx,locationy,"Cook")
+    }
+    else{
+        draw_text(locationx,locationy,"Oven")
+    }
+}
+
+if place_meeting(x,y,obj_radio){ 
+    draw_text(locationx,locationy,"Listen to")
 }
 </string>
           </argument>

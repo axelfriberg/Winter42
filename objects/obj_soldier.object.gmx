@@ -231,7 +231,7 @@ if Busy &amp;&amp; Completed{
         if(CraftingAmmo){
             CraftingAmmo = false;
             global.Scraps -=1;
-            global.Ammunition += AmmoSkill;
+            global.Ammunition += 5*AmmoSkill;
             scr_dialogue("Feeling safer now!", x-260, y-130);
         }        
 }
