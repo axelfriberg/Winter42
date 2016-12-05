@@ -29,6 +29,7 @@
             }
             else {
                 scr_dialogue("Looks like there's no food left...", x-260, y-130);
+                Cooking=false;
             }
         }
         else if ((place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier))&&!isMedic){

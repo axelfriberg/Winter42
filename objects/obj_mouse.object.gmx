@@ -329,10 +329,11 @@ if place_meeting(x,y,obj_sentry){
 
 if place_meeting(x,y,obj_soldier){ 
     if(global.Selected!=-1){
-        if(global.Selected!=instance_place(x,y,obj_soldier)&amp;&amp;global.Selected.isMedic)
-            draw_text(locationx,locationy,"Heal")
-        else if(global.Selected!=instance_place(x,y,obj_soldier))
-            draw_text(locationx,locationy,"Talk")
+        if(global.Selected!=instance_place(x,y,obj_soldier))
+            if(global.Selected.isMedic)
+                draw_text(locationx,locationy,"Heal")
+            else
+                draw_text(locationx,locationy,"Talk")
     }
     else{
         draw_text(locationx,locationy,"Select")
