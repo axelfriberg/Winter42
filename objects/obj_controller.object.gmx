@@ -43,7 +43,7 @@ global.isWatch=false;
 
 alarm[0] = 500/global.multiplier;  // storm
 alarm[2] = 1500/global.multiplier; // enemy attack
-alarm[4] = 30;
+alarm[4] = 2;
 startMessage = false;
 messageCheck = false;
 
@@ -342,7 +342,7 @@ var gameOver;
 var quitButton;
 gameover = false;
 scr_pause();
-//screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
+screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
 startingInfo = instance_create(room_width/2, room_height/2, obj_startingInfo);
 continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
 }

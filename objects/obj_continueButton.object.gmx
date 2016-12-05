@@ -93,9 +93,9 @@ with(obj_controller.continueButton){
     instance_destroy();
 }
 
-//with(obj_controller.screenHide){
-//    instance_destroy();
-//}
+with(obj_controller.screenHide){
+    instance_destroy();
+}
 
 instance_activate_all();
 background_index[0] = -1;
