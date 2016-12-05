@@ -130,12 +130,16 @@ for(i = 0; i &lt; 15; i++){
 }
 
 if(global.SnowCounter &lt; 50){
-alarm[3] = 6;
-global.SnowCounter += 1;
-if(global.SnowCounter % 5 == 0){
-    global.Temperature -= 1;
-} 
-} 
+    if(!audio_is_playing(snd_wind))
+        audio_play_sound(snd_wind,0,0);
+    alarm[3] = 6;
+    global.SnowCounter += 1;
+    if(global.SnowCounter % 5 == 0){
+        global.Temperature -= 1;
+    }
+}
+else
+    audio_stop_sound(snd_wind);
 
 </string>
           </argument>
@@ -214,21 +218,25 @@ if(!gameover &amp;&amp; messageCheck &amp;&amp; control){
             <kind>1</kind>
             <string>/// Storm event going on
 if(!gameover){
-x = 200;
-control = true;
-messageCheck = true;
-for(i = 0; i &lt; 15; i++){
-    instance_create(x, 0, obj_snowFlake);
-    x += 100;
+    x = 200;
+    control = true;
+    messageCheck = true;
+    for(i = 0; i &lt; 15; i++){
+        instance_create(x, 0, obj_snowFlake);
+        x += 100;
 }
 
 if(global.SnowCounter &lt; 50){
-alarm[3] = 6;
-global.SnowCounter += 1;
-if(global.SnowCounter % 5 == 0){
-    global.Temperature -= 1;
-} 
+    if(!audio_is_playing(snd_wind))
+        audio_play_sound(snd_wind,0,0);
+    alarm[3] = 6;
+    global.SnowCounter += 1;
+    if(global.SnowCounter % 5 == 0){
+        global.Temperature -= 1;
+    }
 }
+else
+    audio_stop_sound(snd_wind);
 }
 </string>
           </argument>

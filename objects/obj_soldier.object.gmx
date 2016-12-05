@@ -213,6 +213,7 @@ if Busy &amp;&amp; Completed{
             global.RawFood -= 1;
             global.CookedFood += CookSkill;
             scr_dialogue("Mmmm it will be delicious", x-260, y-130);
+            audio_stop_sound(snd_cooking);   
         } // Went scavaging, found raw food and scraps
         if(isOut)
         {
@@ -220,19 +221,21 @@ if Busy &amp;&amp; Completed{
             global.RawFood += 1;
             global.Scraps += 1;
             scr_dialogue("Found raw food and scraps", x-260, y-130);
+            audio_play_sound(snd_door,0,0);
         }
         if(makingFire){
             makingFire = false;
             global.Temperature += 1;
             global.Scraps -= 1;
             scr_dialogue("Warm and cozy", x-260, y-130);
-         
+            audio_stop_sound(snd_fire);         
         }
         if(CraftingAmmo){
             CraftingAmmo = false;
             global.Scraps -=1;
             global.Ammunition += 5*AmmoSkill;
             scr_dialogue("Feeling safer now!", x-260, y-130);
+            audio_stop_sound(snd_blacksmith);
         }        
 }
 
