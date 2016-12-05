@@ -95,9 +95,9 @@ if(global.isAttack){
 if(global.isWatch&amp;&amp;global.isAttack){
     if(x&gt;1552&amp;&amp;global.Ammunition&gt;0){
         counter++;
-        if(counter&gt;=10){
+        if(counter&gt;=1){
             Health=Health-2*global.multiplier;
-            global.Ammunition--;
+            global.Ammunition-=global.multiplier;
             counter=0;
         }
     }

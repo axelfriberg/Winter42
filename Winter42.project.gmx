@@ -58,6 +58,7 @@
       <sprite>sprites\spr_attackInfo</sprite>
       <sprite>sprites\spr_sicknessInfo</sprite>
     </sprites>
+    <sprite>sprites\spr_radio</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -87,6 +88,7 @@
     <object>objects\obj_mouse</object>
     <object>objects\obj_pot</object>
     <object>objects\obj_sentry</object>
+    <object>objects\obj_radio</object>
     <object>objects\obj_bed</object>
     <object>objects\obj_stairs</object>
     <object>objects\obj_chimney</object>

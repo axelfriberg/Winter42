@@ -82,6 +82,7 @@
         else if (x == obj_sentry.x-20 && y == obj_sentry.y+11)&&goToWatch{  
             if(global.Ammunition > 0){ 
                 scr_dialogue("I'll be on watch now", x-260, y-130);
+                alarm[3]=60;
                 Busy=true;
                 onWatch=true;
                 global.isWatch = true;
