@@ -94,13 +94,18 @@ if(global.isAttack){
 
 if(global.isWatch&amp;&amp;global.isAttack){
     if(x&gt;1552&amp;&amp;global.Ammunition&gt;0){
+        if(!audio_is_playing(snd_gatling))
+            audio_play_sound(snd_gatling,0,0);
         counter++;
         if(counter&gt;=1){
             Health=Health-2*global.multiplier;
             global.Ammunition-=global.multiplier;
             counter=0;
         }
+        
     }
+    if(Health &lt;= 0 &amp;&amp; audio_is_playing(snd_gatling))
+            audio_stop_sound(snd_gatling);
 }
 
 if Move&amp;&amp;!isOut{
@@ -111,7 +116,6 @@ if Move&amp;&amp;!isOut{
         var textbox  = instance_place(x-260, y-130, obj_textbox);
         if textbox != noone
         {
-        
             with(textbox) instance_destroy();
         }
     }
@@ -226,6 +230,7 @@ if(Health&lt;=0){
         }
     }
     instance_destroy();
+    audio_play_sound(snd_death,0,0);
     isAttack=false;
 }
 </string>
