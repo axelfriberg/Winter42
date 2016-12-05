@@ -19,9 +19,9 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_soldier</sprite>
+    <sprite>sprites\spr_soldierSelected</sprite>
     <sprite>sprites\spr_medic</sprite>
     <sprite>sprites\spr_medicSelected</sprite>
-    <sprite>sprites\spr_soldierSelected</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_pot</sprite>
     <sprite>sprites\spr_mouse</sprite>
