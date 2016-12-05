@@ -44,11 +44,36 @@ global.isWatch=false;
 alarm[0] = 500/global.multiplier;  // storm
 alarm[2] = 1500/global.multiplier; // enemy attack
 alarm[4] = 2;
+alarm[5] = 2;
 startMessage = false;
 messageCheck = false;
+control = false;
 
 //Start Message
-
+gameover = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>startMessage = true;
 </string>
           </argument>
         </arguments>
@@ -71,8 +96,8 @@ messageCheck = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>startMessage = true;
-messageCheck = true;
+            <string>messageCheck = true;
+control = true;
 </string>
           </argument>
         </arguments>
@@ -135,27 +160,37 @@ if(global.SnowCounter % 5 == 0){
           <argument>
             <kind>1</kind>
             <string>global.isAttack=true;
+control = true;
+messageCheck = true;
 </string>
           </argument>
         </arguments>
       </action>
       <action>
         <libid>1</libid>
-        <id>321</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_message</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>2</kind>
-            <string>We're under attack! Enemy soldiers are closing in! Send some soldiers to defend the fortress or they'll enter and kill you!</string>
+            <kind>1</kind>
+            <string>///Display message
+if(!gameover &amp;&amp; messageCheck &amp;&amp; control){
+    control = false;
+    scr_pause();
+    screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
+    startingInfo = instance_create(room_width/2, room_height/2, obj_attackInfo);
+    continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -178,9 +213,10 @@ if(global.SnowCounter % 5 == 0){
           <argument>
             <kind>1</kind>
             <string>/// Storm event going on
-
+if(!gameover){
 x = 200;
-
+control = true;
+messageCheck = true;
 for(i = 0; i &lt; 15; i++){
     instance_create(x, 0, obj_snowFlake);
     x += 100;
@@ -192,29 +228,37 @@ global.SnowCounter += 1;
 if(global.SnowCounter % 5 == 0){
     global.Temperature -= 1;
 } 
-} 
-
+}
+}
 </string>
           </argument>
         </arguments>
       </action>
       <action>
         <libid>1</libid>
-        <id>321</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_message</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>2</kind>
-            <string>Massive storm started. The temperature is going down real fast. Don't let your soldiers freeze!</string>
+            <kind>1</kind>
+            <string>///Display message
+if(!gameover &amp;&amp; messageCheck &amp;&amp; control){
+    control = false;
+    scr_pause();
+    screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
+    startingInfo = instance_create(room_width/2, room_height/2, obj_stormInfo);
+    continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -238,7 +282,7 @@ if(global.SnowCounter % 5 == 0){
             <kind>1</kind>
             <string>/// Check the losing condition
 
-if((global.Soldiers &lt;= 0||!instance_exists(obj_general)) &amp;&amp; !startMessage){
+if((global.Soldiers &lt;= 0||!instance_exists(obj_general)) &amp;&amp; !messageCheck){
     gameover = true;
     screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
     gameOver = instance_create(room_width/2, room_height/2, obj_gameOverMenu);
@@ -335,16 +379,14 @@ if(global.hours == 22){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///start message
-if(messageCheck){
-messageCheck = false;
-var gameOver;
-var quitButton;
-gameover = false;
-scr_pause();
-screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
-startingInfo = instance_create(room_width/2, room_height/2, obj_startingInfo);
-continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
+            <string>///Start message
+if(messageCheck &amp;&amp; startMessage &amp;&amp; control){
+    control = false;
+    startMessage = false;
+    scr_pause();
+    screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
+    startingInfo = instance_create(room_width/2, room_height/2, obj_startingInfo);
+    continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
 }
 </string>
           </argument>

@@ -33,7 +33,7 @@ AmmoSkill = 5;
 FightSkill = 1;
 CookSkill = 1;
 SocialSkill = 1;
-alarm[6] = 1000/global.multiplier; // sickness
+alarm[5] = 300/global.multiplier; // sickness
 </string>
           </argument>
         </arguments>
@@ -86,27 +86,37 @@ if(sick){
             <string>/// Set the damage interval
 alarm[6] = 100/global.multiplier;
 sick = true;
+obj_controller.messageCheck = true;
+obj_controller.control = true;
 </string>
           </argument>
         </arguments>
       </action>
       <action>
         <libid>1</libid>
-        <id>321</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_message</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>2</kind>
-            <string>You blacksmith just got sick, heal him with the medic!</string>
+            <kind>1</kind>
+            <string>///Display message
+/*if(!obj_controller.gameover &amp;&amp; obj_controller.messageCheck &amp;&amp; obj_controller.control){
+    obj_controller.control = false;
+    scr_pause();
+    screenHide = instance_create(room_width/2, room_height/2, obj_darkenScreen);
+    startingInfo = instance_create(room_width/2, room_height/2, obj_sicknessInfo);
+    continueButton = instance_create(room_width/2, room_height/2+90, obj_continueButton);
+}*/
+</string>
           </argument>
         </arguments>
       </action>
