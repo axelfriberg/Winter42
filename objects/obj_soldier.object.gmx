@@ -366,9 +366,9 @@ if(Health&lt;=0){
             <string>if(!isOut){
     draw_self();
     draw_healthbar(x-16,y-50, x+16, y-40, max(0,(Health / 100) * 100), c_black, c_red, c_lime, 0, true, true)
-    if(alarm[0]&gt;0)
+    if(alarm[0]&gt;0&amp;&amp;Busy)
         draw_healthbar(x+30,y-20, x+40, y-70, max(0,100-(alarm[0] / 100) * 100), c_black, c_red, c_lime, 2, true, true)
-    if(alarm[2]&gt;0)
+    if(alarm[2]&gt;0&amp;&amp;Busy)
         draw_healthbar(x-30,y-20, x-40, y-70, max(0,100-(alarm[2] / 100) * 100), c_black, c_red, c_lime, 2, true, true)
 }
 </string>
