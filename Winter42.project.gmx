@@ -71,9 +71,11 @@
       <sprite>sprites\spr_attackInfo</sprite>
       <sprite>sprites\spr_sicknessInfo</sprite>
     </sprites>
+    <sprite>sprites\spr_teste</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
+    <background>background\background1</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -134,6 +136,7 @@
       <object>objects\obj_attackInfo</object>
       <object>objects\obj_sicknessInfo</object>
     </objects>
+    <object>objects\obj_teste</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MainMenu</room>
