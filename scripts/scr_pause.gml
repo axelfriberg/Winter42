@@ -3,6 +3,7 @@
 width = surface_get_width(application_surface);
 height = surface_get_height(application_surface);
 
+
 global.pauseScreenshot = background_create_from_surface(application_surface, 0, 0, width, height, false, false);
 
 with(obj_controller){
