@@ -197,8 +197,11 @@ if(isTarget){
     MoveY=y;
 }
 
-scr_smallMovement();
-//scr_randomMovement();
+if(global.movement)
+    scr_randomMovement();
+else
+    scr_smallMovement();
+
 
 if Move&amp;&amp;!isOut{
   if(Cooking)    

@@ -42,6 +42,8 @@
     <sprite>sprites\spr_anvil</sprite>
     <sprite>sprites\spr_radio</sprite>
     <sprite>sprites\spr_snowFlake</sprite>
+    <sprite>sprites\spr_move</sprite>
+    <sprite>sprites\spr_stop</sprite>
     <sprite>sprites\spr_cook</sprite>
     <sprite>sprites\spr_cookSelected</sprite>
     <sprite>sprites\spr_blacksmith</sprite>
@@ -98,6 +100,7 @@
     <object>objects\obj_textbox</object>
     <object>objects\obj_abilitiesText</object>
     <object>objects\obj_descriptionText</object>
+    <object>objects\obj_move</object>
     <object>objects\obj_mouse</object>
     <object>objects\obj_pot</object>
     <object>objects\obj_sentry</object>

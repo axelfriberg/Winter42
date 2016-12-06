@@ -252,6 +252,9 @@ else{
           <argument>
             <kind>1</kind>
             <string>/// Character selection
+if(place_meeting(x,y, obj_move)){
+    global.movement=!global.movement;
+}
 if(place_meeting(x,y, obj_radio)){
  if(object_exists(obj_textbox))
     {
@@ -387,8 +390,19 @@ if place_meeting(x,y,obj_pot){
     }
 }
 
+if place_meeting(x,y,obj_button_fastForward){ 
+        draw_text(locationx,locationy,"Change game speed")
+}
+
+
 if place_meeting(x,y,obj_radio){ 
     draw_text(locationx,locationy,"Listen to")
+}
+if place_meeting(x,y,obj_move){ 
+    if(global.movement)
+        draw_text(locationx,locationy,"Disable random movement")
+    else 
+        draw_text(locationx,locationy,"Enable random movement")
 }
 </string>
           </argument>

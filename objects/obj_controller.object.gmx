@@ -41,6 +41,9 @@ global.multiplier = 1;
 global.isAttack=false;
 global.isWatch=false;
 
+global.movement=false;
+
+
 alarm[4] = 2;
 alarm[5] = 2;
 startMessage = false;
@@ -51,6 +54,7 @@ attackBuffer = -1;
 once=true;
 canZoom = true;
 hour=-1;
+
 //Start Message
 gameover = false;
 </string>
