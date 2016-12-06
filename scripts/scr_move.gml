@@ -26,7 +26,7 @@
                 Busy = true;
                 audio_play_sound(snd_cooking,0,0);
                 scr_dialogue("Let's cook some food...", x-260, y-130);
-                alarm[0] = 60/global.multiplier;
+                alarm[0] = 120/global.multiplier;
             }
             else {
                 scr_dialogue("Looks like there's no food left...", x-260, y-130);
@@ -63,10 +63,11 @@
                 Interact = false 
                 
         }
-        else if place_meeting(x,y,obj_door){ 
-                if(isGeneral)
-                     scr_dialogue("Shouldn't be leaving, I'm more useful here...", x-260, y-130);
-                else{
+        else if place_meeting(x,y,obj_door)&&GoOut{ 
+                if(isGeneral){
+                    scr_dialogue("Shouldn't be leaving, I'm more useful here...", x-260, y-130);
+                    GoOut=false;
+                }else{
                     audio_play_sound(snd_door,0,0);
                     scr_dialogue("I'm going to find some resources...", x-260, y-130);
                     alarm[3]=60;

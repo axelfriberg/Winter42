@@ -93,7 +93,7 @@ if(global.isAttack){
 }
 
 if(global.isWatch&amp;&amp;global.isAttack){
-    if(x&gt;1552&amp;&amp;global.Ammunition&gt;0){
+    if(x&gt;1552&amp;&amp;global.Ammunition&gt;global.multiplier){
         if(!audio_is_playing(snd_gatling))
             audio_play_sound(snd_gatling,0,0);
         counter++;

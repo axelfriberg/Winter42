@@ -228,6 +228,7 @@ if Busy &amp;&amp; Completed{
         if(isOut)
         {
             isOut = false;
+            GoOut= false;
             global.RawFood += 2;
             global.Scraps += 3;
             scr_dialogue("Found raw food and scraps", x-260, y-130);
@@ -261,9 +262,14 @@ scr_eat(19);
 /// Low temperature every hour causes soldiers to lose health
 scr_cold(10,0);
 
+if(global.Soldiers&lt;5){
+    Morale=global.Soldiers*20;
+}
+
 if(Health&lt;=0){
     if(isSelected)
         global.Selected=-1;
+    global.Soldiers--;
     instance_destroy();
     audio_play_sound(snd_death,0,0);
 }

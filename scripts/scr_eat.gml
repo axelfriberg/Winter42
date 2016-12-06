@@ -3,8 +3,8 @@
 
 if(global.hours == argument0 && global.minutes == 0 && canEat){
     canEat = false;
-    if(global.CookedFood > 0){
-        global.CookedFood -= 1;
+    if(global.CookedFood > global.Soldiers){
+        global.CookedFood -= global.Soldiers;
     } 
     else{ 
         Health=Health-20;
