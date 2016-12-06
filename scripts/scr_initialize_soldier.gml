@@ -19,5 +19,6 @@ isMedic = false;
 isGeneral = false;
 hour=0;
 isCold=false;
+isReallyCold=false;
 Interact=false;
 sick = false;

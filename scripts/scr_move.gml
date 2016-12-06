@@ -69,8 +69,9 @@
                 else{
                     audio_play_sound(snd_door,0,0);
                     scr_dialogue("I'm going to find some resources...", x-260, y-130);
+                    alarm[3]=60;
                     Busy=true;
-                    alarm[1] = 120/global.multiplier;
+                    alarm[1] = 900/global.multiplier;
                     isOut=true;
                     selected=-1;
                 }     
@@ -80,7 +81,7 @@
                 scr_dialogue("Making some ammuniton...", x-260, y-130);
                 Busy=true;
                 audio_play_sound(snd_blacksmith,0,5);
-                alarm[0]=60/global.multiplier;
+                alarm[0]=120/global.multiplier;
             }
             else{
                 scr_dialogue("Looks like there's no scrap left...", x-260, y-130);
@@ -110,7 +111,7 @@
                     audio_play_sound(snd_fire,0,5);    
                     scr_dialogue("Making a fire...", x-260, y-130);
                     Busy=true;
-                    alarm[2] = 60/global.multiplier;   
+                    alarm[2] = 120/global.multiplier;   
                 }
                 else {
                     makingFire=false;

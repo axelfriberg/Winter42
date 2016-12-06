@@ -228,8 +228,8 @@ if Busy &amp;&amp; Completed{
         if(isOut)
         {
             isOut = false;
-            global.RawFood += 1;
-            global.Scraps += 1;
+            global.RawFood += 2;
+            global.Scraps += 3;
             scr_dialogue("Found raw food and scraps", x-260, y-130);
             audio_play_sound(snd_door,0,0);
         }
@@ -243,7 +243,7 @@ if Busy &amp;&amp; Completed{
         if(CraftingAmmo){
             CraftingAmmo = false;
             global.Scraps -=1;
-            global.Ammunition += 5*AmmoSkill;
+            global.Ammunition += 3*AmmoSkill;
             scr_dialogue("Feeling safer now!", x-260, y-130);
             audio_stop_sound(snd_blacksmith);
         } 
@@ -255,10 +255,11 @@ if global.Selected == id{
 else{
     isSelected = false
 }
-/// Soldiers eat at 12
+/// Soldiers eat at 12 and 19
 scr_eat(12);
+scr_eat(19);
 /// Low temperature every hour causes soldiers to lose health
-scr_cold(10);
+scr_cold(10,0);
 
 if(Health&lt;=0){
     if(isSelected)
