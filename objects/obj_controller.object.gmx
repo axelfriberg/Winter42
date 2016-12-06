@@ -41,8 +41,6 @@ global.multiplier = 1;
 global.isAttack=false;
 global.isWatch=false;
 
-alarm[0] = 500/global.multiplier;  // storm
-alarm[2] = 1500/global.multiplier; // enemy attack
 alarm[4] = 2;
 alarm[5] = 2;
 startMessage = false;
@@ -50,7 +48,7 @@ messageCheck = false;
 control = false;
 stormBuffer = -1;
 attackBuffer = -1;
-
+once=true;
 canZoom = true;
 hour=-1;
 //Start Message
@@ -437,6 +435,42 @@ if(global.hours != hour &amp;&amp; global.minutes == 0 &amp;&amp; global.Tempera
     global.Temperature-=1; 
     hour=global.hours;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// events on set time
+if(global.hours == 14 &amp;&amp; global.minutes == 0 ){
+    alarm[2] = 2; // enemy attack
+}
+if(global.hours == 20 &amp;&amp; global.minutes == 0 ){
+    if(once){
+        instance_create(1792,736,obj_german);
+        instance_create(1752,736,obj_german);
+        once=false;
+    }
+    alarm[2] = 2; // enemy attack 2
+}
+if(global.hours == 16 &amp;&amp; global.minutes == 0){
+    alarm[0] = 2;  // storm
+}
+
 </string>
           </argument>
         </arguments>

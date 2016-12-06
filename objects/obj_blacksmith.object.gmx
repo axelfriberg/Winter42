@@ -33,7 +33,6 @@ AmmoSkill = 5;
 FightSkill = 1;
 CookSkill = 1;
 SocialSkill = 1;
-alarm[5] = 300/global.multiplier; // sickness
 </string>
           </argument>
         </arguments>
@@ -84,7 +83,7 @@ if(sick){
           <argument>
             <kind>1</kind>
             <string>/// Set the damage interval
-alarm[6] = 100/global.multiplier;
+alarm[6] = 2
 sick = true;
 obj_controller.messageCheck = true;
 obj_controller.control = true;
@@ -149,6 +148,10 @@ sprite_index = spr_blacksmithSelected
 } else {
 sprite_index = spr_blacksmith
 }
+if(global.hours == 18 &amp;&amp; global.minutes == 0){
+    alarm[5] = 2;  // sickness
+}
+
 
 </string>
           </argument>
