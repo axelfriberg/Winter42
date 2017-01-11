@@ -43,6 +43,12 @@ global.isWatch=false;
 
 global.movement=false;
 
+//buffers for going out
+global.outDamage = 0;
+global.outFood = 0;
+global.outScrap = 0;
+
+returnMessage = false;
 
 alarm[4] = 2;
 alarm[5] = 2;
