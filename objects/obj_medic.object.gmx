@@ -29,10 +29,12 @@
 Health=100;
 Morale=100;
 Name="Tania";
+CanEvolve=false;
 AmmoSkill = 1;
 FightSkill = 1;
 CookSkill = 1;
 SocialSkill = 2;
+ScavengingSkill = 1;
 isMedic=true;
 </string>
           </argument>
@@ -69,6 +71,40 @@ sprite_index = spr_medic
         </arguments>
       </action>
     </event>
+    <event eventtype="6" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(isSelected){
+     if(Health&lt;100&amp;&amp;global.Scraps&gt;0){
+        global.Scraps--;
+        Health+=10;
+        audio_play_sound(snd_heal,0,0);
+        scr_dialogue("Feeling better now!",x-260,y-130);
+     }
+     else{
+        scr_dialogue("Cannot heal myself now..",x-260,y-130);
+     }
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
@@ -100,7 +136,11 @@ sprite_index = spr_medic
     
     //Character description
     draw_text(20, 570, 
-    "Has been healing people for#years.#Her favorite WoW class is#priest, so she's got a lot of#practice.");
+    "Has been healing people for#years. Her favorite WoW class#is priest, so she's got a lot of#practice.");
+
+     //Stats
+    draw_text(20, 625, 
+    "#Crafting:     lvl " + string(AmmoSkill) + "#Fighting:     lvl " + string(FightSkill) + "#Cooking:     lvl "  + string(CookSkill)+ "#Scavenging:  lvl "  + string(ScavengingSkill));
 }
 </string>
           </argument>

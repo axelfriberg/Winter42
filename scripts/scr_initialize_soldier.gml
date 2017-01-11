@@ -28,3 +28,4 @@ OldX=0; // for eating purpose
 OldY=0; // for eating purpose
 table=0;
 bed=0;
+Sleep=false;

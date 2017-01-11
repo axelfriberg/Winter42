@@ -339,6 +339,8 @@ if place_meeting(x,y,obj_soldier){
                 draw_text(locationx,locationy,"Heal")
             else
                 draw_text(locationx,locationy,"Talk")
+        else if(global.Selected.isMedic)
+                draw_text(locationx,locationy,"Heal self")
     }
     else{
         draw_text(locationx,locationy,"Select")

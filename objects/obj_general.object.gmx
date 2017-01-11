@@ -29,10 +29,12 @@
 Health=100;
 Morale=100;
 Name="Ivan";
+CanEvolve=false;
 AmmoSkill = 1;
 FightSkill = 1;
 CookSkill = 1;
 SocialSkill = 5;
+ScavengingSkill = 1;
 isGeneral = true;
 </string>
           </argument>
@@ -99,6 +101,10 @@ sprite_index = spr_general
     //Character description
     draw_text(20, 570, 
     "Everyone's leader.#Takes the blame when bad#things happen.");
+    
+    //Stats
+    draw_text(20, 625, 
+    "Skills:#Crafting:     lvl " + string(AmmoSkill) + "#Fighting:     lvl " + string(FightSkill) + "#Cooking:     lvl "  + string(CookSkill)+ "#Scavenging:  lvl "  + string(ScavengingSkill));
 }
 </string>
           </argument>

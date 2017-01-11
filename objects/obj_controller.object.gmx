@@ -29,9 +29,9 @@
 
 global.Selected = -1;
 global.Temperature = 17;
-global.Scraps = 7;
+global.Scraps = 20;
 global.Ammunition = 53;
-global.RawFood = 4;
+global.RawFood = 20;
 global.CookedFood = 0;
 global.Soldiers = 5;
 global.SnowCounter = 0;
