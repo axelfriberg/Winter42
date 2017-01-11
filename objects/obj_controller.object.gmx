@@ -55,6 +55,15 @@ once=true;
 canZoom = true;
 hour=-1;
 
+// bed and table seats (false is free)
+for(var i=0;i&lt;5;i++){
+    global.tableSeat[i]=false;
+}
+
+for(var i=0;i&lt;5;i++){
+    global.bedTaken[i]=false;
+}
+
 //Start Message
 gameover = false;
 </string>

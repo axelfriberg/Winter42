@@ -38,6 +38,31 @@ SocialSkill = 1;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Eating alarm
+
+Completed = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="3">
       <action>
         <libid>1</libid>
@@ -248,6 +273,28 @@ if Busy &amp;&amp; Completed{
             scr_dialogue("Feeling safer now!", x-260, y-130);
             audio_stop_sound(snd_blacksmith);
         } 
+        if(Eating){
+            Eating = false;
+            if(global.CookedFood &gt; 0){
+                global.CookedFood -= 1;
+            } 
+             else{ 
+                Health=Health-20;
+            }
+            Move=true;
+            MoveX=OldX;
+            MoveY=OldY;
+            tableSeat[table]=false;
+            
+        }
+        if(Sleep){
+            Sleep = false;
+            Move=true;
+            MoveX=OldX;
+            MoveY=OldY;
+            bedTaken[bed]=false;
+            
+        }
 }
 
 if global.Selected == id{
@@ -265,6 +312,8 @@ scr_cold(10,0);
 if(global.Soldiers&lt;5){
     Morale=global.Soldiers*20;
 }
+/// they go to bed at 21:45
+scr_sleep(21);
 
 if(Health&lt;=0){
     if(isSelected)
@@ -353,7 +402,7 @@ if(Health&lt;=0){
     
     //Character base info          
     draw_text(80, 484, 
-    "Name: " + string(Name) + "#Ability: Cooking#Health: " + string(Health) + "%#Morale: " + string(Morale) + "%");
+    "Name: " + string(Name) + "#Ability: None#Health: " + string(Health) + "%#Morale: " + string(Morale) + "%");
     
     //Character description
     draw_text(20, 570, 

@@ -77,6 +77,16 @@
                     selected=-1;
                 }     
         }
+        else if place_meeting(x,y,obj_table)&&Eating{ 
+                    Busy=true;
+                    if(global.CookedFood > 0){
+                         scr_dialogue("Mmm, delicious!", x-260, y-130);
+                    } 
+                    else{ 
+                        scr_dialogue("No food for me? I'm getting hungry :(", x-260, y-130);
+                    }
+                    alarm[4] = 200/global.multiplier;
+        }
         else if (x == obj_anvil.x-50 && y == obj_anvil.y - 11)&&CraftingAmmo{  
             if(global.Scraps > 0){ 
                 scr_dialogue("Making some ammuniton...", x-260, y-130);
@@ -104,7 +114,6 @@
             }  
         }
         else if place_meeting(x-30,y-10,obj_chimney)&&makingFire{ 
-            show_debug_message("Fire");
             if(global.Temperature > 22){
                 scr_dialogue("Shouldn't make it any hotter", x-260, y-130);               
             } else {

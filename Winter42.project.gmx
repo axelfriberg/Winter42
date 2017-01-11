@@ -74,6 +74,7 @@
       <sprite>sprites\spr_sicknessInfo</sprite>
     </sprites>
     <sprite>sprites\spr_teste</sprite>
+    <sprite>sprites\spr_table</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -86,6 +87,7 @@
     <script>scripts\scr_randomMovement.gml</script>
     <script>scripts\scr_move.gml</script>
     <script>scripts\scr_eat.gml</script>
+    <script>scripts\scr_sleep.gml</script>
     <script>scripts\scr_initialize_soldier.gml</script>
     <script>scripts\scr_cold.gml</script>
     <script>scripts\scr_pause.gml</script>
@@ -140,6 +142,7 @@
       <object>objects\obj_sicknessInfo</object>
     </objects>
     <object>objects\obj_teste</object>
+    <object>objects\obj_table</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MainMenu</room>
