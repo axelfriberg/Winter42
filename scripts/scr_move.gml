@@ -87,6 +87,7 @@
                     menuBg = instance_create(view_wview[0]/2,  view_hview[0]/2, obj_menuBg);
                     backyardButton = instance_create(view_xview[0]+view_wview[0]/2-215, view_yview[0]+view_hview[0]/2, obj_outBackyard);
                     fieldButton = instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]/2, obj_outField);
+                    campButton = instance_create(view_xview[0]+view_wview[0]/2+215, view_yview[0]+view_hview[0]/2, obj_outCamp);
                     }
                 }     
         }

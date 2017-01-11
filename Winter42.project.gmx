@@ -74,7 +74,11 @@
       <sprite>sprites\spr_attackInfo</sprite>
       <sprite>sprites\spr_sicknessInfo</sprite>
       <sprite>sprites\spr_outBackyard</sprite>
+      <sprite>sprites\spr_outBackyardSelected</sprite>
       <sprite>sprites\spr_outField</sprite>
+      <sprite>sprites\spr_outFieldSelected</sprite>
+      <sprite>sprites\spr_outCamp</sprite>
+      <sprite>sprites\spr_outCampSelected</sprite>
     </sprites>
     <sprite>sprites\spr_teste</sprite>
   </sprites>
@@ -144,6 +148,7 @@
       <object>objects\obj_menuBg</object>
       <object>objects\obj_outBackyard</object>
       <object>objects\obj_outField</object>
+      <object>objects\obj_outCamp</object>
     </objects>
     <object>objects\obj_teste</object>
   </objects>
