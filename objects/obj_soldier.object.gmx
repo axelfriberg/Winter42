@@ -227,11 +227,32 @@ if Busy &amp;&amp; Completed{
         } // Went scavaging, found raw food and scraps
         if(isOut)
         {
-            isOut = false;
+            
             GoOut= false;
-            global.RawFood += 2;
+            Health -= global.outDamage;
+            if(Health &lt;= 0){
+            }
+            else{
+                global.RawFood += global.outFood;
+                global.Scraps += global.outScrap;
+                with(obj_controller){
+                        messageCheck = true;
+                        returnMessage = true;
+                        attackBuffer = alarm[2];
+                        stormBuffer = alarm[0];
+                        alarm[2] = -1;
+                        alarm[0] = -1;
+                        scr_pause();
+                        screenHide = instance_create(view_wview[0]/2, view_hview[0]/2, obj_darkenScreen);
+                        startingInfo = instance_create(view_wview[0]/2,  view_hview[0]/2, obj_menuBg);
+                        continueButton = instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]/2+117, obj_continueButton);
+                        
+                    }
+            }
+            isOut = false;
+            /*global.RawFood += 2;
             global.Scraps += 3;
-            scr_dialogue("Found raw food and scraps", x-260, y-130);
+            scr_dialogue("Found raw food and scraps", x-260, y-130);*/
             audio_play_sound(snd_door,0,0);
         }
         if(makingFire){
@@ -389,6 +410,7 @@ if(Health&lt;=0){
     if(alarm[2]&gt;0&amp;&amp;Busy)
         draw_healthbar(x-30,y-20, x-40, y-70, max(0,100-(alarm[2] / 100) * 100), c_black, c_red, c_lime, 2, true, true)
 }
+
 </string>
           </argument>
         </arguments>
