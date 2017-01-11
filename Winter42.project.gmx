@@ -68,10 +68,13 @@
       <sprite>sprites\spr_startingInfo</sprite>
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_gameOverMenu</sprite>
+      <sprite>sprites\spr_menuBg</sprite>
       <sprite>sprites\spr_winMenu</sprite>
       <sprite>sprites\spr_stormInfo</sprite>
       <sprite>sprites\spr_attackInfo</sprite>
       <sprite>sprites\spr_sicknessInfo</sprite>
+      <sprite>sprites\spr_outBackyard</sprite>
+      <sprite>sprites\spr_outField</sprite>
     </sprites>
     <sprite>sprites\spr_teste</sprite>
   </sprites>
@@ -138,6 +141,9 @@
       <object>objects\obj_stormInfo</object>
       <object>objects\obj_attackInfo</object>
       <object>objects\obj_sicknessInfo</object>
+      <object>objects\obj_menuBg</object>
+      <object>objects\obj_outBackyard</object>
+      <object>objects\obj_outField</object>
     </objects>
     <object>objects\obj_teste</object>
   </objects>
