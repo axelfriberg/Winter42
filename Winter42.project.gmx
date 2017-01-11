@@ -81,6 +81,11 @@
       <sprite>sprites\spr_outCampSelected</sprite>
     </sprites>
     <sprite>sprites\spr_teste</sprite>
+    <sprite>sprites\spr_therm_colder</sprite>
+    <sprite>sprites\spr_therm_cold</sprite>
+    <sprite>sprites\spr_therm_ok</sprite>
+    <sprite>sprites\spr_therm_hot</sprite>
+    <sprite>sprites\spr_therm_hotter</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -150,6 +155,7 @@
       <object>objects\obj_outField</object>
       <object>objects\obj_outCamp</object>
     </objects>
+    <object>objects\obj_thermometer</object>
     <object>objects\obj_teste</object>
   </objects>
   <rooms name="rooms">
