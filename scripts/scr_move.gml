@@ -69,12 +69,26 @@
                     GoOut=false;
                 }else{
                     audio_play_sound(snd_door,0,0);
-                    scr_dialogue("I'm going to find some resources...", x-260, y-130);
+                    /*scr_dialogue("I'm going to find some resources...", x-260, y-130); 
                     alarm[3]=60;
                     Busy=true;
                     alarm[1] = 900/global.multiplier;
                     isOut=true;
                     selected=-1;
+                    */
+                    with(obj_controller){
+                    messageCheck = true;
+                    attackBuffer = alarm[2];
+                    stormBuffer = alarm[0];
+                    alarm[2] = -1;
+                    alarm[0] = -1;
+                    scr_pause();
+                    screenHide = instance_create(view_wview[0]/2, view_hview[0]/2, obj_darkenScreen);
+                    menuBg = instance_create(view_wview[0]/2,  view_hview[0]/2, obj_menuBg);
+                    backyardButton = instance_create(view_xview[0]+view_wview[0]/2-215, view_yview[0]+view_hview[0]/2, obj_outBackyard);
+                    fieldButton = instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]/2, obj_outField);
+                    campButton = instance_create(view_xview[0]+view_wview[0]/2+215, view_yview[0]+view_hview[0]/2, obj_outCamp);
+                    }
                 }     
         }
         else if place_meeting(x,y,obj_table)&&Eating{ 
