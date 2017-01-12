@@ -109,6 +109,7 @@
                         craftRightTurret=instance_create(view_xview[0]+view_wview[0]/2-400, view_yview[0]+view_hview[0]/2, obj_craftRightTurret);
                         craftLeftSpikes=instance_create(view_xview[0]+view_wview[0]/2+200, view_yview[0]+view_hview[0]/2, obj_craftLeftSpikes);
                         craftRightSpikes=instance_create(view_xview[0]+view_wview[0]/2+400, view_yview[0]+view_hview[0]/2, obj_craftRightSpikes);
+                        craftCancel=instance_create(view_xview[0]+view_wview[0]/2-100, view_yview[0]+view_hview[0]/2+200, obj_craftCancel);
                     }     
                 
         }

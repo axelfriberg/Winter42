@@ -116,7 +116,7 @@ if(place_meeting(x,y, obj_radio)){
             with(textbox) instance_destroy();
         }
     }
-    var i=floor(random(9))
+    var i=floor(random(13))
     scr_dialogue(obj_radio.messages[i], obj_radio.x+20, obj_radio.y-130);
     alarm[0]=150;
 }
@@ -281,7 +281,7 @@ if(place_meeting(x,y, obj_radio)){
             with(textbox) instance_destroy();
         }
     }
-    var i=floor(random(9))
+    var i=floor(random(13))
     scr_dialogue(obj_radio.messages[i], obj_radio.x+20, obj_radio.y-130);
     alarm[0]=150;
 }

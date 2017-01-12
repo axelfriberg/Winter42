@@ -34,7 +34,11 @@ messages[5]="Your general's the most important person here. If he dies you'll lo
 messages[6]="If you run out of scraps or raw food, you can send soldiers to look for some by clicking at the door "
 messages[7]="If the temperature drops below 10 celcius degrees, your soldiers will lose 10% of health every hour. Keep them warm! "
 messages[8]="When one of your soldiers gets sick he'll lose health very quickly. Use medic to heal him ASAP! "
-messages[9]="Temperature normally decreases 1 celcius degree an hour. Click on a fireplace to keep your house warm "
+messages[9]="You can earn XP in scavenging, cooking and crafting by doing different things! If you LEVEL UP in theese skills, you'll do things faster! "
+messages[10]="Reaching level 3 in any of soldier's skills lets them earn a specialisation. You can become cook, scavenger or blacksmith!"
+messages[11]="If you craft spikes on enemies way, they will lose health even if you dont have anyone on the watch! "
+messages[12]="Crafting turrets will help you fight off hordes of incoming enemies. Remember about the ammunition! "
+messages[13]="Did you know that you can check amount of food, scraps and ammo left by looking at Food Chest, Scrap Pile and Ammo Pile? "
 </string>
           </argument>
         </arguments>
