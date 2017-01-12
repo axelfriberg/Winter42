@@ -80,7 +80,16 @@ for(var i=0;i&lt;5;i++){
 for(var i=0;i&lt;5;i++){
     global.bedTaken[i]=false;
 }
-
+global.Names[0]="Bob"
+global.Names[1]="John"
+global.Names[2]="Josh"
+global.Names[3]="Dimitry"
+global.Names[4]="Yurek"
+global.Names[5]="Natalino"
+global.Names[6]="Francisco"
+global.Names[7]="Tomasz"
+global.Names[8]="Mike"
+global.Names[9]="Vladimir"
 //Start Message
 gameover = false;
 </string>
@@ -437,7 +446,12 @@ if(messageCheck &amp;&amp; startMessage &amp;&amp; control){
     startMessage = false;
     scr_pause();
     screenHide = instance_create(view_wview[0]/2, view_hview[0]/2, obj_darkenScreen);
+    if(global.day==32){
     startingInfo = instance_create(view_wview[0]/2,  view_hview[0]/2, obj_startingInfo);
+    }
+    else{
+    startingInfo = instance_create(view_wview[0]/2,  view_hview[0]/2, obj_startingInfoDay1);
+    }
     continueButton = instance_create(view_wview[0]/2,  view_hview[0]/2+90, obj_continueButton);
 }
 </string>
@@ -485,19 +499,20 @@ if(global.hours != hour &amp;&amp; global.minutes == 0 &amp;&amp; global.Tempera
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// events on set time
-if(global.hours == 14 &amp;&amp; global.minutes == 0 ){
+            <string>/// major events on set time
+if(global.day==32 &amp;&amp; global.hours == 14 &amp;&amp; global.minutes == 0 ){
     alarm[2] = 2; // enemy attack
 }
-if(global.hours == 20 &amp;&amp; global.minutes == 0 ){
+if(global.day==32 &amp;&amp; global.hours == 20 &amp;&amp; global.minutes == 0 ){
     if(once){
         instance_create(1792,736,obj_german);
         instance_create(1752,736,obj_german);
+        instance_create(200,736,obj_german);
         once=false;
     }
     alarm[2] = 2; // enemy attack 2
 }
-if(global.hours == 16 &amp;&amp; global.minutes == 0){
+if(global.day==32 &amp;&amp; global.hours == 16 &amp;&amp; global.minutes == 0){
     alarm[0] = 2;  // storm
 }
 
@@ -533,11 +548,6 @@ draw_set_font(fnt);
 draw_text(20,35,"Day "+ string(global.day));
 draw_text(20,55,"Time " + string(global.Thours)+string(global.hours)+":"+string(global.Tminutes)+string(global.minutes));
 draw_text(20,75,"Speed "+ string(global.multiplier)+"x");
-draw_text(20,95,"Temperature: " + string(global.Temperature)+" C");
-draw_text(20,115,"Raw food: " + string(global.RawFood));
-draw_text(20,135,"Cooked food: " + string(global.CookedFood));
-draw_text(20,155,"Scraps: " + string(global.Scraps));
-draw_text(20,175,"Ammunition: " + string(global.Ammunition));
 
 /*
 if(object_exists(obj_button_fastForward))
@@ -548,15 +558,15 @@ inst = instance_create(900, 100, obj_button_fastForward);
 
 // Draw the thermometer according to the temperature
 if(global.Temperature &lt; 0) {
-draw_sprite(spr_therm_colder, image_index, 20, 30);
+draw_sprite(spr_therm_colder, image_index, 20, 100);
 } else if(global.Temperature &gt;= 0 &amp;&amp; global.Temperature &lt; 10){
-draw_sprite(spr_therm_cold, image_index, 20, 30);
+draw_sprite(spr_therm_cold, image_index, 20, 100);
 } else if(global.Temperature &gt;= 10 &amp;&amp; global.Temperature &lt; 18) {
-draw_sprite(spr_therm_ok, image_index, 20, 30);
+draw_sprite(spr_therm_ok, image_index, 20, 100);
 } else if(global.Temperature &gt;= 18 &amp;&amp; global.Temperature &lt; 26) {
-draw_sprite(spr_therm_hot, image_index, 20, 30);
+draw_sprite(spr_therm_hot, image_index, 20, 100);
 } else if(global.Temperature &gt;= 26 ) {
-draw_sprite(spr_therm_hotter, image_index, 20, 30);
+draw_sprite(spr_therm_hotter, image_index, 20, 100);
 }
 </string>
           </argument>

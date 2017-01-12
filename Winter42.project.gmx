@@ -67,6 +67,7 @@
       <sprite>sprites\spr_playButtonSelected</sprite>
       <sprite>sprites\spr_darkenScreen</sprite>
       <sprite>sprites\spr_startingInfo</sprite>
+      <sprite>sprites\spr_startingInfoDay1</sprite>
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_gameOverMenu</sprite>
       <sprite>sprites\spr_menuBg</sprite>
@@ -177,6 +178,7 @@
       <object>objects\obj_playButton</object>
       <object>objects\obj_darkenScreen</object>
       <object>objects\obj_startingInfo</object>
+      <object>objects\obj_startingInfoDay1</object>
       <object>objects\obj_continueButton</object>
       <object>objects\obj_title</object>
       <object>objects\obj_gameOverMenu</object>
