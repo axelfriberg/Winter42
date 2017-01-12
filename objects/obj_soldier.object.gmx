@@ -35,6 +35,7 @@ FightSkill = 5;
 CookSkill = 1;
 SocialSkill = 1;
 ScavengingSkill = 1;
+outBuffer = 0;
 </string>
           </argument>
         </arguments>
@@ -197,6 +198,32 @@ sprite_index = spr_soldier
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Scavenging Evolution
+
+if(outBuffer == 1){
+    ScavengingSkill += 1;
+    outBuffer = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -257,7 +284,8 @@ if Busy &amp;&amp; Completed{
         if(isOut)
         {
             if(CanEvolve)
-                ScavengingSkill += 0.20;
+                outBuffer += 0.2;
+                //ScavengingSkill += 0.20;
             isOut = false;
             GoOut= false;
             Health -= global.outDamage;

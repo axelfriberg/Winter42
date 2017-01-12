@@ -132,6 +132,7 @@
   <fonts name="fonts">
     <font>fonts\fnt</font>
     <font>fonts\fnt_info</font>
+    <font>fonts\fnt_out</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_timer</object>
