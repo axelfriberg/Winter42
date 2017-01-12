@@ -80,6 +80,12 @@
       <sprite>sprites\spr_outFieldSelected</sprite>
       <sprite>sprites\spr_outCamp</sprite>
       <sprite>sprites\spr_outCampSelected</sprite>
+      <sprite>sprites\spr_scenario1</sprite>
+      <sprite>sprites\spr_scenario1Selected</sprite>
+      <sprite>sprites\spr_scenario2</sprite>
+      <sprite>sprites\spr_scenario2Selected</sprite>
+      <sprite>sprites\spr_scenario3</sprite>
+      <sprite>sprites\spr_scenario3Selected</sprite>
     </sprites>
     <sprite>sprites\spr_teste</sprite>
     <sprite>sprites\spr_table</sprite>
@@ -165,13 +171,19 @@
       <object>objects\obj_outBackyard</object>
       <object>objects\obj_outField</object>
       <object>objects\obj_outCamp</object>
+      <object>objects\obj_scenario1</object>
+      <object>objects\obj_scenario2</object>
+      <object>objects\obj_scenario3</object>
     </objects>
     <object>objects\obj_teste</object>
     <object>objects\obj_table</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MainMenu</room>
-    <room>rooms\room0</room>
+    <room>rooms\SelectScenarios</room>
+    <room>rooms\Day1</room>
+    <room>rooms\Day32</room>
+    <room>rooms\Day32alternative</room>
     <room>rooms\room1</room>
   </rooms>
   <help>
