@@ -318,13 +318,16 @@ if Busy &amp;&amp; Completed{
             global.Scraps += 3;
             scr_dialogue("Found raw food and scraps", x-260, y-130);*/
             audio_play_sound(snd_door,0,0);
+            scr_popup(x-50, y-50,"+" + string(global.outScrap), spr_scraps, 0.3, 0.3);
+            scr_popup(x+30, y-50,"+" + string(global.outFood), spr_rawFood, 0.3, 0.3);
         }
         if(makingFire){
             makingFire = false;
             global.Temperature += 1;
             global.Scraps -= 1;
             scr_dialogue("Warm and cozy", x-260, y-130);
-            scr_popup(x+10, y-50,"+1", spr_temperature, 0.6, 0.6);
+            scr_popup(x-50, y-50,"-1", spr_scraps, 0.3, 0.3);
+            scr_popup(x+30, y-50,"+1", spr_temperature, 0.6, 0.6);
             audio_stop_sound(snd_fire);         
         }
         if(CraftingAmmo){
@@ -334,14 +337,15 @@ if Busy &amp;&amp; Completed{
             global.Scraps -=1;
             global.Ammunition += 3*floor(AmmoSkill);
             scr_dialogue("Feeling safer now!", x-260, y-130);
-            scr_popup(x+10, y-50,"+" + string(3 * floor(AmmoSkill)), spr_ammo, 0.4, 0.4);
+            scr_popup(x-50, y-50,"-1", spr_scraps, 0.3, 0.3);
+            scr_popup(x+30, y-50,"+" + string(3 * floor(AmmoSkill)), spr_ammo, 0.4, 0.4);
             audio_stop_sound(snd_blacksmith);
         } 
         if(Eating){
             Eating = false;
             if(global.CookedFood &gt; 0){
                 global.CookedFood -= 1;
-                scr_popup(x+10, y-50,"-1", spr_cookedFood, 0.3, 0.3);
+                scr_popup(x, y-50,"-1", spr_cookedFood, 0.3, 0.3);
             } 
              else{ 
                 Health=Health-20;

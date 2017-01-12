@@ -94,6 +94,7 @@ sprite_index = spr_medic
         Health+=10;
         audio_play_sound(snd_heal,0,0);
         scr_dialogue("Feeling better now!",x-260,y-130);
+        scr_popup(x, y-50,"-1", spr_scraps, 0.3, 0.3);
      }
      else{
         scr_dialogue("Cannot heal myself now..",x-260,y-130);

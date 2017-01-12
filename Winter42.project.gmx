@@ -98,7 +98,6 @@
     <sprite>sprites\spr_scavenger</sprite>
     <sprite>sprites\spr_scavengerSelected</sprite>
     <sprite>sprites\spr_scraps</sprite>
-    <sprite>sprites\spr_health</sprite>
     <sprite>sprites\spr_rawFood</sprite>
     <sprite>sprites\spr_cookedFood</sprite>
     <sprite>sprites\spr_ammo</sprite>
@@ -190,6 +189,7 @@
     <object>objects\obj_teste</object>
     <object>objects\obj_table</object>
     <object>objects\obj_popup</object>
+    <object>objects\obj_pileScraps</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MainMenu</room>
