@@ -135,12 +135,12 @@ sprite_index = spr_medic
     "Name: " + string(Name) + "#Ability: Healing#Health: " + string(Health) + "%#Morale: " + string(Morale) + "%");
     
     //Character description
-    draw_text(20, 570, 
+    draw_text(20, 560, 
     "Has been healing people for#years. Her favorite WoW class#is priest, so she's got a lot of#practice.");
 
      //Stats
-    draw_text(20, 625, 
-    "#Crafting:     lvl " + string(AmmoSkill) + "#Fighting:     lvl " + string(FightSkill) + "#Cooking:     lvl "  + string(CookSkill)+ "#Scavenging:  lvl "  + string(ScavengingSkill));
+    draw_text(20, 642, 
+    "Crafting:     lvl " + string(AmmoSkill) + "#Fighting:     lvl " + string(FightSkill) + "#Cooking:     lvl "  + string(CookSkill)+ "#Scavenging:  lvl "  + string(ScavengingSkill));
 }
 </string>
           </argument>

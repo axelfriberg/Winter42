@@ -133,7 +133,6 @@
     <object>objects\obj_anvil</object>
     <object>objects\obj_snowFlake</object>
     <object>objects\obj_soldier</object>
-    <object>objects\obj_cookInfo</object>
     <object>objects\obj_general</object>
     <object>objects\obj_cook</object>
     <object>objects\obj_blacksmith</object>

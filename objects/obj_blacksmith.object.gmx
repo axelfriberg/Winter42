@@ -190,12 +190,12 @@ if(global.hours == 18 &amp;&amp; global.minutes == 0){
     "Name: " + string(Name) + "#Ability: Blacksmith#Health: " + string(Health) + "%#Morale: " + string(Morale) + "%");
     
     //Character description
-    draw_text(20, 570, 
+    draw_text(20, 560, 
     "I used to make mean swords#Now I make mean bullets.");
     
      //Stats
-    draw_text(20, 625, 
-    "Skills:#Crafting:     lvl " + string(AmmoSkill) + "#Fighting:     lvl " + string(FightSkill) + "#Cooking:     lvl "  + string(CookSkill)+ "#Scavenging:  lvl "  + string(ScavengingSkill));
+    draw_text(20, 642, 
+    "Crafting:     lvl " + string(AmmoSkill) + "#Fighting:     lvl " + string(FightSkill) + "#Cooking:     lvl "  + string(CookSkill)+ "#Scavenging:  lvl "  + string(ScavengingSkill));
 }
 </string>
           </argument>
