@@ -96,6 +96,11 @@ with(obj_controller.continueButton){
 with(obj_controller.screenHide){
     instance_destroy();
 }
+if(instance_exists(obj_restartButton)){
+    with(obj_restartButton){
+        instance_destroy();
+    }
+}
 
 scr_unpause();
 obj_controller.alarm[0] = obj_controller.stormBuffer;

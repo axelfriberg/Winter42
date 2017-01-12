@@ -69,6 +69,7 @@
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_gameOverMenu</sprite>
       <sprite>sprites\spr_menuBg</sprite>
+      <sprite>sprites\spr_pauseMenu</sprite>
       <sprite>sprites\spr_winMenu</sprite>
       <sprite>sprites\spr_stormInfo</sprite>
       <sprite>sprites\spr_attackInfo</sprite>
@@ -183,6 +184,8 @@
       <object>objects\obj_scenario1</object>
       <object>objects\obj_scenario2</object>
       <object>objects\obj_scenario3</object>
+      <object>objects\obj_pause</object>
+      <object>objects\obj_pauseMenu</object>
     </objects>
     <object>objects\obj_teste</object>
     <object>objects\obj_table</object>
