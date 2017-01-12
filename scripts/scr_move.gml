@@ -34,6 +34,19 @@
                 Cooking=false;
             }
         }
+        if (x == obj_pot.x-32 && y== obj_pot.y)&&Repair{
+            if(global.Scraps>0){    
+                Busy = true;
+                audio_play_sound(snd_blacksmith,0,0);
+                scr_dialogue("Gotta fix this damn thing...", x-260, y-130);
+                alarm[0] = 20/global.multiplier;
+            }
+            else {
+                scr_dialogue("I need scraps to do this...", x-260, y-130);
+                Repair=false;
+            }
+        }
+        
         else if ((place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier))&&!isMedic&&Interact){
                 secondSoldier = instance_place(x-32, y, obj_soldier); 
                 if(!instance_exists(secondSoldier))

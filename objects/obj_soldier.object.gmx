@@ -36,6 +36,7 @@ CookSkill = 1;
 SocialSkill = 1;
 ScavengingSkill = 1;
 outBuffer = 0;
+
 </string>
           </argument>
         </arguments>
@@ -287,7 +288,23 @@ if Busy &amp;&amp; Completed{
             scr_popup(x-50, y-50,"-1", spr_rawFood, 0.3, 0.3);
             scr_popup(x+30, y-50,"+" + string(floor(CookSkill)), spr_cookedFood, 0.4, 0.4);
             audio_stop_sound(snd_cooking);   
-        } // Went scavaging, found raw food and scraps
+        } 
+        if(Repair){
+            Repair = false;
+            global.Scraps -=1;
+            obj_controller.repairCount -= 1;
+            scr_popup(x-50, y-50,"-1", spr_scraps, 0.3, 0.3);
+            if(obj_controller.repairCount == 0){
+                obj_controller.repairCount = 3;
+                global.ovenBroken = false; 
+                scr_dialogue("That should do it!", x-260, y-130);            
+            }
+            else{
+                scr_dialogue("Still needs more work...", x-260, y-130);
+            }
+            audio_stop_sound(snd_blacksmith);
+        }
+        // Went scavaging, found raw food and scraps
         if(isOut)
         {
             if(CanEvolve)

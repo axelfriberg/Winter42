@@ -124,12 +124,21 @@ if(place_meeting(x,y, obj_radio)){
 
 if place_meeting(x, y, obj_pot){
     with(global.Selected){  
-        MoveX = obj_pot.x - 32;
-        MoveY = obj_pot.y;
-        Move = true;
-        MoveSpeed = 7;
-        Resource = 1
-        Cooking = true;
+            MoveX = obj_pot.x - 32;
+            MoveY = obj_pot.y;
+            Move = true;
+            MoveSpeed = 7;
+            Resource = 1
+    }
+    if(global.ovenBroken){
+    with(global.Selected){  
+            Repair = true;
+    }
+    }
+    else{
+        with(global.Selected){  
+            Cooking = true;
+        }
     }
 }
 else if place_meeting(x, y, obj_soldier){
