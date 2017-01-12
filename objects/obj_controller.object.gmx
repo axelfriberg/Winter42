@@ -36,6 +36,15 @@ global.CookedFood = 0;
 global.Soldiers = 5;
 global.SnowCounter = 0;
 
+
+global.SpikesLeft[0]=false;
+global.SpikesLeft[1]=false;
+global.SpikesRight[0]=false;
+global.SpikesRight[1]=false;
+
+global.TurretLeft=false;
+global.TurretRight=false;
+
 global.multiplier = 1;
 
 global.isAttack=false;

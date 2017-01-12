@@ -31,6 +31,7 @@
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_ground</sprite>
     <sprite>sprites\spr_sentry</sprite>
+    <sprite>sprites\spr_leftSentry</sprite>
     <sprite>sprites\spr_window</sprite>
     <sprite>sprites\spr_window_back</sprite>
     <sprite>sprites\spr_chimney</sprite>
@@ -86,6 +87,12 @@
       <sprite>sprites\spr_scenario2Selected</sprite>
       <sprite>sprites\spr_scenario3</sprite>
       <sprite>sprites\spr_scenario3Selected</sprite>
+      <sprite>sprites\spr_craftSpikes</sprite>
+      <sprite>sprites\spr_craftTurret</sprite>
+      <sprite>sprites\spr_craftRight</sprite>
+      <sprite>sprites\spr_craftRightSelected</sprite>
+      <sprite>sprites\spr_craftLeftSelected</sprite>
+      <sprite>sprites\spr_craftLeft</sprite>
     </sprites>
     <sprite>sprites\spr_teste</sprite>
     <sprite>sprites\spr_table</sprite>
@@ -94,6 +101,8 @@
     <sprite>sprites\spr_therm_hot</sprite>
     <sprite>sprites\spr_therm_hotter</sprite>
     <sprite>sprites\spr_therm_ok</sprite>
+    <sprite>sprites\spr_crafting</sprite>
+    <sprite>sprites\spr_spikes</sprite>
     <sprite>sprites\spr_temperature</sprite>
     <sprite>sprites\spr_scavenger</sprite>
     <sprite>sprites\spr_scavengerSelected</sprite>
@@ -144,6 +153,7 @@
     <object>objects\obj_mouse</object>
     <object>objects\obj_pot</object>
     <object>objects\obj_sentry</object>
+    <object>objects\obj_leftSentry</object>
     <object>objects\obj_radio</object>
     <object>objects\obj_bed</object>
     <object>objects\obj_stairs</object>
@@ -183,21 +193,25 @@
       <object>objects\obj_scenario1</object>
       <object>objects\obj_scenario2</object>
       <object>objects\obj_scenario3</object>
+      <object>objects\obj_craftTurret</object>
+      <object>objects\obj_craftSpikes</object>
+      <object>objects\obj_craftLeftSpikes</object>
+      <object>objects\obj_craftLeftTurret</object>
+      <object>objects\obj_craftRightSpikes</object>
+      <object>objects\obj_craftRightTurret</object>
       <object>objects\obj_pause</object>
       <object>objects\obj_pauseMenu</object>
     </objects>
     <object>objects\obj_teste</object>
     <object>objects\obj_table</object>
+    <object>objects\obj_crafting</object>
+    <object>objects\obj_spikes</object>
     <object>objects\obj_popup</object>
     <object>objects\obj_pileScraps</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MainMenu</room>
     <room>rooms\SelectScenarios</room>
-    <room>rooms\Day1</room>
-    <room>rooms\Day32</room>
-    <room>rooms\Day32alternative</room>
-    <room>rooms\room1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

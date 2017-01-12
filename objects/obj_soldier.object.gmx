@@ -340,6 +340,13 @@ if Busy &amp;&amp; Completed{
             scr_popup(x-50, y-50,"-1", spr_scraps, 0.3, 0.3);
             scr_popup(x+30, y-50,"+" + string(3 * floor(AmmoSkill)), spr_ammo, 0.4, 0.4);
             audio_stop_sound(snd_blacksmith);
+        }
+        if(CraftDefenses){
+            if(CanEvolve)
+                AmmoSkill += 0.20;
+            CraftDefenses = false;
+            scr_dialogue("Much defense, such safety! Wow!", x-260, y-130);
+            audio_stop_sound(snd_blacksmith);
         } 
         if(Eating){
             Eating = false;

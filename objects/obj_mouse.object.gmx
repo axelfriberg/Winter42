@@ -166,10 +166,26 @@ else if place_meeting(x, y, obj_door){
         MoveSpeed = 7;
         CraftingAmmo = true;
     }
-} else if place_meeting(x, y, obj_sentry){
+} else if place_meeting(x, y, obj_crafting){
+    with(global.Selected){  
+        MoveX = obj_crafting.x - 16;
+        MoveY = obj_crafting.y + 32 ;
+        Move = true;
+        MoveSpeed = 7;
+        CraftDefenses=true;
+    }
+} else if instance_exists(obj_sentry)&amp;&amp;(place_meeting(x, y, obj_sentry)){
     with(global.Selected){  
         MoveX = obj_sentry.x-20;
         MoveY = obj_sentry.y + 11;
+        Move = true;
+        MoveSpeed = 7;
+        goToWatch=true;
+    }
+} else if instance_exists(obj_leftSentry)&amp;&amp;(place_meeting(x, y, obj_leftSentry)){
+    with(global.Selected){  
+        MoveX = obj_leftSentry.x+50;
+        MoveY = obj_leftSentry.y + 11;
         Move = true;
         MoveSpeed = 7;
         goToWatch=true;
@@ -324,12 +340,20 @@ if place_meeting(x,y,obj_door){
         draw_text(locationx,locationy,"Door")
     }
 }
-if place_meeting(x,y,obj_sentry){ 
+if place_meeting(x,y,obj_sentry)||place_meeting(x,y,obj_leftSentry){ 
     if(global.Selected!=-1){
         draw_text(locationx,locationy,"Go on watch")
     }
     else{
         draw_text(locationx,locationy,"Sentry")
+    }
+}
+if place_meeting(x,y,obj_crafting){ 
+    if(global.Selected!=-1){
+        draw_text(locationx,locationy,"Craft defenses")
+    }
+    else{
+        draw_text(locationx,locationy,"Crafting station")
     }
 }
 
