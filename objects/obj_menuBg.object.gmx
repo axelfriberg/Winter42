@@ -28,16 +28,16 @@
             <string>///Draw scavenging results
 draw_self();
 if(obj_controller.returnMessage){
-    draw_set_halign(fa_left);
-    draw_set_valign(fa_middle);
-    draw_set_color(c_black);
-    draw_set_font(fnt);
-    
-    
-    draw_text(view_wview[0]/2-200, view_hview[0]/2-100,"Your soldier came back!");
-    draw_text(view_wview[0]/2-200, view_hview[0]/2-50,"Damage: "+ string(global.outDamage));
-    draw_text(view_wview[0]/2-200, view_hview[0]/2-30,"Food: "+ string(global.outFood));
-    draw_text(view_wview[0]/2-200, view_hview[0]/2-10,"Scraps: "+ string(global.outScrap));
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
+draw_set_color(c_black);
+draw_set_font(fnt_out);
+
+
+draw_text(view_wview[0]/2-200, view_hview[0]/2-100,"Your soldier came back!");
+draw_text(view_wview[0]/2-200, view_hview[0]/2-50,"Damage: "+ string(global.outDamage));
+draw_text(view_wview[0]/2-200, view_hview[0]/2-30,"Food: "+ string(global.outFood));
+draw_text(view_wview[0]/2-200, view_hview[0]/2-10,"Scraps: "+ string(global.outScrap));
 }
 </string>
           </argument>

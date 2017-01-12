@@ -8,6 +8,29 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>lvl=global.outLevel;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="11">
       <action>
         <libid>1</libid>
@@ -64,6 +87,149 @@
           <argument>
             <kind>0</kind>
             <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with(obj_controller.menuBg){
+    instance_destroy();
+}
+
+with(obj_controller.backyardButton){
+    instance_destroy();
+}
+
+with(obj_controller.fieldButton){
+    instance_destroy();
+}
+
+with(obj_controller.campButton){
+    instance_destroy();
+}
+
+with(obj_controller.screenHide){
+    instance_destroy();
+}
+
+obj_controller.alarm[0] = obj_controller.stormBuffer;
+obj_controller.alarm[2] = obj_controller.attackBuffer;
+
+obj_controller.messageCheck = false;
+
+scr_unpause();
+
+//lvl=global.Selected.ScavengingSkill;
+with(global.Selected){
+    Busy=true;
+    alarm[1]=90/global.multiplier;
+    isOut=true;
+}
+global.Selected = -1;
+
+if(lvl==1){
+    if(irandom(4)=1){
+        global.outDamage=0;
+    }
+    else{
+        global.outDamage=irandom_range(70,100)        
+    }
+    global.outFood=irandom_range(6,10);
+    global.outScrap=irandom_range(7,12);
+}
+
+if(lvl==2){
+    if(irandom(2)=1){
+        global.outDamage=0;
+    }
+    else{
+        global.outDamage=irandom_range(50,100)        
+    }
+    global.outFood=irandom_range(6,12);
+    global.outScrap=irandom_range(8,13);
+}
+
+if(lvl==5){
+    rng=irandom(4);
+    if(rng==0 || rng == 1){
+        global.outDamage=0;
+    }
+    else{
+        global.outDamage=irandom_range(50,80)        
+    }
+    global.outFood=irandom_range(8,15);
+    global.outScrap=irandom_range(10,18);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
+draw_set_color(c_black);
+draw_set_font(fnt_out);
+
+//if(global.Selected != -1)
+   //lvl=global.Selected.ScavengingSkill;
+
+//draw_text(100,100,string(lvl));
+if(lvl==1){
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-135,"-Risk: 80%");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-105,"-Damage: 70-100");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-75,"-Food: 6-10");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-45,"-Scraps: 7-12");
+}
+
+if(lvl==2){
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-135,"-Risk: 70%");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-105,"-Damage: 50-100");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-75,"-Food: 6-12");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-45,"-Scraps: 8-13");
+}
+
+if(lvl==5){
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-135,"-Risk: 60%");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-105,"-Damage: 50-80");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-75,"-Food: 8-15");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-45,"-Scraps: 10-18");
+}
+
+</string>
           </argument>
         </arguments>
       </action>

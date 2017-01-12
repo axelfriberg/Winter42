@@ -8,6 +8,29 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>lvl=global.outLevel;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="11">
       <action>
         <libid>1</libid>
@@ -85,9 +108,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string> 
-
-with(obj_controller.menuBg){
+            <string>with(obj_controller.menuBg){
     instance_destroy();
 }
 
@@ -113,22 +134,94 @@ obj_controller.alarm[2] = obj_controller.attackBuffer;
 obj_controller.messageCheck = false;
 
 scr_unpause();
+
 with(global.Selected){
     Busy=true;
     alarm[1]=90/global.multiplier;
     isOut=true;
 }
 global.Selected = -1;
-if(irandom(9)=1){
-    global.outDamage=irandom(20);
+
+if(lvl==1){
+    if(irandom(9)=1){
+        global.outDamage=irandom(20);
+    }
+    else{
+        global.outDamage=0;
+    }
+    global.outFood=irandom(2);
+    global.outScrap=irandom(2);
 }
-else{
-    global.outDamage=0;
+
+if(lvl==2){
+    if(irandom(9)=1){
+        global.outDamage=irandom(20);
+    }
+    else{
+        global.outDamage=0;
+    }
+    global.outFood=irandom(3);
+    global.outScrap=irandom(3);
 }
-global.outFood=irandom(2);
-global.outScrap=irandom(2);
+
+if(lvl==5){
+    global.outFood=irandom(3);
+    global.outScrap=irandom(4);
+}
     
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
+draw_set_color(c_black);
+draw_set_font(fnt_out);
+
+if(global.Selected != -1)
+    lvl=global.Selected.ScavengingSkill;
+
+//draw_text(100,100,string(lvl));
+if(lvl==1){
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-135,"-Risk: 10%");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-105,"-Damage: 0-20");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-75,"-Food: 0-2");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-45,"-Scraps: 0-2");
+}
+
+if(lvl==2){
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-135,"-Risk: 10%");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-105,"-Damage: 0-20");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-75,"-Food: 0-3");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-45,"-Scraps: 0-3");
+}
+
+if(lvl==5){
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-135,"-Risk: 0%");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-105,"-Damage: 0");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-75,"-Food: 0-3");
+    draw_text(x-sprite_width/2+30, y+sprite_height/2-45,"-Scraps: 0-4");
+}
 </string>
           </argument>
         </arguments>

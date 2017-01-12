@@ -154,6 +154,7 @@ else if place_meeting(x, y, obj_door){
         MoveY = obj_door.y;
         GoOut = true;
         Move = true;
+        global.outLevel = ScavengingSkill;
         MoveSpeed = 7;
     }
 } else if place_meeting(x, y, obj_anvil){

@@ -36,6 +36,7 @@ CookSkill = 1;
 SocialSkill = 5;
 ScavengingSkill = 1;
 isGeneral = true;
+
 </string>
           </argument>
         </arguments>

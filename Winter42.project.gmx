@@ -14,7 +14,6 @@
     <sound>sound\snd_cooking</sound>
     <sound>sound\snd_mainMenu</sound>
     <sound>sound\snd_gatling</sound>
-    <sound>sound\sound9</sound>
     <sound>sound\snd_death</sound>
   </sounds>
   <sprites name="sprites">
@@ -52,6 +51,7 @@
     <sprite>sprites\spr_cookInfo</sprite>
     <sprite>sprites\spr_generalInfo</sprite>
     <sprite>sprites\spr_medicInfo</sprite>
+    <sprite>sprites\spr_scavengerInfo</sprite>
     <sprite>sprites\spr_soldierInfo</sprite>
     <sprite>sprites\spr_german</sprite>
     <sprite>sprites\spr_textbox</sprite>
@@ -70,6 +70,7 @@
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_gameOverMenu</sprite>
       <sprite>sprites\spr_menuBg</sprite>
+      <sprite>sprites\spr_pauseMenu</sprite>
       <sprite>sprites\spr_winMenu</sprite>
       <sprite>sprites\spr_stormInfo</sprite>
       <sprite>sprites\spr_attackInfo</sprite>
@@ -102,6 +103,21 @@
     <sprite>sprites\spr_therm_ok</sprite>
     <sprite>sprites\spr_crafting</sprite>
     <sprite>sprites\spr_spikes</sprite>
+    <sprite>sprites\spr_temperature</sprite>
+    <sprite>sprites\spr_scavenger</sprite>
+    <sprite>sprites\spr_scavengerSelected</sprite>
+    <sprite>sprites\spr_scraps</sprite>
+    <sprite>sprites\spr_health</sprite>
+    <sprite>sprites\spr_rawFood</sprite>
+    <sprite>sprites\spr_cookedFood</sprite>
+    <sprite>sprites\spr_ammo</sprite>
+    <sprite>sprites\spr_pileScrapsSmall</sprite>
+    <sprite>sprites\spr_pileScrapsMed</sprite>
+    <sprite>sprites\spr_pileScrapsLarge</sprite>
+    <sprite>sprites\spr_pileAmmoSmall</sprite>
+    <sprite>sprites\spr_pileAmmoMed</sprite>
+    <sprite>sprites\spr_pileAmmoLarge</sprite>
+    <sprite>sprites\spr_foodChest</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -121,10 +137,12 @@
     <script>scripts\scr_unpause.gml</script>
     <script>scripts\scr_smallMovement.gml</script>
     <script>scripts\scr_evolve.gml</script>
+    <script>scripts\scr_popup.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt</font>
     <font>fonts\fnt_info</font>
+    <font>fonts\fnt_out</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_timer</object>
@@ -151,6 +169,7 @@
     <object>objects\obj_soldier</object>
     <object>objects\obj_general</object>
     <object>objects\obj_cook</object>
+    <object>objects\obj_scavenger</object>
     <object>objects\obj_blacksmith</object>
     <object>objects\obj_medic</object>
     <object>objects\obj_german</object>
@@ -181,11 +200,14 @@
       <object>objects\obj_craftLeftTurret</object>
       <object>objects\obj_craftRightSpikes</object>
       <object>objects\obj_craftRightTurret</object>
+      <object>objects\obj_pause</object>
+      <object>objects\obj_pauseMenu</object>
     </objects>
     <object>objects\obj_teste</object>
     <object>objects\obj_table</object>
     <object>objects\obj_crafting</object>
     <object>objects\obj_spikes</object>
+    <object>objects\obj_popup</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MainMenu</room>
