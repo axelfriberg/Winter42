@@ -14,7 +14,6 @@
     <sound>sound\snd_cooking</sound>
     <sound>sound\snd_mainMenu</sound>
     <sound>sound\snd_gatling</sound>
-    <sound>sound\sound9</sound>
     <sound>sound\snd_death</sound>
   </sounds>
   <sprites name="sprites">
@@ -128,6 +127,7 @@
     <script>scripts\scr_unpause.gml</script>
     <script>scripts\scr_smallMovement.gml</script>
     <script>scripts\scr_evolve.gml</script>
+    <script>scripts\scr_popup.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt</font>
@@ -184,6 +184,7 @@
     </objects>
     <object>objects\obj_teste</object>
     <object>objects\obj_table</object>
+    <object>objects\obj_popup</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MainMenu</room>
