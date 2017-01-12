@@ -44,6 +44,7 @@ global.isWatch=false;
 global.movement=false;
 
 //buffers for going out
+global.outLevel = -1;
 global.outDamage = 0;
 global.outFood = 0;
 global.outScrap = 0;

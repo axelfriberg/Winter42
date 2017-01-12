@@ -934,8 +934,8 @@
     <instance objName="obj_general" x="864" y="544" name="inst_2C2A2833" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_anvil" x="932" y="363" name="inst_AFECFFDA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_radio" x="1472" y="325" name="inst_B328D4EB" locked="0" code="" scaleX="1.90625" scaleY="1.87999999523163" colour="4294967295" rotation="0"/>
-    <instance objName="obj_move" x="896" y="144" name="inst_2AFC8930" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_teste" x="960" y="562" name="inst_5B1DE51A" locked="0" code="" scaleX="1.35000002384186" scaleY="1.35000002384186" colour="4294967295" rotation="0"/>
+    <instance objName="obj_move" x="832" y="141" name="inst_2AFC8930" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_teste" x="960" y="560" name="inst_5B1DE51A" locked="0" code="" scaleX="1.35000002384186" scaleY="1.35000002384186" colour="4294967295" rotation="0"/>
     <instance objName="obj_soldier" x="1280" y="544" name="inst_44C0EEE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_table" x="576" y="928" name="inst_29B846CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bed" x="1216" y="912" name="inst_2EF0FD30" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -946,6 +946,7 @@
     <instance objName="obj_soldier" x="992" y="928" name="inst_326A5B1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_soldier" x="768" y="352" name="inst_42758978" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_medic" x="864" y="736" name="inst_A4447875" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pause" x="896" y="141" name="inst_B28319D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="" x="1184" y="224" w="16" h="16" xo="0" yo="0" id="10000001" name="inst_92CF24E5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
