@@ -421,6 +421,12 @@ if place_meeting(x,y,obj_button_fastForward){
         draw_text(locationx,locationy,"Change game speed")
 }
 
+if place_meeting(x,y,obj_pileScraps){ 
+        draw_text(locationx,locationy,"Scraps left:"+string(global.Scraps))
+}
+if place_meeting(x,y,obj_pause){ 
+        draw_text(locationx,locationy,"Pause game")
+}
 
 if place_meeting(x,y,obj_radio){ 
     draw_text(locationx,locationy,"Listen to")
