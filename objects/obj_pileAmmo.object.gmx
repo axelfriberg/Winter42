@@ -26,11 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>
-if (global.Scraps &lt;= 0){
+if (global.Ammunition &lt;= 0){
 sprite_index = spr_empty;
-} else if (global.Scraps &gt; 0 &amp;&amp; global.Scraps &lt;= 100){
+} else if (global.Ammunition &gt; 0 &amp;&amp; global.Ammunition &lt;= 100){
 sprite_index = spr_pileAmmoSmall;
-} else if (global.Scraps &gt; 100 &amp;&amp; global.Scraps &lt;= 250){
+} else if (global.Ammunition &gt; 100 &amp;&amp; global.Ammunition &lt;= 250){
 sprite_index = spr_pileAmmoMed;
 } else {
 sprite_index = spr_pileAmmoLarge;
