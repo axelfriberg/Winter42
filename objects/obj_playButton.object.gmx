@@ -107,7 +107,7 @@
         <arguments>
           <argument>
             <kind>11</kind>
-            <room>room0</room>
+            <room>SelectScenarios</room>
           </argument>
         </arguments>
       </action>
