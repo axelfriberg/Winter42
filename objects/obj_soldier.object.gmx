@@ -301,6 +301,13 @@ if Busy &amp;&amp; Completed{
             global.Ammunition += 3*floor(AmmoSkill);
             scr_dialogue("Feeling safer now!", x-260, y-130);
             audio_stop_sound(snd_blacksmith);
+        }
+        if(CraftDefenses){
+            if(CanEvolve)
+                AmmoSkill += 0.20;
+            CraftDefenses = false;
+            scr_dialogue("Much defense, such safety! Wow!", x-260, y-130);
+            audio_stop_sound(snd_blacksmith);
         } 
         if(Eating){
             Eating = false;

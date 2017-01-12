@@ -15,6 +15,7 @@ canEat = true;
 Eating=false;
 CraftingAmmo = false;
 GoOut=false;
+CraftDefenses=false;
 goToWatch=false;
 onWatch = false;
 isMedic = false;

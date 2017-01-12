@@ -91,6 +91,25 @@
                     }
                 }     
         }
+        else if place_meeting(x+16,y-32,obj_crafting)&&CraftDefenses{ 
+                    audio_play_sound(snd_blacksmith,0,0);
+                    with(obj_controller){
+                        messageCheck = true;
+                        attackBuffer = alarm[2];
+                        stormBuffer = alarm[0];
+                        alarm[2] = -1;
+                        alarm[0] = -1;
+                        scr_pause();
+                        screenHide=instance_create(view_wview[0]/2, view_hview[0]/2, obj_darkenScreen);
+                        craftTurret=instance_create(view_xview[0]+view_wview[0]/2-600, view_yview[0]+view_hview[0]/2-200, obj_craftTurret);
+                        craftSpikes=instance_create(view_xview[0]+view_wview[0]/2+200, view_yview[0]+view_hview[0]/2-200, obj_craftSpikes);
+                        craftLeftTurret=instance_create(view_xview[0]+view_wview[0]/2-600, view_yview[0]+view_hview[0]/2, obj_craftLeftTurret);
+                        craftRightTurret=instance_create(view_xview[0]+view_wview[0]/2-400, view_yview[0]+view_hview[0]/2, obj_craftRightTurret);
+                        craftLeftSpikes=instance_create(view_xview[0]+view_wview[0]/2+200, view_yview[0]+view_hview[0]/2, obj_craftLeftSpikes);
+                        craftRightSpikes=instance_create(view_xview[0]+view_wview[0]/2+400, view_yview[0]+view_hview[0]/2, obj_craftRightSpikes);
+                    }     
+                
+        }
         else if place_meeting(x,y,obj_table)&&Eating{ 
                     Busy=true;
                     if(global.CookedFood > 0){
@@ -112,7 +131,22 @@
                 scr_dialogue("Looks like there's no scrap left...", x-260, y-130);
             }  
         }
-        else if (x == obj_sentry.x-20 && y == obj_sentry.y+11)&&goToWatch{  
+        else if (instance_exists(obj_sentry))&&(x == obj_sentry.x-20 && y == obj_sentry.y+11)&&goToWatch{  
+            if(global.Ammunition > 0){
+                audio_play_sound(snd_gun,0,0); 
+                scr_dialogue("I'll be on watch now", x-260, y-130);
+                alarm[3]=60;
+                Busy=true;
+                onWatch=true;
+                global.isWatch = true;
+            }
+            else{
+                onWatch=false;
+                global.isWatch = false;
+                scr_dialogue("No ammunition left... No point of being on the watch", x-260, y-130);
+            }  
+        }
+        else if (instance_exists(obj_leftSentry)&&(x == obj_leftSentry.x+50 && y == obj_leftSentry.y+11)&&goToWatch){  
             if(global.Ammunition > 0){
                 audio_play_sound(snd_gun,0,0); 
                 scr_dialogue("I'll be on watch now", x-260, y-130);

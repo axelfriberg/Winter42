@@ -947,6 +947,8 @@
     <instance objName="obj_bed" x="1408" y="912" name="inst_85048368" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bed" x="1472" y="913" name="inst_01F1F6C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cook" x="896" y="928" name="inst_2328EF88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spikes" x="1728" y="739" name="inst_D0722D0F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spikes" x="1664" y="738" name="inst_9995D3BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="" x="1184" y="224" w="16" h="16" xo="0" yo="0" id="10000001" name="inst_92CF24E5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
