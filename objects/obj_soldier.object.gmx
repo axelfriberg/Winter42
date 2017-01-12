@@ -220,6 +220,9 @@ if(outBuffer == 1){
     ScavengingSkill += 1;
     outBuffer = 0;
 }
+if(ScavengingSkill == 3){
+    scr_evolve(2);
+}
 </string>
           </argument>
         </arguments>

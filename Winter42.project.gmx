@@ -158,6 +158,7 @@
     <object>objects\obj_soldier</object>
     <object>objects\obj_general</object>
     <object>objects\obj_cook</object>
+    <object>objects\obj_scavenger</object>
     <object>objects\obj_blacksmith</object>
     <object>objects\obj_medic</object>
     <object>objects\obj_german</object>
