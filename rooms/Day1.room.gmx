@@ -946,8 +946,10 @@
     <instance objName="obj_soldier" x="768" y="352" name="inst_42758978" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_medic" x="864" y="736" name="inst_A4447875" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pause" x="896" y="141" name="inst_B28319D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pileScraps" x="1344" y="321" name="inst_9FA128CB" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pileScraps" x="1120" y="514" name="inst_9FA128CB" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_crafting" x="1088" y="320" name="inst_ABE1A580" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_foodChest" x="1216" y="1082" name="inst_328D6CBD" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pileAmmo" x="1312" y="306" name="inst_9E52AE11" locked="0" code="" scaleX="0.400000005960464" scaleY="0.400000005960464" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="" x="1184" y="224" w="16" h="16" xo="0" yo="0" id="10000001" name="inst_92CF24E5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
