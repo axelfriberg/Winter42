@@ -8,7 +8,8 @@
         }
     }
     if(onWatch){
-        global.isWatch=false;
+        global.isWatchLeft=false;
+        global.isWatchRight=false;
         onWatch=false;
     }
     Busy = false
@@ -138,11 +139,11 @@
                 alarm[3]=60;
                 Busy=true;
                 onWatch=true;
-                global.isWatch = true;
+                global.isWatchRight = true;
             }
             else{
                 onWatch=false;
-                global.isWatch = false;
+                global.isWatchRight = false;
                 scr_dialogue("No ammunition left... No point of being on the watch", x-260, y-130);
             }  
         }
@@ -153,11 +154,11 @@
                 alarm[3]=60;
                 Busy=true;
                 onWatch=true;
-                global.isWatch = true;
+                global.isWatchLeft = true;
             }
             else{
                 onWatch=false;
-                global.isWatch = false;
+                global.isWatchLeft = false;
                 scr_dialogue("No ammunition left... No point of being on the watch", x-260, y-130);
             }  
         }

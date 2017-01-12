@@ -267,6 +267,8 @@ if Move&amp;&amp;!isOut{
     audio_stop_sound(snd_fire); 
   if(CraftingAmmo)
     audio_stop_sound(snd_blacksmith);
+  if(CraftDefenses)
+    audio_stop_sound(snd_blacksmith);
   scr_move();
 }
 

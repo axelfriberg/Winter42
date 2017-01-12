@@ -48,7 +48,8 @@ global.TurretRight=false;
 global.multiplier = 1;
 
 global.isAttack=false;
-global.isWatch=false;
+global.isWatchRight=false;
+global.isWatchLeft=false;
 
 global.movement=false;
 
