@@ -51,6 +51,7 @@
     <sprite>sprites\spr_cookInfo</sprite>
     <sprite>sprites\spr_generalInfo</sprite>
     <sprite>sprites\spr_medicInfo</sprite>
+    <sprite>sprites\spr_scavengerInfo</sprite>
     <sprite>sprites\spr_soldierInfo</sprite>
     <sprite>sprites\spr_german</sprite>
     <sprite>sprites\spr_textbox</sprite>
@@ -87,6 +88,14 @@
     <sprite>sprites\spr_therm_hot</sprite>
     <sprite>sprites\spr_therm_hotter</sprite>
     <sprite>sprites\spr_therm_ok</sprite>
+    <sprite>sprites\spr_temperature</sprite>
+    <sprite>sprites\spr_scavenger</sprite>
+    <sprite>sprites\spr_scavengerSelected</sprite>
+    <sprite>sprites\spr_scraps</sprite>
+    <sprite>sprites\spr_health</sprite>
+    <sprite>sprites\spr_rawFood</sprite>
+    <sprite>sprites\spr_cookedFood</sprite>
+    <sprite>sprites\spr_ammo</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
