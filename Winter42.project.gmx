@@ -208,6 +208,8 @@
     <object>objects\obj_spikes</object>
     <object>objects\obj_popup</object>
     <object>objects\obj_pileScraps</object>
+    <object>objects\obj_pileAmmo</object>
+    <object>objects\obj_foodChest</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MainMenu</room>
