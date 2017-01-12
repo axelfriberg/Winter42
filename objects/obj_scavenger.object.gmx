@@ -89,7 +89,7 @@ sprite_index = spr_scavenger;
           <argument>
             <kind>1</kind>
             <string>if isSelected{
-    draw_sprite(spr_cookInfo, image_index, 100, 595);
+    draw_sprite(spr_scavengerInfo, image_index, 100, 595);
     draw_set_alpha( 1 );
     draw_set_color( c_white );
     draw_set_font(fnt_info);
@@ -101,9 +101,8 @@ sprite_index = spr_scavenger;
     "Name: " + string(Name) + "#Ability: Scavenging#Health: " + string(Health) + "%#Morale: " + string(Morale) + "%");
     
     //Character description
-    draw_text(20, 560, 
-    "Swift and silent, you will never see me coming...#");
-    
+    draw_text(20, 560,
+    "Voted most likely to succeed #at an Indiana Jones reboot.");
     // Stats
     draw_text(20, 642, 
     "Crafting:     lvl " + string(AmmoSkill) + "#Fighting:     lvl " + string(FightSkill) + "#Cooking:     lvl "  + string(CookSkill)+ "#Scavenging:  lvl "  + string(ScavengingSkill));

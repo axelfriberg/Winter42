@@ -55,6 +55,7 @@
                         secondSoldier.Health+=10;
                         audio_play_sound(snd_heal,0,0);
                         scr_dialogue("There there.. I'll heal your wounds", x-260, y-130);
+                        scr_popup(x, y-50,"-1", spr_scraps, 0.3, 0.3);
                     }
                     else {
                         scr_dialogue("Looks like you're in perfect shape!", x-260, y-130);

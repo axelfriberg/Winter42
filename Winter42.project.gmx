@@ -107,7 +107,6 @@
     <sprite>sprites\spr_scavenger</sprite>
     <sprite>sprites\spr_scavengerSelected</sprite>
     <sprite>sprites\spr_scraps</sprite>
-    <sprite>sprites\spr_health</sprite>
     <sprite>sprites\spr_rawFood</sprite>
     <sprite>sprites\spr_cookedFood</sprite>
     <sprite>sprites\spr_ammo</sprite>
@@ -208,14 +207,11 @@
     <object>objects\obj_crafting</object>
     <object>objects\obj_spikes</object>
     <object>objects\obj_popup</object>
+    <object>objects\obj_pileScraps</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MainMenu</room>
     <room>rooms\SelectScenarios</room>
-    <room>rooms\Day1</room>
-    <room>rooms\Day32</room>
-    <room>rooms\Day32alternative</room>
-    <room>rooms\room1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
