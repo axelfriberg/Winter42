@@ -118,6 +118,7 @@
     <sprite>sprites\spr_pileAmmoMed</sprite>
     <sprite>sprites\spr_pileAmmoLarge</sprite>
     <sprite>sprites\spr_foodChest</sprite>
+    <sprite>sprites\spr_broken</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -212,6 +213,7 @@
     <object>objects\obj_pileScraps</object>
     <object>objects\obj_pileAmmo</object>
     <object>objects\obj_foodChest</object>
+    <object>objects\obj_broken</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MainMenu</room>
