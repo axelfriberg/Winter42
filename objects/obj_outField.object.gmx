@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>lvl=-1;
+            <string>lvl=global.outLevel;
 </string>
           </argument>
         </arguments>
@@ -135,7 +135,6 @@ obj_controller.messageCheck = false;
 
 scr_unpause();
 
-lvl=global.Selected.ScavengingSkill;
 with(global.Selected){
     Busy=true;
     alarm[1]=90/global.multiplier;
