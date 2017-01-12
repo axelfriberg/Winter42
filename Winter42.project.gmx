@@ -82,6 +82,11 @@
     </sprites>
     <sprite>sprites\spr_teste</sprite>
     <sprite>sprites\spr_table</sprite>
+    <sprite>sprites\spr_therm_cold</sprite>
+    <sprite>sprites\spr_therm_colder</sprite>
+    <sprite>sprites\spr_therm_hot</sprite>
+    <sprite>sprites\spr_therm_hotter</sprite>
+    <sprite>sprites\spr_therm_ok</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>

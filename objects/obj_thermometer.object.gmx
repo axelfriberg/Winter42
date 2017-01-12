@@ -25,13 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.Temperature &lt; 2) {
+            <string>if(global.Temperature &lt; 0) {
 sprite_index = spr_therm_colder;
-} else if(global.Temperature &gt;= 2 &amp;&amp; global.Temperature &lt; 12){
+} else if(global.Temperature &gt;= 0 &amp;&amp; global.Temperature &lt; 10){
 sprite_index = spr_therm_cold
-} else if(global.Temperature &gt;= 12 &amp;&amp; global.Temperature &lt; 20) {
+} else if(global.Temperature &gt;= 10 &amp;&amp; global.Temperature &lt; 18) {
 sprite_index = spr_therm_ok
-} else if(global.Temperature &gt;= 20 &amp;&amp; global.Temperature &lt; 26) {
+} else if(global.Temperature &gt;= 18 &amp;&amp; global.Temperature &lt; 26) {
 sprite_index = spr_therm_hot
 } else if(global.Temperature &gt;= 26 ) {
 sprite_index = spr_therm_hotter

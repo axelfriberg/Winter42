@@ -534,6 +534,19 @@ if(object_exists(obj_button_fastForward))
     with(obj_button_fastForward) instance_destroy();
 }*/
 inst = instance_create(900, 100, obj_button_fastForward);
+
+// Draw the thermometer according to the temperature
+if(global.Temperature &lt; 0) {
+draw_sprite(spr_therm_colder, image_index, 20, 30);
+} else if(global.Temperature &gt;= 0 &amp;&amp; global.Temperature &lt; 10){
+draw_sprite(spr_therm_cold, image_index, 20, 30);
+} else if(global.Temperature &gt;= 10 &amp;&amp; global.Temperature &lt; 18) {
+draw_sprite(spr_therm_ok, image_index, 20, 30);
+} else if(global.Temperature &gt;= 18 &amp;&amp; global.Temperature &lt; 26) {
+draw_sprite(spr_therm_hot, image_index, 20, 30);
+} else if(global.Temperature &gt;= 26 ) {
+draw_sprite(spr_therm_hotter, image_index, 20, 30);
+}
 </string>
           </argument>
         </arguments>
