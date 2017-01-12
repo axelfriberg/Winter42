@@ -148,7 +148,7 @@ else if place_meeting(x, y, obj_soldier){
         }
     }
 }
-else if place_meeting(x, y, obj_door){
+else if place_meeting(x, y, obj_door)&amp;&amp;global.Selected!=-1{
     with(global.Selected){
         MoveX = obj_door.x;
         MoveY = obj_door.y;
@@ -424,6 +424,15 @@ if place_meeting(x,y,obj_button_fastForward){
 if place_meeting(x,y,obj_pileScraps){ 
         draw_text(locationx,locationy,"Scraps left:"+string(global.Scraps))
 }
+
+if place_meeting(x,y,obj_pileAmmo){ 
+        draw_text(locationx,locationy,"Ammo left:"+string(global.Ammunition))
+}
+
+if place_meeting(x,y,obj_foodChest){ 
+        draw_text(locationx,locationy-20,"Cooked food:"+string(global.CookedFood)+"#Raw food: "+string(global.RawFood))
+}
+
 if place_meeting(x,y,obj_pause){ 
         draw_text(locationx,locationy,"Pause game")
 }
