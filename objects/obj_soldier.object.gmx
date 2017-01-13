@@ -281,8 +281,10 @@ if Busy &amp;&amp; Completed{
         {
             if(CanEvolve){
                 CookSkill+=0.20;
-                if(CookSkill == 2 || CookSkill == 3 || CookSkill == 4 || CookSkill == 5)
+                if(CookSkill == 2 || CookSkill == 3 || CookSkill == 4 || CookSkill == 5){
                     scr_popup(x, y-50,"", spr_lvlup, 0.4, 0.4);
+                    audio_play_sound(snd_lvlup,0,0);
+                }
             }
             Cooking = false;
             global.RawFood -= 1;
@@ -312,8 +314,10 @@ if Busy &amp;&amp; Completed{
         {
             if(CanEvolve){
                 outBuffer += 0.25;
-                if(outBuffer == 1)
+                if(outBuffer == 1){
                     scr_popup(x, y-50,"", spr_lvlup, 0.4, 0.4);
+                    audio_play_sound(snd_lvlup,0,0);
+                }
             }
             //ScavengingSkill += 0.20;
             isOut = false;
@@ -358,8 +362,10 @@ if Busy &amp;&amp; Completed{
         if(CraftingAmmo){
             if(CanEvolve){
                 AmmoSkill += 0.20;
-                if(AmmoSkill == 2 || AmmoSkill == 3 || AmmoSkill == 4 || AmmoSkill == 5)
-                    scr_popup(x, y-50,"", spr_lvlup, 0.4, 0.4);    
+                if(AmmoSkill == 2 || AmmoSkill == 3 || AmmoSkill == 4 || AmmoSkill == 5){
+                    scr_popup(x, y-50,"", spr_lvlup, 0.4, 0.4);
+                    audio_play_sound(snd_lvlup,0,0);
+                }    
             }
             CraftingAmmo = false;
             global.Scraps -=1;
@@ -372,8 +378,10 @@ if Busy &amp;&amp; Completed{
         if(CraftDefenses){
             if(CanEvolve){
                 AmmoSkill += 0.20;
-                if(AmmoSkill == 2 || AmmoSkill == 3 || AmmoSkill == 4 || AmmoSkill == 5)
+                if(AmmoSkill == 2 || AmmoSkill == 3 || AmmoSkill == 4 || AmmoSkill == 5){
                     scr_popup(x, y-50,"", spr_lvlup, 0.4, 0.4);    
+                    audio_play_sound(snd_lvlup,0,0);
+                }
             }
             CraftDefenses = false;
             scr_dialogue("Much defense, such safety! Wow!", x-260, y-130);
