@@ -89,7 +89,7 @@ global.Names[9]="Vladimir"
 //Start Message
 gameover = false;
 //Oven breakdown
-ovenBreak = 10//irandom_range(10,21);
+ovenBreak = irandom_range(10,21);
 ovenControl = true;
 global.ovenBroken = false;
 repairCount = 3;
