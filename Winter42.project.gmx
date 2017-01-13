@@ -220,6 +220,7 @@
     <object>objects\obj_pileAmmo</object>
     <object>objects\obj_foodChest</object>
     <object>objects\obj_broken</object>
+    <object>objects\obj_nightCycle</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MainMenu</room>

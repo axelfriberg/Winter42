@@ -952,6 +952,7 @@
     <instance objName="obj_crafting" x="1088" y="320" name="inst_AE563438" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pileAmmo" x="1312" y="306" name="inst_3D415387" locked="0" code="" scaleX="0.400000005960464" scaleY="0.400000005960464" colour="4294967295" rotation="0"/>
     <instance objName="obj_foodChest" x="1216" y="1082" name="inst_E74BE0E0" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
+    <instance objName="obj_nightCycle" x="0" y="12" name="inst_45AAA6D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="" x="1184" y="224" w="16" h="16" xo="0" yo="0" id="10000001" name="inst_92CF24E5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

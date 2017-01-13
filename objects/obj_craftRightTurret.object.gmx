@@ -152,7 +152,10 @@ if(!global.TurretRight)&amp;&amp;(global.Scraps&gt;=scrapsNeeded){
 }
 else{
     with(global.Selected){
-        scr_dialogue("I cannot build it now..",x-260,y-130)
+        if(global.Scraps&lt;20)
+            scr_dialogue("I don't have enough scraps to build it.",x-260,y-130);
+        else
+            scr_dialogue("This defense already exists...",x-260,y-130);
     }
 }
 with(global.Selected){
