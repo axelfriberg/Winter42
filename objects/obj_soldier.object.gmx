@@ -324,6 +324,18 @@ if Busy &amp;&amp; Completed{
             GoOut= false;
             Health -= global.outDamage;
             if(Health &lt;= 0){
+                with(obj_controller){
+                        messageCheck = true;
+                        returnMessage = true;
+                        attackBuffer = alarm[2];
+                        stormBuffer = alarm[0];
+                        alarm[2] = -1;
+                        alarm[0] = -1;
+                        scr_pause();
+                        screenHide = instance_create(view_wview[0]/2, view_hview[0]/2, obj_darkenScreen);
+                        startingInfo = instance_create(view_wview[0]/2,  view_hview[0]/2, obj_menuBgDeath);
+                        continueButton = instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]/2+117, obj_continueButton);
+                    }
             }
             else{
                 global.RawFood += global.outFood;
@@ -346,9 +358,11 @@ if Busy &amp;&amp; Completed{
             /*global.RawFood += 2;
             global.Scraps += 3;
             scr_dialogue("Found raw food and scraps", x-260, y-130);*/
-            audio_play_sound(snd_door,0,0);
-            scr_popup(x-50, y-50,"+" + string(global.outScrap), spr_scraps, 0.3, 0.3);
-            scr_popup(x+30, y-50,"+" + string(global.outFood), spr_rawFood, 0.3, 0.3);
+            if(Health &gt; 0){
+                audio_play_sound(snd_door,0,0);
+                scr_popup(x-50, y-50,"+" + string(global.outScrap), spr_scraps, 0.3, 0.3);
+                scr_popup(x+30, y-50,"+" + string(global.outFood), spr_rawFood, 0.3, 0.3);
+            }
         }
         if(makingFire){
             makingFire = false;

@@ -194,6 +194,7 @@
       <object>objects\obj_attackInfo</object>
       <object>objects\obj_sicknessInfo</object>
       <object>objects\obj_menuBg</object>
+      <object>objects\obj_menuBgDeath</object>
       <object>objects\obj_outBackyard</object>
       <object>objects\obj_outField</object>
       <object>objects\obj_outCamp</object>
