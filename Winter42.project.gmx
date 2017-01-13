@@ -118,6 +118,7 @@
     <sprite>sprites\spr_pileAmmoMed</sprite>
     <sprite>sprites\spr_pileAmmoLarge</sprite>
     <sprite>sprites\spr_foodChest</sprite>
+    <sprite>sprites\spr_lvlup</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
