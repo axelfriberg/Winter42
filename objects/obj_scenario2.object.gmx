@@ -106,6 +106,10 @@
           <argument>
             <kind>1</kind>
             <string>global.day=32;
+global.Scraps=10;
+global.RawFood=5;
+global.CookedFood=5;
+global.Ammunition=25;
 </string>
           </argument>
         </arguments>
