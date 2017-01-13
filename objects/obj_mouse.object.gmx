@@ -116,7 +116,7 @@ if(place_meeting(x,y, obj_radio)){
             with(textbox) instance_destroy();
         }
     }
-    var i=floor(random(9))
+    var i=floor(random(13))
     scr_dialogue(obj_radio.messages[i], obj_radio.x+20, obj_radio.y-130);
     alarm[0]=150;
 }
@@ -124,12 +124,21 @@ if(place_meeting(x,y, obj_radio)){
 
 if place_meeting(x, y, obj_pot){
     with(global.Selected){  
-        MoveX = obj_pot.x - 32;
-        MoveY = obj_pot.y;
-        Move = true;
-        MoveSpeed = 7;
-        Resource = 1
-        Cooking = true;
+            MoveX = obj_pot.x - 32;
+            MoveY = obj_pot.y;
+            Move = true;
+            MoveSpeed = 7;
+            Resource = 1
+    }
+    if(global.ovenBroken){
+    with(global.Selected){  
+            Repair = true;
+    }
+    }
+    else{
+        with(global.Selected){  
+            Cooking = true;
+        }
     }
 }
 else if place_meeting(x, y, obj_soldier){
@@ -281,7 +290,7 @@ if(place_meeting(x,y, obj_radio)){
             with(textbox) instance_destroy();
         }
     }
-    var i=floor(random(9))
+    var i=floor(random(13))
     scr_dialogue(obj_radio.messages[i], obj_radio.x+20, obj_radio.y-130);
     alarm[0]=150;
 }

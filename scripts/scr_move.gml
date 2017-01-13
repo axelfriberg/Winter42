@@ -34,6 +34,19 @@
                 Cooking=false;
             }
         }
+        if (x == obj_pot.x-32 && y== obj_pot.y)&&Repair{
+            if(global.Scraps>0){    
+                Busy = true;
+                audio_play_sound(snd_blacksmith,0,0);
+                scr_dialogue("Gotta fix this damn thing...", x-260, y-130);
+                alarm[0] = 20/global.multiplier;
+            }
+            else {
+                scr_dialogue("I need scraps to do this...", x-260, y-130);
+                Repair=false;
+            }
+        }
+        
         else if ((place_meeting(x-32,y,obj_soldier)||place_meeting(x+32,y,obj_soldier))&&!isMedic&&Interact){
                 secondSoldier = instance_place(x-32, y, obj_soldier); 
                 if(!instance_exists(secondSoldier))
@@ -109,6 +122,7 @@
                         craftRightTurret=instance_create(view_xview[0]+view_wview[0]/2-400, view_yview[0]+view_hview[0]/2, obj_craftRightTurret);
                         craftLeftSpikes=instance_create(view_xview[0]+view_wview[0]/2+200, view_yview[0]+view_hview[0]/2, obj_craftLeftSpikes);
                         craftRightSpikes=instance_create(view_xview[0]+view_wview[0]/2+400, view_yview[0]+view_hview[0]/2, obj_craftRightSpikes);
+                        craftCancel=instance_create(view_xview[0]+view_wview[0]/2-100, view_yview[0]+view_hview[0]/2+200, obj_craftCancel);
                     }     
                 
         }

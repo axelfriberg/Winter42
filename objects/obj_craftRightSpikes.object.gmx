@@ -135,6 +135,9 @@ with(obj_controller.craftRightSpikes){
 with(obj_controller.screenHide){
     instance_destroy();
 }
+with(obj_controller.craftCancel){
+    instance_destroy();
+}
 
 obj_controller.alarm[0] = obj_controller.stormBuffer;
 obj_controller.alarm[2] = obj_controller.attackBuffer;

@@ -94,6 +94,8 @@
       <sprite>sprites\spr_craftRightSelected</sprite>
       <sprite>sprites\spr_craftLeftSelected</sprite>
       <sprite>sprites\spr_craftLeft</sprite>
+      <sprite>sprites\spr_craftCancel</sprite>
+      <sprite>sprites\spr_craftCancelSelected</sprite>
     </sprites>
     <sprite>sprites\spr_teste</sprite>
     <sprite>sprites\spr_table</sprite>
@@ -119,6 +121,7 @@
     <sprite>sprites\spr_pileAmmoLarge</sprite>
     <sprite>sprites\spr_foodChest</sprite>
     <sprite>sprites\spr_lvlup</sprite>
+    <sprite>sprites\spr_broken</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -202,6 +205,7 @@
       <object>objects\obj_craftLeftTurret</object>
       <object>objects\obj_craftRightSpikes</object>
       <object>objects\obj_craftRightTurret</object>
+      <object>objects\obj_craftCancel</object>
       <object>objects\obj_pause</object>
       <object>objects\obj_pauseMenu</object>
     </objects>
@@ -213,6 +217,7 @@
     <object>objects\obj_pileScraps</object>
     <object>objects\obj_pileAmmo</object>
     <object>objects\obj_foodChest</object>
+    <object>objects\obj_broken</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MainMenu</room>
