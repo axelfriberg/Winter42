@@ -279,8 +279,13 @@ if Busy &amp;&amp; Completed{
         //Raw Food ==&gt; Cooked Food
         if(Cooking)
         {
-            if(CanEvolve)
+            if(CanEvolve){
                 CookSkill+=0.20;
+                if(CookSkill == 2 || CookSkill == 3 || CookSkill == 4 || CookSkill == 5){
+                    scr_popup(x, y-50,"", spr_lvlup, 0.4, 0.4);
+                    audio_play_sound(snd_lvlup,0,0);
+                }
+            }
             Cooking = false;
             global.RawFood -= 1;
             global.CookedFood += floor(CookSkill);
@@ -307,13 +312,30 @@ if Busy &amp;&amp; Completed{
         // Went scavaging, found raw food and scraps
         if(isOut)
         {
-            if(CanEvolve)
-                outBuffer += 0.2;
-                //ScavengingSkill += 0.20;
+            if(CanEvolve){
+                outBuffer += 0.25;
+                if(outBuffer == 1){
+                    scr_popup(x, y-50,"", spr_lvlup, 0.4, 0.4);
+                    audio_play_sound(snd_lvlup,0,0);
+                }
+            }
+            //ScavengingSkill += 0.20;
             isOut = false;
             GoOut= false;
             Health -= global.outDamage;
             if(Health &lt;= 0){
+                with(obj_controller){
+                        messageCheck = true;
+                        returnMessage = true;
+                        attackBuffer = alarm[2];
+                        stormBuffer = alarm[0];
+                        alarm[2] = -1;
+                        alarm[0] = -1;
+                        scr_pause();
+                        screenHide = instance_create(view_wview[0]/2, view_hview[0]/2, obj_darkenScreen);
+                        startingInfo = instance_create(view_wview[0]/2,  view_hview[0]/2, obj_menuBgDeath);
+                        continueButton = instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]/2+117, obj_continueButton);
+                    }
             }
             else{
                 global.RawFood += global.outFood;
@@ -336,9 +358,11 @@ if Busy &amp;&amp; Completed{
             /*global.RawFood += 2;
             global.Scraps += 3;
             scr_dialogue("Found raw food and scraps", x-260, y-130);*/
-            audio_play_sound(snd_door,0,0);
-            scr_popup(x-50, y-50,"+" + string(global.outScrap), spr_scraps, 0.3, 0.3);
-            scr_popup(x+30, y-50,"+" + string(global.outFood), spr_rawFood, 0.3, 0.3);
+            if(Health &gt; 0){
+                audio_play_sound(snd_door,0,0);
+                scr_popup(x-50, y-50,"+" + string(global.outScrap), spr_scraps, 0.3, 0.3);
+                scr_popup(x+30, y-50,"+" + string(global.outFood), spr_rawFood, 0.3, 0.3);
+            }
         }
         if(makingFire){
             makingFire = false;
@@ -350,8 +374,13 @@ if Busy &amp;&amp; Completed{
             audio_stop_sound(snd_fire);         
         }
         if(CraftingAmmo){
-            if(CanEvolve)
+            if(CanEvolve){
                 AmmoSkill += 0.20;
+                if(AmmoSkill == 2 || AmmoSkill == 3 || AmmoSkill == 4 || AmmoSkill == 5){
+                    scr_popup(x, y-50,"", spr_lvlup, 0.4, 0.4);
+                    audio_play_sound(snd_lvlup,0,0);
+                }    
+            }
             CraftingAmmo = false;
             global.Scraps -=1;
             global.Ammunition += 3*floor(AmmoSkill);
@@ -361,8 +390,13 @@ if Busy &amp;&amp; Completed{
             audio_stop_sound(snd_blacksmith);
         }
         if(CraftDefenses){
-            if(CanEvolve)
+            if(CanEvolve){
                 AmmoSkill += 0.20;
+                if(AmmoSkill == 2 || AmmoSkill == 3 || AmmoSkill == 4 || AmmoSkill == 5){
+                    scr_popup(x, y-50,"", spr_lvlup, 0.4, 0.4);    
+                    audio_play_sound(snd_lvlup,0,0);
+                }
+            }
             CraftDefenses = false;
             scr_dialogue("Much defense, such safety! Wow!", x-260, y-130);
             audio_stop_sound(snd_blacksmith);

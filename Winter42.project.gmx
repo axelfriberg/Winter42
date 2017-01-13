@@ -15,6 +15,7 @@
     <sound>sound\snd_mainMenu</sound>
     <sound>sound\snd_gatling</sound>
     <sound>sound\snd_death</sound>
+    <sound>sound\snd_lvlup</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_soldier</sprite>
@@ -120,6 +121,7 @@
     <sprite>sprites\spr_pileAmmoMed</sprite>
     <sprite>sprites\spr_pileAmmoLarge</sprite>
     <sprite>sprites\spr_foodChest</sprite>
+    <sprite>sprites\spr_lvlup</sprite>
     <sprite>sprites\spr_broken</sprite>
   </sprites>
   <backgrounds name="background">
@@ -192,6 +194,7 @@
       <object>objects\obj_attackInfo</object>
       <object>objects\obj_sicknessInfo</object>
       <object>objects\obj_menuBg</object>
+      <object>objects\obj_menuBgDeath</object>
       <object>objects\obj_outBackyard</object>
       <object>objects\obj_outField</object>
       <object>objects\obj_outCamp</object>
